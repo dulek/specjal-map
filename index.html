@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="leaflet.css" />
+  <script src="leaflet.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <script src="markers.js"></script>
+</head>
+<body>
+
+<h1>Specjal On Tour</h1>
+
+<div id="map"></div>
+<script>
+  var map = L.map('map',{
+    center: [52.64701, 42.39425],
+    zoom: 4
+  });
+
+  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+              {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+
+  for (var i = 0; i < markers.length; ++i) {
+    L.marker([markers[i].latitude, markers[i].longitude])
+    .bindPopup('<h2> ' + markers[i].title + '</h2><a href="' + markers[i].photo + '"><img style="width: 100%" src="' + markers[i].photo + '"/></a>')
+    .addTo(map);
+  }
+</script>
+
+</body>
+</html>

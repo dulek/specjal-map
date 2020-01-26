@@ -1,0 +1,12 @@
+#map {
+  height: 90vh;
+  margin: 0 auto;
+}
+
+body, html {
+  background-color: black;
+}
+
+h1 {
+  color: white;
+}
