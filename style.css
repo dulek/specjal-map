@@ -9,4 +9,10 @@ body, html {
 
 h1 {
   color: white;
+  text-align: center;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.leaflet-popup-content-wrapper {
+  min-width: 250px;
 }
