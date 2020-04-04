@@ -111,7 +111,7 @@ markers = [
     latitude: 43.740171,
     longitude: 7.429586,
     photo: "photos/monaco.jpg",
-    title: "Monaco - Spain"
+    title: "Monaco"
   },
   {
     latitude: 35.768166,
