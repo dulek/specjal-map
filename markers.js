@@ -269,4 +269,10 @@ markers = [
     photo: "photos/malta2.jpg",
     title: "Malta"
   },
+  {
+    latitude: 44.171026,
+    longitude: 28.663482,
+    photo: "photos/konstanca.jpg",
+    title: "Faleza Cazino - Constanta - Romania"
+  }
 ]
