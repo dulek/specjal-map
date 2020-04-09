@@ -35,7 +35,7 @@
 
   for (var i = 0; i < markers.length; ++i) {
     L.marker([markers[i].latitude, markers[i].longitude], {icon: icon})
-    .bindPopup('<h2> ' + markers[i].title + '</h2><a href="' + markers[i].photo + '"><img style="width: 100%" src="' + markers[i].photo + '"/></a>')
+    .bindPopup('<h2> ' + markers[i].title + '</h2><a href="' + markers[i].photo + '"><img style="width: 100%" src="' + markers[i].photo + '"/></a><em>' + markers[i].author + '</em>')
     .addTo(map);
   }
 </script>

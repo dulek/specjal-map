@@ -274,5 +274,12 @@ markers = [
     longitude: 28.663482,
     photo: "photos/konstanca.jpg",
     title: "Faleza Cazino - Constanta - Romania"
+  },
+  {
+    latitude: 32.080000,
+    longitude: 34.766778,
+    photo: "photos/tel-aviv.jpg",
+    title: "Frishman Beach - Tel Aviv - Israel",
+    author: "Kamil"
   }
 ]
