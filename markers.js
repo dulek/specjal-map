@@ -281,5 +281,54 @@ markers = [
     photo: "photos/tel-aviv.jpg",
     title: "Frishman Beach - Tel Aviv - Israel",
     author: "Kamil"
+  },
+  {
+    latitude: 64.326113,
+    longitude: -20.123739,
+    photo: "photos/marcin/islandia-gulfoss.jpg",
+    title: "Gulfoss - Iceland",
+    author: "Marcin"
+  },
+  {
+    latitude: 50.450712,
+    longitude: 30.523168,
+    photo: "photos/marcin/ukraine-kiev.jpg",
+    title: "Ukraine - Kiev - Майдан Незалежності ",
+    author: "Marcin"
+  },
+  {
+    latitude: 51.408011,
+    longitude: 30.055859,
+    photo: "photos/marcin/ukraine-chernobyl.jpg",
+    title: "Ukraine - Pripyat - Колесо огляду ",
+    author: "Marcin"
+  },
+  {
+    latitude: 37.971711,
+    longitude: 23.727353,
+    photo: "photos/marcin/greece-athens.jpg",
+    title: "Greece - Athens - Acropolis",
+    author: "Marcin"
+  },
+  {
+    latitude: 53.895434,
+    longitude: 27.54577,
+    photo: "photos/marcin/belarus-minsk.jpg",
+    title: "Belarus - Minsk - Помнік Леніну",
+    author: "Marcin"
+  },
+  {
+    latitude: 55.752051,
+    longitude: 37.623585,
+    photo: "photos/marcin/russia-moscow.jpg",
+    title: "Russia - Moscow - Храм Василия Блаженного",
+    author: "Marcin"
+  },
+  {
+    latitude: 59.939160,
+    longitude: 30.314702,
+    photo: "photos/marcin/russia-petersburg.jpg",
+    title: "Russia - St. Petersburg - Государственный Эрмитаж ",
+    author: "Marcin"
   }
 ]
