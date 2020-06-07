@@ -601,4 +601,11 @@ markers = [
     title: "Marseille - France",
     author: "Marcin"
   },
+  {
+    latitude: 49.152643,
+    longitude: 22.555545,
+    photo: "photos/poland-bieszczady.jpg",
+    title: "Połonina Wetlińska - Bieszczady - Poland",
+    author: "Szmuk"
+  },
 ]
