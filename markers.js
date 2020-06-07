@@ -608,4 +608,11 @@ markers = [
     title: "Połonina Wetlińska - Bieszczady - Poland",
     author: "Szmuk"
   },
+  {
+    latitude: 49.074558,
+    longitude: 22.726140,
+    photo: "photos/poland-tarnica.jpg",
+    title: "Tarnica - Bieszczady - Poland",
+    author: "Dulek"
+  },
 ]
