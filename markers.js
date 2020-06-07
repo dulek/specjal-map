@@ -560,8 +560,8 @@ markers = [
     author: "Marcin"
   },
   {
-    latitude: 46.195743,
-    longitude: 7.337968,
+    latitude: 46.194603,
+    longitude: 7.339643,
     photo: "photos/marcin/switzerland-veysonnaz.jpg",
     title: "Veysonnaz - Switzerland",
     author: "Marcin"
@@ -595,8 +595,8 @@ markers = [
     author: "Marcin"
   },
   {
-    latitude: 43.285024,
-    longitude: 5.370620,
+    latitude: 43.291737,
+    longitude: 5.362526,
     photo: "photos/marcin/france-marseille.jpg",
     title: "Marseille - France",
     author: "Marcin"
