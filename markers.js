@@ -615,4 +615,11 @@ markers = [
     title: "Tarnica - Bieszczady - Poland",
     author: "Dulek"
   },
+  {
+    latitude: 35.713553,
+    longitude: 139.793291,
+    photo: "photos/tokyo-2.jpg",
+    title: "Don Quijote Asakusa - Tokyo - Japan",
+    author: "Paweł Murat"
+  },
 ]
