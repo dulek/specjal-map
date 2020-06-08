@@ -622,4 +622,11 @@ markers = [
     title: "Don Quijote Asakusa - Tokyo - Japan",
     author: "Paweł Murat"
   },
+  {
+    latitude: 26.223987,
+    longitude: 127.308899,
+    photo: "photos/okinawa.jpg",
+    title: "Furuzamami Beach - Zamami Island - Okinawa - Japan",
+    author: "Paweł Murat"
+  },
 ]
