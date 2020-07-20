@@ -629,4 +629,11 @@ markers = [
     title: "Furuzamami Beach - Zamami Island - Okinawa - Japan",
     author: "Paweł Murat"
   },
+  {
+    latitude: 78.1301,
+    longitude: 16.2014,
+    photo: "photos/svalbard.jpg",
+    title: "Spitzbergen - Norway",
+    author: "Łukasz Lewandowski"
+  }
 ]
