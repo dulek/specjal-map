@@ -635,5 +635,12 @@ markers = [
     photo: "photos/svalbard.jpg",
     title: "Spitzbergen - Norway",
     author: "Łukasz Lewandowski"
+  },
+  {
+    latitude: 54.686814,
+    longitude: 25.297784,
+    photo: "photos/vilnius.jpg",
+    title: "Trys kryžiai - Vilnius - Lithuania",
+    author: "Dulek"
   }
 ]
