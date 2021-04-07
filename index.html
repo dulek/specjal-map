@@ -3,6 +3,7 @@
 <head>
   <link rel="stylesheet" href="leaflet.css" />
   <script src="leaflet.js"></script>
+  <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.3.0"></script>
   <link rel="stylesheet" href="style.css" />
   <script src="markers.js"></script>
   <link rel="shortcut icon" href="images/favicon.png"/>
@@ -28,8 +29,10 @@
   });
 
 
-  L.tileLayer('http://a.tile.stamen.com/toner/{z}/{x}/{y}.png ',
-              {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+  var layer = new L.StamenTileLayer("toner");
+  map.addLayer(layer);
+  //L.tileLayer('http://a.tile.stamen.com/toner/{z}/{x}/{y}.png ',
+  //            {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
   //L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
   //            {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
 
