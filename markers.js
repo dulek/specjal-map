@@ -642,5 +642,19 @@ markers = [
     photo: "photos/vilnius.jpg",
     title: "Trys kryžiai - Vilnius - Lithuania",
     author: "Dulek"
+  },
+  {
+    latitude: 49.22865,
+    longitude: 20.04728,
+    photo: "photos/krzyzne.jpg",
+    title: "Krzyżne - Tatry - Poland",
+    author: "Dulek"
+  },
+  {
+    latitude: 37.05340,
+    longitude: -3.31157,
+    photo: "photos/mulhacen.jpg",
+    title: "Mulhacen - Sierra Nevada - Spain",
+    author: "Dulek"
   }
 ]
