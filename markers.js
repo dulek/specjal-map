@@ -656,5 +656,12 @@ markers = [
     photo: "photos/mulhacen.jpg",
     title: "Mulhacen - Sierra Nevada - Spain",
     author: "Dulek"
+  },
+  {
+    latitude: 54.36412,
+    longitude: 18.65383,
+    photo: "photos/gdansk-zuraw.jpg",
+    title: "Żuraw M3 - Gdańsk - Polska",
+    author: "Doris"
   }
 ]
