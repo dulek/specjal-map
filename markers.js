@@ -663,5 +663,33 @@ markers = [
     photo: "photos/gdansk-zuraw.jpg",
     title: "Żuraw M3 - Gdańsk - Polska",
     author: "Doris"
+  },
+  {
+    latitude: 19.815023,
+    longitude: -70.715184,
+    photo: "photos/dominican.jpg",
+    title: "Playa Grande - Puerto Plata - Dominican Republic",
+    author: "Doris"
+  },
+  {
+    latitude: 50.302906,
+    longitude: 19.164474,
+    photo: "photos/sosnowiec.jpg",
+    title: "Pomnik lądowania Ojca Świętego JPII - Sosnowiec - Poland",
+    author: "Marcin"
+  },
+  {
+    latitude: 51.397350,
+    longitude: 21.146130,
+    photo: "photos/radom.jpg",
+    title: "Hotel Gromada - Radom - Poland",
+    author: "Marcin"
+  },
+  {
+    latitude: 53.123340,
+    longitude: 18.001448,
+    photo: "photos/bydgoszcz.jpg",
+    title: "Most Jerzego Sulimy-Kamińskiego - Bydgoszcz - Poland",
+    author: "Marcin"
   }
 ]
