@@ -698,5 +698,26 @@ markers = [
     photo: "photos/calabria.jpg",
     title: "San Nicola Arcella - Calabria - Italy",
     author: "Julia & Kuks"
+  },
+  {
+    latitude: 48.377233,
+    longitude: -4.489948,
+    photo: "photos/brest.jpg",
+    title: "Marina - Brest - France",
+    author: "Lucy"
+  },
+  {
+    latitude: 36.383333,
+    longitude: -3.81666,
+    photo: "photos/dolphins.jpg",
+    title: "Wybrzeże Andaluzji - Morze Śródziemne",
+    author: "Doris"
+  },
+  {
+    latitude: 43.555954,
+    longitude: 4.081710,
+    photo: "photos/la-grande-motte.jpg",
+    title: "La Grande-Motte - Occitanie - France",
+    author: "Doris"
   }
 ]
