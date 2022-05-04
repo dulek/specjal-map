@@ -691,5 +691,12 @@ markers = [
     photo: "photos/bydgoszcz.jpg",
     title: "Most Jerzego Sulimy-Kamińskiego - Bydgoszcz - Poland",
     author: "Marcin"
+  },
+  {
+    latitude: 39.833394,
+    longitude: 15.775609,
+    photo: "photos/calabria.jpg",
+    title: "San Nicola Arcella - Calabria - Italy",
+    author: "Julia & Kuks"
   }
 ]
