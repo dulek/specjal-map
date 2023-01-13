@@ -725,6 +725,8 @@ markers = [
     longitude: -15.970957,
     photo: "photos/mauritania.jpg",
     title: "Mauritania",
-    author: "Maniu"
+    author: "Maniu",
+    datetime: "2023-01-13T14:15:00.511Z",
+    comment: "Wyprawa Golfem przez Afrykę"
   }
 ]
