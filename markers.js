@@ -719,5 +719,12 @@ markers = [
     photo: "photos/la-grande-motte.jpg",
     title: "La Grande-Motte - Occitanie - France",
     author: "Doris"
+  },
+  {
+    latitude: 20.182302,
+    longitude: -15.970957,
+    photo: "photos/mauritania.jpg",
+    title: "Mauritania",
+    author: "Maniu"
   }
 ]
