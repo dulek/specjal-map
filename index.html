@@ -43,12 +43,16 @@
   //            {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
 
 
-  function displayDate(datetime) {
-    var datetime = new Date(datetime);
-    var datetimeString = datetime.toISOString().slice(0, 16);
+  function displayDate(datetimeJson) {
+    var datetime = new Date(datetimeJson);
+    var datetimeString = datetime.toISOString();
     var date = datetimeString.substring(0,10);
-    var time = datetimeString.substring(11,16);
-    return date + ' ' + time;
+    if(datetimeJson.length >= 16) {      
+        var time = datetimeString.substring(11,16);
+        return date + ' ' + time;
+    }else{
+        return date;
+    }
   }
 
   for (var i = 0; i < markers.length; ++i) {
