@@ -19,7 +19,7 @@
     zoom: 3
   });
 
-  var icon = L.icon({
+  var beerBottleIcon = L.icon({
     iconUrl: 'images/icon3.png',
 
     iconSize:     [12, 43.5], // size of the icon
@@ -27,10 +27,19 @@
     popupAnchor:  [0, -43.5] // point from which the popup should open relative to the iconAnchor
   });
 
+  var beerCanIcon = L.icon({
+    iconUrl: 'images/beer-can-small.png',
+
+    iconSize:     [15, 40],
+    iconAnchor:   [6, 40], 
+    popupAnchor:  [2, -40] 
+  });
+
+  var defaultIcon = beerBottleIcon;
 
   L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png ',
               {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
-  //L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+  // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
   //            {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
 
 
@@ -53,7 +62,12 @@
     if (markers[i].datetime) {
         popupContent += '<br>🗓️ ' + displayDate(markers[i].datetime);
     }
-    L.marker([markers[i].latitude, markers[i].longitude], {icon: icon})
+    var beerIcon = defaultIcon;
+    if (markers[i].type == "can") {
+      beerIcon = beerCanIcon;
+    }
+
+    L.marker([markers[i].latitude, markers[i].longitude], {icon: beerIcon})
     .bindPopup(popupContent)
     .addTo(map);
   }
