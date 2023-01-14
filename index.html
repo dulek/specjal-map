@@ -46,9 +46,17 @@
 
   for (var i = 0; i < markers.length; ++i) {
     var imgTag = '<img style="width: 100%" src="' + markers[i].photo + '"';
-    if (markers[i].comment) {
-        imgTag += ' alt="'+markers[i].comment+'"';
-        imgTag += ' title="'+markers[i].comment+'"';
+    var comment;
+    if (language === 'pl' && markers[i].commentPolish) {
+        comment = markers[i].commentPolish;
+    } else if (language === 'en' && markers[i].commentEnglish) {
+        comment = markers[i].commentEnglish;
+    } else if (markers[i].comment) {
+        comment = markers[i].comment;
+    }
+    if (comment) {
+        imgTag += ' alt="'+comment+'"';
+        imgTag += ' title="'+comment+'"';
     }
     imgTag += '/>';
     var popupContent = '<h2> ' + markers[i].title + '</h2><a href="' + markers[i].photo + '">'+imgTag+'</a>📷 ' + markers[i].author;

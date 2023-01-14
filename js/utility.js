@@ -1,3 +1,6 @@
+var language = navigator.language || navigator.userLanguage;
+var language = (language === "pl") ? "pl" : "en";
+
 function displayDate(datetimeJson) {
   var datetime = new Date(datetimeJson);
   var datetimeString = datetime.toISOString();
