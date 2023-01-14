@@ -4,462 +4,532 @@ markers = [
     longitude: 2.173260,
     photo: "photos/sagradafamilia.jpg",
     author: "Dulek",
-    title: "Sagrada Familia - Barcelona - Spain"
+    title: "Sagrada Familia - Barcelona - Spain",
+    type: "bottle"
   },
   {
     latitude: 52.358408,
     longitude: 4.883081,
     photo: "photos/amsterdam.jpg",
     author: "Dulek",
-    title: "Rijksmuseum - Amsterdam - Netherlands"
+    title: "Rijksmuseum - Amsterdam - Netherlands",
+    commentPolish: "Koningsdag to święto króla w Niderlandach, obchodzone 27 kwietnia, które upamiętnia urodziny króla Wilhelma Alexandera. Wcześniej, za panowania królowej Beatrix, było obchodzone 30 kwietnia i nazywane Koninginnedag.",
+    commentEnglish: "Koningsdag is a king's holiday in the Netherlands, celebrated on April 27, which commemorates the birthday of King William Alexander. Previously, during the reign of Queen Beatrix, it was celebrated on April 30 and called Koninginnedag.",
+    type: "bottle"
   },
   {
     latitude: 33.760179,
     longitude: -84.374328,
     photo: "photos/atlanta.jpg",
     author: "Dulek",
-    title: "Jackson Street Bridge - Atlanta - Georgia, USA"
+    title: "Jackson Street Bridge - Atlanta - Georgia, USA",
+    type: "bottle"
   },
   {
     latitude: 52.516360,
     longitude: 13.378772,
     photo: "photos/berlin.jpg",
     author: "Dulek",
-    title: "Brandenburger Tor - Berlin - Germany"
+    title: "Brandenburger Tor - Berlin - Germany",
+    type: "bottle"
   },
   {
     latitude: 44.430993,
     longitude: 26.087265,
     photo: "photos/bucaresti.jpg",
     author: "Dulek",
-    title: "Palatul Parlamentului - Bucharest - Romania"
+    title: "Palatul Parlamentului - Bucharest - Romania",
+    type: "bottle"
   },
   {
     latitude: 41.419353,
     longitude: 2.161977,
     photo: "photos/bunkers.jpg",
     author: "Dulek",
-    title: "Bunkers del Carmel - Barcelona - Spain"
+    title: "Bunkers del Carmel - Barcelona - Spain",
+    type: "bottle"
   },
   {
     latitude: 28.211452,
     longitude: -14.018584,
     photo: "photos/canaria.jpg",
     author: "Dulek",
-    title: "Playa Gan Tarajal - Fuerteventura - Canary Islands, Spain"
+    title: "Playa Gan Tarajal - Fuerteventura - Canary Islands, Spain",
+    type: "bottle"
   },
   {
     latitude: 38.780462,
     longitude: -9.498610,
     photo: "photos/capodelaroca.jpg",
     author: "Dulek",
-    title: "Cabo da Roca - Portugal"
+    title: "Cabo da Roca - Portugal",
+    type: "can"
   },
   {
     latitude: 27.817559,
     longitude: -97.389722,
     photo: "photos/carrier.jpg",
     author: "Dulek",
-    title: "USS Lexington - Corpus Christi - Texas, USA"
+    title: "USS Lexington - Corpus Christi - Texas, USA",
+    type: "bottle"
   },
   {
     latitude: 45.807043,
     longitude: 9.070160,
     photo: "photos/como.jpg",
     author: "Dulek",
-    title: "Como Lake - Italy"
+    title: "Como Lake - Italy",
+    type: "bottle"
   },
   {
     latitude: 39.756244,
     longitude: -105.005395,
     photo: "photos/denver.jpg",
     author: "Dulek",
-    title: "Denver - Colorado, USA"
+    title: "Denver - Colorado, USA",
+    type: "bottle"
   },
   {
     latitude: 53.342761,
     longitude: -6.288293,
     photo: "photos/dublin.jpg",
     author: "Dulek",
-    title: "Guiness Brewery - Dublin - Ireland"
+    title: "Guiness Brewery - Dublin - Ireland",
+    type: "can"
   },
   {
     latitude: 36.132295,
     longitude: -5.348805,
     photo: "photos/gibraltar.jpg",
     author: "Dulek",
-    title: "The Rock - Gibraltar"
+    title: "The Rock - Gibraltar",
+    type: "bottle"
   },
   {
     latitude: 34.130865,
     longitude: -118.318469,
     photo: "photos/hollywood.jpg",
     author: "Dulek",
-    title: "Hollywood - Los Angeles - California, USA"
+    title: "Hollywood - Los Angeles - California, USA",
+    type: "bottle"
   },
   {
     latitude: 53.400019,
     longitude: -2.988467,
     photo: "photos/liverpool.jpg",
     author: "Dulek",
-    title: "Liverpool - United Kingdom"
+    title: "Liverpool - United Kingdom",
+    type: "can"
   },
   {
     latitude: 38.693557, 
     longitude: -9.206076,
     photo: "photos/lizbon.jpg",
     author: "Dulek",
-    title: "Padrão dos Descobrimentos - Lisbon - Portugal"
+    title: "Padrão dos Descobrimentos - Lisbon - Portugal",
+    type: "can"
   },
   {
     latitude: 42.476291,
     longitude: -2.434660,
     photo: "photos/logrono.jpg",
     author: "Dulek",
-    title: "Logroño - Spain"
+    title: "Logroño - Spain",
+    type: "bottle"
   },
   {
     latitude: 40.416213,
     longitude: -3.714302,
     photo: "photos/madrid.jpg",
     author: "Dulek",
-    title: "Palacio Real - Madrid - Spain"
+    title: "Palacio Real - Madrid - Spain",
+    type: "bottle"
   },
   {
     latitude: 43.740171,
     longitude: 7.429586,
     photo: "photos/monaco.jpg",
     author: "Dulek",
-    title: "Monaco"
+    title: "Monaco",
+    type: "bottle"
   },
   {
     latitude: 35.768166,
     longitude: -5.935260,
     photo: "photos/morocco.jpg",
     author: "Dulek",
-    title: "Morocco"
+    title: "Morocco",
+    type: "bottle"
   },
   {
     latitude: 48.137527,
     longitude: 11.574891,
     photo: "photos/munich.jpg",
     author: "Dulek",
-    title: "Marienplatz - Munich - Germany"
+    title: "Marienplatz - Munich - Germany",
+    type: "bottle"
   },
   {
     latitude: 29.552022,
     longitude: -95.096203,
     photo: "photos/nasa.jpg",
     author: "Dulek",
-    title: "Johnson Space Center - Houston - Texas, USA"
+    title: "Johnson Space Center - Houston - Texas, USA",
+    type: "bottle"
   },
   {
     latitude: 35.896443,
     longitude: -78.941505,
     photo: "photos/nc.jpg",
     author: "Dulek",
-    title: "Raleigh - North Carolina, USA"
+    title: "Raleigh - North Carolina, USA",
+    type: "bottle"
   },
   {
     latitude: 43.722566,
     longitude: 10.395771,
     photo: "photos/piza.jpg",
     author: "Dulek",
-    title: "Duomo - Pisa - Italy"
+    title: "Duomo - Pisa - Italy",
+    type: "bottle"
   },
   {
     latitude: 50.086435,
     longitude: 14.412275,
     photo: "photos/prague.jpg",
     author: "Dulek",
-    title: "Karlův most - Prague - Czechia"
+    title: "Karlův most - Prague - Czechia",
+    type: "bottle"
   },
   {
     latitude: 37.805399,
     longitude: -122.452788,
     photo: "photos/san-francisco.jpg",
     author: "Dulek",
-    title: "Golden Gate - San Francisco - California, USA"
+    title: "Golden Gate - San Francisco - California, USA",
+    type: "bottle"
   },
   {
     latitude: 43.936623,
     longitude: 12.446718,
     photo: "photos/san-marino.jpg",
     author: "Dulek",
-    title: "Piazza della Libertà - San Marino"
+    title: "Piazza della Libertà - San Marino",
+    type: "bottle"
   },
   {
     latitude: 31.24016,
     longitude: 121.48602,
     photo: "photos/shanghai.jpg",
     author: "Dulek",
-    title: "The Bund - Shanghai - China"
+    title: "The Bund - Shanghai - China",
+    type: "bottle"
   },
   {
     latitude: 36.716964,
     longitude: -3.544821,
     photo: "photos/spain.jpg",
     author: "Dulek",
-    title: "Playa de Granada - Motril - Spain"
+    title: "Playa de Granada - Motril - Spain",
+    type: "bottle"
   },
   {
     latitude: 35.629198,
     longitude: 139.733032,
     photo: "photos/tokyo.jpg",
     author: "Dulek",
-    title: "Tokyo - Japan"
+    title: "Tokyo - Japan",
+    type: "bottle"
   },
   {
     latitude: 49.290334,
     longitude: -123.120247,
     photo: "photos/vancouver.jpg",
     author: "Dulek",
-    title: "Vancouver - Canada"
+    title: "Vancouver - Canada",
+    type: "bottle"
   },
   {
     latitude: 45.437961,
     longitude: 12.335883,
     photo: "photos/venice.jpg",
     author: "Dulek",
-    title: "Ponte di Rialto - Venice - Italy"
+    title: "Ponte di Rialto - Venice - Italy",
+    type: "bottle"
   },
   {
     latitude: 53.962732,
     longitude: -1.084979,
     photo: "photos/york.jpg",
     author: "Dulek",
-    title: "City Wall - York - United Kingdom"
+    title: "City Wall - York - United Kingdom",
+    type: "can"
   },
   {
     latitude: 55.289168,
     longitude: 14.782448,
     photo: "photos/bornholm.jpg",
     author: "Dulek",
-    title: "Allinge - Bornholm - Denmark"
+    title: "Allinge - Bornholm - Denmark",
+    type: "can"
   },
   {
     latitude: 37.181038,
     longitude: -3.592681,
     photo: "photos/granada.jpg",
     author: "Dulek",
-    title: "Alhambra - Granada - Spain"
+    title: "Alhambra - Granada - Spain",
+    type: "can"
   },
   {
     latitude: 45.524681,
     longitude: 13.583396,
     photo: "photos/piran.jpg",
     author: "Dulek",
-    title: "Casa Stelmach - Piran - Slovenia"
+    title: "Casa Stelmach - Piran - Slovenia",
+    type: "can"
   },
   {
     latitude: 35.902282,
     longitude: 14.514344,
     photo: "photos/malta.jpg",
     author: "Dulek",
-    title: "Valetta - Malta"
+    title: "Valetta - Malta",
+    type: "bottle"
   },
   {
     latitude: 54.024725,
     longitude: 23.978232,
     photo: "photos/druskienniki.jpg",
     author: "Dulek",
-    title: "Druskininkai - Litwa"
+    title: "Druskininkai - Litwa",
+    type: "bottle"
   },
   {
     latitude: 54.415725,
     longitude: 18.567558,
     photo: "photos/dickmana.jpg",
     author: "Dulek",
-    title: "Gdańsk - Poland"
+    title: "Gdańsk - Poland",
+    commentPolish: "Specjal Bursztynowy",
+    commentEnglish: "Amber Specjal",
+    type: "can"
   },
   {
     latitude: 42.508728,
     longitude: 1.529388,
     photo: "photos/andorra.jpg",
     author: "Dulek",
-    title: "Andorra la Vella - Andorra"
+    title: "Andorra la Vella - Andorra",
+    type: "can"
   },
   {
     latitude: 49.194755,
     longitude: 16.608632,
     photo: "photos/brno.jpg",
     author: "Dulek",
-    title: "Brněnský orloj - Brno - Czechia"
+    title: "Brněnský orloj - Brno - Czechia",
+    type: "bottle"
   },
   {
     latitude: 37.015873,
     longitude: -7.935581,
     photo: "photos/faro.jpg",
     author: "Dulek",
-    title: "Faro - Portugal"
+    title: "Faro - Portugal",
+    type: "can"
   },
   {
     latitude: 3.158163,
     longitude: 101.713305,
     photo: "photos/kuala-lumpur.jpg",
     author: "Dulek",
-    title: "Petronas Towers - Kuala Lumpur - Malaysia"
+    title: "Petronas Towers - Kuala Lumpur - Malaysia",
+    type: "bottle"
   },
   {
     latitude: 37.055651,
     longitude: -3.304463,
     photo: "photos/siete-lagunas.jpg",
     author: "Dulek",
-    title: "Sierra Nevada - Spain"
+    title: "Sierra Nevada - Spain",
+    type: "can"
   },
   {
     latitude: 35.806419,
     longitude: 14.517013,
     photo: "photos/malta2.jpg",
     author: "Dulek",
-    title: "Malta"
+    title: "Malta",
+    type: "bottle"
   },
   {
     latitude: 44.171026,
     longitude: 28.663482,
     photo: "photos/konstanca.jpg",
     author: "Dulek",
-    title: "Faleza Cazino - Constanta - Romania"
+    title: "Faleza Cazino - Constanta - Romania",
+    type: "bottle"
   },
   {
     latitude: 32.080000,
     longitude: 34.766778,
     photo: "photos/tel-aviv.jpg",
     title: "Frishman Beach - Tel Aviv - Israel",
-    author: "Kamil"
+    author: "Kamil",
+    type: "bottle"
   },
   {
     latitude: 64.326113,
     longitude: -20.123739,
     photo: "photos/marcin/islandia-gulfoss.jpg",
     title: "Gulfoss - Iceland",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 50.450712,
     longitude: 30.523168,
     photo: "photos/marcin/ukraine-kiev.jpg",
     title: "Майдан Незалежності - Kiev - Ukraine",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 51.408011,
     longitude: 30.055859,
     photo: "photos/marcin/ukraine-chernobyl.jpg",
     title: "Колесо огляду- Pripyat - Ukraine",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 37.971711,
     longitude: 23.727353,
     photo: "photos/marcin/greece-athens.jpg",
     title: "Acropolis - Athens - Greece",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 53.895434,
     longitude: 27.54577,
     photo: "photos/marcin/belarus-minsk.jpg",
     title: "Помнік Леніну - Minsk - Belarus",
-    author: "Marcin"
+    author: "Marcin",
+    type: "bottle"
   },
   {
     latitude: 55.752051,
     longitude: 37.623585,
     photo: "photos/marcin/russia-moscow.jpg",
     title: "Храм Василия Блаженного - Moscow - Russia",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 59.939160,
     longitude: 30.314702,
     photo: "photos/marcin/russia-petersburg.jpg",
     title: "Государственный Эрмитаж -  St. Petersburg - Russia",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 47.512102,
     longitude: 19.039490,
     photo: "photos/marcin/budapest.jpg",
     title: "Országház - Budapest - Hungary",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 51.303542,
     longitude: 30.062219,
     photo: "photos/marcin/ukraine-chernobyl2.jpg",
     title: "Duga radar - Chernobyl - Ukraine",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 54.674444,
     longitude: 25.289527,
     photo: "photos/marcin/lithuania-vilnius.jpg",
     title: "Aušros Vartai - Vilnius - Lithuania",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 54.177610,
     longitude: 19.391577,
     photo: "photos/marcin/poland-elblag.jpg",
     title: "Browar - Elbląg - Poland",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 37.184743,
     longitude: -3.587914,
     photo: "photos/marcin/granada-spain.jpg",
     title: "Mirador de San Miguel - Granada - Spain",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 44.427592,
     longitude: 26.085733,
     photo: "photos/marcin/romania-bucharest.jpg",
     title: "Palatul Parlamentului - Bucharest - Romania",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 51.481616,
     longitude: -3.180790,
     photo: "photos/marcin/uk-cardiff.jpg",
     title: "Castle - Cardiff - UK",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 55.679935,
     longitude: 12.589580,
     photo: "photos/marcin/denmark-copenhagen.jpg",
     title: "Nyhavn - Copenhagen - Denmark",
-    author: "Marcin"
+    author: "Marcin",
+    type: "bottle"
   },
   {
     latitude: 48.873772,
     longitude: 2.295542,
     photo: "photos/marcin/france-paris.jpg",
     title: "Arc de Triomphe - Paris - France",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 51.500865,
     longitude: -0.125457,
     photo: "photos/marcin/uk-london.jpg",
     title: "Big Ben - London - UK",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 41.890982,
     longitude: 12.493114,
     photo: "photos/marcin/italy-rome.jpg",
     title: "Colosseo - Rome - Italy",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 48.742790,
     longitude: 44.538459,
     photo: "photos/marcin/russia-volgograd.jpg",
     title: "Родина-мать зовёт! - Volgograd - Russia",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 59.326854,
@@ -474,56 +544,64 @@ markers = [
     longitude: 12.456799,
     photo: "photos/marcin/vatican.jpg",
     title: "Piazza San Pietro - Vatican",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 45.464369,
     longitude: 9.189900,
     photo: "photos/marcin/italy-milan.jpg",
     title: "Duomo - Milan - Italy",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 51.921427,
     longitude: 4.484263,
     photo: "photos/marcin/netherlands-rotterdam.jpg",
     title: "Erasmusbeeld - Rotterdam - Netherlands",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 48.208376,
     longitude: 16.372398,
     photo: "photos/marcin/austria-vienna.jpg",
     title: "Domkirche St. Stephan - Vienna - Austria",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 64.255482,
     longitude: -21.128606,
     photo: "photos/marcin/iceland-pingvillir.jpg",
     title: "Pingvillir - Iceland",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 51.515193,
     longitude: 7.454228,
     photo: "photos/marcin/germany-dortmund.jpg",
     title: "U-Tower - Dortmund - Germany",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 51.494212,
     longitude: 7.453005,
     photo: "photos/marcin/germany-dortmund2.jpg",
     title: "Signal Iduna Park - Dortmund - Germany",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 49.253521,
     longitude: 4.032625,
     photo: "photos/marcin/france-reims.jpg",
     title: "Cathédrale Notre-Dame - Reims - France",
-    author: "Marcin"
+    author: "Marcin",
+    type: "bottle"
   },
   {
     latitude: 59.116182,
@@ -538,147 +616,168 @@ markers = [
     longitude: 24.120989,
     photo: "photos/marcin/latvia-riga.jpg",
     title: "Turgeņeva iela - Riga - Latvia",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 50.040414,
     longitude: 21.999215,
     photo: "photos/marcin/poland-rzeszow.jpg",
     title: "Pomnik Czynu Rewolucyjnego - Rzeszów - Poland",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 40.818939,
     longitude: 14.425021,
     photo: "photos/marcin/italy-napoli.jpg",
     title: "Vesuvio - Napoli - Italy",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 48.856764,
     longitude: 2.298489,
     photo: "photos/marcin/france-paris2.jpg",
     title: "Eiffel Tower - Paris - France",
-    author: "Marcin"
+    author: "Marcin",
+    type: "bottle"
   },
   {
     latitude: 46.194603,
     longitude: 7.339643,
     photo: "photos/marcin/switzerland-veysonnaz.jpg",
     title: "Veysonnaz - Switzerland",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 45.351798,
     longitude: 14.333795,
     photo: "photos/marcin/croatia-rijeka.jpg",
     title: "Rijeka - Croatia",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 47.012823,
     longitude: 28.854447,
     photo: "photos/marcin/moldova-kishinev.jpg",
     title: "Chișinău - Moldova",
-    author: "Marcin"
+    author: "Marcin",
+    type: "bottle"
   },
   {
     latitude: 44.619594,
     longitude: 6.632951,
     photo: "photos/marcin/france-risoul.jpg",
     title: "Risoul - France",
-    author: "Marcin"
+    author: "Marcin",
+    type: "bottle"
   },
   {
     latitude: 44.489700,
     longitude: 6.559273,
     photo: "photos/marcin/france-les-orres.jpg",
     title: "Les Orres - France",
-    author: "Marcin"
+    author: "Marcin",
+    type: "bottle"
   },
   {
     latitude: 43.291737,
     longitude: 5.362526,
     photo: "photos/marcin/france-marseille.jpg",
     title: "Marseille - France",
-    author: "Marcin"
+    author: "Marcin",
+    type: "bottle"
   },
   {
     latitude: 49.152643,
     longitude: 22.555545,
     photo: "photos/poland-bieszczady.jpg",
     title: "Połonina Wetlińska - Bieszczady - Poland",
-    author: "Szmuk"
+    author: "Szmuk",
+    type: "can"
   },
   {
     latitude: 49.074558,
     longitude: 22.726140,
     photo: "photos/poland-tarnica.jpg",
     title: "Tarnica - Bieszczady - Poland",
-    author: "Dulek"
+    author: "Dulek",
+    type: "bottle"
   },
   {
     latitude: 35.713553,
     longitude: 139.793291,
     photo: "photos/tokyo-2.jpg",
     title: "Don Quijote Asakusa - Tokyo - Japan",
-    author: "Paweł Murat"
+    author: "Paweł Murat",
+    type: "can"
   },
   {
     latitude: 26.223987,
     longitude: 127.308899,
     photo: "photos/okinawa.jpg",
     title: "Furuzamami Beach - Zamami Island - Okinawa - Japan",
-    author: "Paweł Murat"
+    author: "Paweł Murat",
+    type: "can"
   },
   {
     latitude: 78.1301,
     longitude: 16.2014,
     photo: "photos/svalbard.jpg",
     title: "Spitzbergen - Norway",
-    author: "Łukasz Lewandowski"
+    author: "Łukasz Lewandowski",
+    type: "bottle"
   },
   {
     latitude: 54.686814,
     longitude: 25.297784,
     photo: "photos/vilnius.jpg",
     title: "Trys kryžiai - Vilnius - Lithuania",
-    author: "Dulek"
+    author: "Dulek",
+    type: "bottle"
   },
   {
     latitude: 49.22865,
     longitude: 20.04728,
     photo: "photos/krzyzne.jpg",
     title: "Krzyżne - Tatry - Poland",
-    author: "Dulek"
+    author: "Dulek",
+    type: "can"
   },
   {
     latitude: 37.05340,
     longitude: -3.31157,
     photo: "photos/mulhacen.jpg",
     title: "Mulhacen - Sierra Nevada - Spain",
-    author: "Dulek"
+    author: "Dulek",
+    type: "bottle"
   },
   {
     latitude: 54.36412,
     longitude: 18.65383,
     photo: "photos/gdansk-zuraw.jpg",
     title: "Żuraw M3 - Gdańsk - Polska",
-    author: "Doris"
+    author: "Doris",
+    type: "bottle"
   },
   {
     latitude: 19.815023,
     longitude: -70.715184,
     photo: "photos/dominican.jpg",
     title: "Playa Grande - Puerto Plata - Dominican Republic",
-    author: "Doris"
+    author: "Doris",
+    type: "bottle"
   },
   {
     latitude: 50.302906,
     longitude: 19.164474,
     photo: "photos/sosnowiec.jpg",
     title: "Pomnik lądowania Ojca Świętego JPII - Sosnowiec - Poland",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 51.397350,
@@ -693,35 +792,40 @@ markers = [
     longitude: 18.001448,
     photo: "photos/bydgoszcz.jpg",
     title: "Most Jerzego Sulimy-Kamińskiego - Bydgoszcz - Poland",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 39.833394,
     longitude: 15.775609,
     photo: "photos/calabria.jpg",
     title: "San Nicola Arcella - Calabria - Italy",
-    author: "Julia & Kuks"
+    author: "Julia & Kuks",
+    type: "can"
   },
   {
     latitude: 48.377233,
     longitude: -4.489948,
     photo: "photos/brest.jpg",
     title: "Marina - Brest - France",
-    author: "Lucy"
+    author: "Lucy",
+    type: "can"
   },
   {
     latitude: 36.383333,
     longitude: -3.81666,
     photo: "photos/dolphins.jpg",
     title: "Wybrzeże Andaluzji - Morze Śródziemne",
-    author: "Doris"
+    author: "Doris", 
+    type: "bottle"
   },
   {
     latitude: 43.555954,
     longitude: 4.081710,
     photo: "photos/la-grande-motte.jpg",
     title: "La Grande-Motte - Occitanie - France",
-    author: "Doris"
+    author: "Doris",
+    type: "can"
   },
   {
     latitude: 20.182302,
