@@ -731,6 +731,29 @@ markers = [
     author: "Maniu",
     datetime: "2023-01-13T14:15:00.511Z",
     comment: "Wyprawa Golfem przez Afrykę",
+    commentEnglish: "Golf car expedition through Africa",
+    type: "bottle"
+  },  
+  {
+    latitude: 16.2067095,
+    longitude: -16.4069102,
+    photo: "photos/maniu/manek.jpg",
+    title: "Mauritania–Senegal Border - Senegal",
+    author: "Maniu",
+    datetime: "2023-01-14T12:12:44.000Z",
+    commentPolish: "Wyprawa Golfem przez Afrykę",    
+    commentEnglish: "Golf car expedition through Africa",
+    type: "bottle"
+  },
+  {
+    latitude: 16.0507743, 
+    longitude: -16.4581642,
+    photo: "photos/maniu/senegal-saint-louis.jpg",
+    title: "Airport - Saint Louis - Senegal",
+    author: "Maniu",
+    datetime: "2023-01-14T13:47:50.511Z",    
+    commentPolish: "Z lotniska Saint Louis w Senegalu, 8 maja 1933 roku Stanisław Skarżyński jako pierwszy Polak przeleciał przez Ocean Atlantycki, lotem do Maceió w Brazylii, na jednomiejscowym samolocie polskiej konstrukcji RWD-5bis (znaki SP-AJU) przebudowanym z samolotu turystycznego. Lot wystartował 7 maja o godz. 23:00.",
+    commentEnglish: "On May 8, 1933, Stanisław Skarżyński became the first Pole to fly across the Atlantic Ocean, taking off from the Saint Louis airport in Senegal and landing in Maceió, Brazil, on a single-seat RWD-5bis aircraft (registration number SP-AJU) which was converted from a tourist plane. The flight took off on May 7 at 11:00 PM.",
     type: "bottle"
   }
 ]
