@@ -5,6 +5,7 @@
   <script src="leaflet.js"></script>
   <link rel="stylesheet" href="style.css" />
   <script src="markers.js"></script>
+  <script src="js/utility.js"></script>
   <link rel="shortcut icon" href="images/favicon.png"/>
   <title>Specjal on Tour</title>
 </head>
@@ -42,18 +43,6 @@
   // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
   //            {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
 
-
-  function displayDate(datetimeJson) {
-    var datetime = new Date(datetimeJson);
-    var datetimeString = datetime.toISOString();
-    var date = datetimeString.substring(0,10);
-    if(datetimeJson.length >= 16) {      
-        var time = datetimeString.substring(11,16);
-        return date + ' ' + time;
-    }else{
-        return date;
-    }
-  }
 
   for (var i = 0; i < markers.length; ++i) {
     var imgTag = '<img style="width: 100%" src="' + markers[i].photo + '"';
