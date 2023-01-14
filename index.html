@@ -5,6 +5,7 @@
   <script src="leaflet.js"></script>
   <link rel="stylesheet" href="style.css" />
   <script src="markers.js"></script>
+  <script src="js/utility.js"></script>
   <link rel="shortcut icon" href="images/favicon.png"/>
   <title>Specjal on Tour</title>
 </head>
@@ -19,7 +20,7 @@
     zoom: 3
   });
 
-  var icon = L.icon({
+  var beerBottleIcon = L.icon({
     iconUrl: 'images/icon3.png',
 
     iconSize:     [12, 43.5], // size of the icon
@@ -27,17 +28,51 @@
     popupAnchor:  [0, -43.5] // point from which the popup should open relative to the iconAnchor
   });
 
+  var beerCanIcon = L.icon({
+    iconUrl: 'images/beer-can-small.png',
+
+    iconSize:     [16, 39],
+    iconAnchor:   [6, 39], 
+    popupAnchor:  [2, -39] 
+  });
+
+  var defaultIcon = beerBottleIcon;
 
   L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png ',
               {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
-  //L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+  // L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
   //            {attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
 
+
   for (var i = 0; i < markers.length; ++i) {
-    L.marker([markers[i].latitude, markers[i].longitude], {icon: icon})
-    .bindPopup('<h2> ' + markers[i].title + '</h2><a href="' + markers[i].photo + '"><img style="width: 100%" src="' + markers[i].photo + '"/></a>📷 ' + markers[i].author)
+    var imgTag = '<img style="width: 100%" src="' + markers[i].photo + '"';
+    var comment;
+    if (language === 'pl' && markers[i].commentPolish) {
+        comment = markers[i].commentPolish;
+    } else if (language === 'en' && markers[i].commentEnglish) {
+        comment = markers[i].commentEnglish;
+    } else if (markers[i].comment) {
+        comment = markers[i].comment;
+    }
+    if (comment) {
+        imgTag += ' alt="'+comment+'"';
+        imgTag += ' title="'+comment+'"';
+    }
+    imgTag += '/>';
+    var popupContent = '<h2> ' + markers[i].title + '</h2><a href="' + markers[i].photo + '">'+imgTag+'</a>📷 ' + markers[i].author;
+    if (markers[i].datetime) {
+        popupContent += '<br>🗓️ ' + displayDate(markers[i].datetime);
+    }
+    var beerIcon = defaultIcon;
+    if (markers[i].type == "can") {
+      beerIcon = beerCanIcon;
+    }
+
+    L.marker([markers[i].latitude, markers[i].longitude], {icon: beerIcon})
+    .bindPopup(popupContent)
     .addTo(map);
   }
+
 </script>
 
 </body>

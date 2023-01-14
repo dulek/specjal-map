@@ -466,7 +466,8 @@ markers = [
     longitude: 18.065668,
     photo: "photos/marcin/sweden-stockholm.jpg",
     title: "Riksdag - Stockholm - Sweden",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 41.901855,
@@ -529,7 +530,8 @@ markers = [
     longitude: 10.227207,
     photo: "photos/marcin/norway-sandefjord.jpg",
     title: "Sandefjord - Norway",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 56.943464,
@@ -683,7 +685,8 @@ markers = [
     longitude: 21.146130,
     photo: "photos/radom.jpg",
     title: "Hotel Gromada - Radom - Poland",
-    author: "Marcin"
+    author: "Marcin",
+    type: "can"
   },
   {
     latitude: 53.123340,
@@ -725,6 +728,9 @@ markers = [
     longitude: -15.970957,
     photo: "photos/mauritania.jpg",
     title: "Mauritania",
-    author: "Maniu"
+    author: "Maniu",
+    datetime: "2023-01-13T14:15:00.511Z",
+    comment: "Wyprawa Golfem przez Afrykę",
+    type: "bottle"
   }
 ]
