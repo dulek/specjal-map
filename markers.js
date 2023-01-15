@@ -859,5 +859,196 @@ markers = [
     commentPolish: "Z lotniska Saint Louis w Senegalu, 8 maja 1933 roku Stanisław Skarżyński jako pierwszy Polak przeleciał przez Ocean Atlantycki, lotem do Maceió w Brazylii, na jednomiejscowym samolocie polskiej konstrukcji RWD-5bis (znaki SP-AJU) przebudowanym z samolotu turystycznego. Lot wystartował 7 maja o godz. 23:00.",
     commentEnglish: "On May 8, 1933, Stanisław Skarżyński became the first Pole to fly across the Atlantic Ocean, taking off from the Saint Louis airport in Senegal and landing in Maceió, Brazil, on a single-seat RWD-5bis aircraft (registration number SP-AJU) which was converted from a tourist plane. The flight took off on May 7 at 11:00 PM.",
     type: "bottle"
+  },
+  {
+    latitude: 52.358408,
+    longitude: 4.883081,
+    photo: "photos/tomasz/amsterdam.jpg",
+    title: "Rijksmuseum - Amsterdam - Netherlands",
+    author: "Tomasz",
+    datetime: "2018-04-27T16:36:20.000Z",
+    commentPolish: "Koningsdag to święto króla w Niderlandach, obchodzone 27 kwietnia, które upamiętnia urodziny króla Wilhelma Alexandera. Wcześniej, za panowania królowej Beatrix, było obchodzone 30 kwietnia i nazywane Koninginnedag.",
+    commentEnglish: "Koningsdag is a king's holiday in the Netherlands, celebrated on April 27, which commemorates the birthday of King William Alexander. Previously, during the reign of Queen Beatrix, it was celebrated on April 30 and called Koninginnedag."
+  },
+  {
+    latitude: 54.4249837,
+    longitude: 18.5809711,
+    photo: "photos/tomasz/gdansk-zabianka.jpg",
+    title: "Autokar na Off Snow, Ergo Arena - Gdańsk-Sopot - Poland",
+    author: "Tomasz",
+    datetime: "2018-04-27T16:36:20.000Z",
+    commentPolish: "Deskidance i Off Snow to wyjazdy narciarskie do Francji, które zabierały trójmiejską grupę dwa razy w roku od końca pierwszej dekady XXI wieku. Autokar był na nich również niesamowitym doświadczeniem, słynął z cateringów w drodze powrotnej, które przygotowywali uczestnicy.",
+    commentEnglish: "Deskidance and Off Snow were ski trips to France that took a group from the Tri-city area twice a year starting in the early 21st century. The bus rides were also an experience, known for the catered meals prepared by the participants on the way back",
+    type: "can"
+  },  
+  {
+    latitude: 45.44018, 
+    longitude: 6.95815,
+    photo: "photos/tomasz/val-disere.jpg",
+    title: "Summit of Bellevarde Mountain - Val d'Isère - France",
+    author: "Tomasz",
+    datetime: "2018-12-11T13:49:24.000Z",
+    commentPolish: "Rzeźba GoToSki to 600 kg bloku aluminium, stworzona przez artystę Stéphane Cipre. Jest to humorystyczna interpretacja Fiata 500 przygotowanego na wakacje narciarskie. Rzeźba została przetransportowana helikopterem na szczyt Bellevarde, wybrany ze względu na panoramiczny widok i dostępność drogą powietrzną.",
+    commentEnglish: "A sculpture of a Fiat 500 car, named GoToSki, was helicoptered to the summit of Bellevarde mountain in Val d'Isère. Created by artist Stéphane Cipre, the 600kg sculpture is a humorous take on a car ready for a ski holiday.",
+    type: "can"
+  },
+  {
+    latitude: 45.44318, 
+    longitude: 6.95162,
+    photo: "photos/tomasz/val-disere-group.jpg",
+    title: "Overhead Symbol - Val d'Isère - France",
+    author: "Tomasz",
+    datetime: "2018-12-13T12:53:28.000Z",
+    commentPolish: "Grupa w tle prezentuje symbol trójkąta nad głową, który podczas tej podróży był rodzajem znaku rozpoznawczego i elementem choreografii do utworu Klub Go Go zespołu Gang Albanii.",
+    commentEnglish: "The group in the background is displaying a triangle symbol above their heads, which served as a distinguishing mark and part of the choreography for the song Klub Go Go by Gang Albanii during the trip.",
+    type: "can"
+  },
+  {
+    latitude: 45.46798,
+    longitude: 6.90565,
+    photo: "photos/tomasz/tignes2.jpg",
+    title: "Tignes - France",
+    author: "Tomasz",
+    datetime: "2018-12-14T14:56:45.000Z",
+    commentPolish: "Piknik na stoku.",
+    commentEnglish: "Picnic on the slope.",
+    type: "can"
+  },
+  {
+    latitude: 44.47694,
+    longitude: 6.553343,
+    photo: "photos/tomasz/les-orres-group.jpg",
+    title: "Les Orres - France",
+    author: "Tomasz",
+    datetime: "2019-03-18T16:06:18.000Z",
+    commentPolish: "Grupa w tle prezentuje symbol trójkąta nad głową, który podczas tej podróży był rodzajem znaku rozpoznawczego i elementem choreografii do utworu Klub Go Go zespołu Gang Albanii.",
+    commentEnglish: "The group in the background is displaying a triangle symbol above their heads, which served as a distinguishing mark and part of the choreography for the song Klub Go Go by Gang Albanii during the trip.",
+    type: "can"
+  },
+  {
+    latitude: 44.47694,
+    longitude: 6.553343,
+    photo: "photos/tomasz/les-orres.jpg",
+    title: "Les Orres - France",
+    author: "Tomasz",
+    datetime: "2019-03-18T16:06:18.000Z",
+    type: "can"
+  },
+  {
+    latitude: 54.38575785,
+    longitude: 19.43394299,
+    photo: "photos/tomasz/krynica-morska.jpg",
+    title: "Foka szara - Krynica Morska - Poland",
+    author: "Tomasz",
+    datetime: "2019-04-13T17:04:21.000Z",
+    commentPolish: "Dorosłe osobniki foki szarej (szarytki morskiej) osiągają długość od 2 do 3 metrów i ważą do 310 kg. Ich dieta składa się głównie z ryb, skorupiaków, kałamarnic i ośmiornic. Liczebność populacji jest niska, szacowana na około 30 tysięcy osobników. Spotkanie foki na polskim wybrzeżu jest rzadkością, głównie z powodu działalności człowieka.",
+    commentEnglish: "Adult gray seals reach a length of 2 to 3 meters and weigh up to 310 kg. Their diet consists mainly of fish, crustaceans, squid and octopus. The population size is low, estimated at about 30,000 individuals. Meeting a seal on the Polish coast is rare, mainly due to human activity.",
+    type: "bottle"
+  },
+  {
+    latitude: 54.40397852529845,
+    longitude: 18.556974937088537,
+    photo: "photos/tomasz/gdansk-oliwa-upstairs.jpg",
+    title: "Upstairs aka Staw - Gdańsk-Oliwa - Poland",
+    author: "Tomasz",
+    datetime: "2019-04-20T12:13:53.000Z",
+    commentPolish: "Upstairs (Up Oliwa) to miejsce położone nad Stawem w Gdańskiej Oliwie, które odgrywa ważną rolę w kształtowaniu charakterów młodzieży z pobliskiego V Liceum Ogólnokształcącego. Nazwa pochodzi od pierwotnie istniejącego wzniesienia, do którego prowadziły leśne schody. Miejsce to zostało opuszczone, ale nazwa pozostała.",
+    commentEnglish: "Upstairs (Up Oliwa) is a location located above the Pond in Gdańsk-Oliwa, which plays an important role in shaping the characters of youth from the nearby Fifth High School (VLO). The name comes from the originally existing elevation, which was accessed by forest stairs. The place was abandoned, but the name remained.",
+    type: "bottle"
+  },
+  {
+    latitude: 54.50974118508644,
+    longitude: 18.6092727886709,
+    photo: "photos/tomasz/zatoka-gdanska.jpg",
+    title: "Widok na Sea Towers - Zatoka Gdańska - Poland",
+    author: "Tomasz",
+    datetime: "2019-05-03T17:25:41.000Z",
+    commentPolish: "Zatoka Gdańska to zatoka położona w południowo-wschodniej części Morza Bałtyckiego, pomiędzy Polską a Rosją. Średnia głębokość wynosi około 50 m, a maksymalna 118 m.",
+    commentEnglish: "The Gulf of Gdańsk is a bay in the southeastern part of the Baltic Sea, located between Poland and Russia. It has an average depth of around 50 m and a maximum depth of 118 m.",    
+    type: "bottle"
+  },
+  {
+    latitude: 54.60233041770585, 
+    longitude: 18.800754115349783,
+    photo: "photos/tomasz/hel-port.jpg",
+    title: "Port morski - Hel - Poland",
+    author: "Tomasz",
+    datetime: "2019-06-01T20:58:11.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 51.20744255525033,
+    longitude: 16.161974278043083,
+    photo: "photos/tomasz/legnica-katedra.jpg",
+    title: "Katedra - Legnica - Poland",
+    author: "Tomasz",
+    datetime: "2019-06-01T20:58:11.000Z",
+    type: "can"
+  },
+  {
+    latitude: 52.6105371,
+    longitude: 14.6710217,
+    photo: "photos/tomasz/kostrzyn-polandrock.jpg",
+    title: "Pol'and'Rock - Kostrzyn nad Odrą - Poland",
+    author: "Tomasz",
+    datetime: "2019-08-04T09:32:27.000Z",
+    commentPolish: "Festiwal Pol'and'Rock, znany również jako Woodstock, organizowany przez Jurka Owsiaka, odbył się ostatni raz w Kostrzynie nad Odrą w sierpniu 2019 r.",
+    commentEnglish: "The Pol'and'Rock aka Woodstock music festival, organized by WOŚP (the Great Orchestra of Christmas Charity) Foundation with money raised from sponsors, gadget sales and earmarked donations which took place in Kostrzyn nad Odrą. The event was held in this location for the last time in 2019.",
+    type: "can"
+  },
+  {
+    latitude: 52.6131138,
+    longitude: 14.6719187,
+    photo: "photos/tomasz/kostrzyn-polandrock2.jpg",
+    title: "Pol'and'Rock 2019 - Kostrzyn nad Odrą - Poland",
+    author: "Tomasz",
+    datetime: "2019-08-01T12:05:11.000Z",
+    commentPolish: "Festiwal Pol'and'Rock, znany również jako Woodstock, organizowany przez Jurka Owsiaka, odbył się ostatni raz w Kostrzynie nad Odrą w sierpniu 2019 r. Na zdjęciu znajduje się podróbka i zdjęcie zostało wykonane w celu humorystycznym.",
+    commentEnglish: "The Pol'and'Rock aka Woodstock music festival, organized by WOŚP (the Great Orchestra of Christmas Charity) Foundation with money raised from sponsors, gadget sales and earmarked donations which took place in Kostrzyn nad Odrą. The event was held in this location for the last time in 2019."    
+  },
+  {
+    latitude: 45.437968,
+    longitude: 12.335878,
+    photo: "photos/tomasz/venice.jpg",
+    author: "Tomasz",
+    title: "Ponte di Rialto - Venice - Italy",
+    datetime: "2018-09-17T11:42:12.000Z",
+    type: "can"
+  },
+  {
+    latitude: 43.9378587,
+    longitude: 12.4456699,
+    photo: "photos/tomasz/san-marino.jpg",
+    author: "Tomasz",
+    title: "Piazzale Girolamo Genga - San Marino - San Marino",
+    datetime: "2018-09-19T15:28:21.000Z",
+    type: "can"
+  },
+  {
+    latitude: 44.059300608558836,
+    longitude: 12.568495218438855,
+    photo: "photos/tomasz/rimini-old-town.jpg",
+    author: "Tomasz",
+    title: "Piazza Tre Martiri - Rimini - Italy",
+    datetime: "2018-09-20T18:33:33.000Z",
+    type: "can"
+  },  
+  {
+    latitude: 44.080065548641485, 
+    longitude: 12.55300515761504,
+    photo: "photos/tomasz/rimini-rivabella-beach.jpg",
+    author: "Tomasz",
+    title: "Rivabella - Rimini - Italy",
+    datetime: "2018-09-21T09:38:58.000Z",
+    type: "can"
+  },
+  {
+    latitude: 44.071156001012525,
+    longitude: 12.576466337166865,
+    photo: "photos/tomasz/rimini-fountain.jpg",
+    author: "Tomasz",
+    title: "Fontana dei Quattro Cavalli - Rimini - Italy",
+    datetime: "2018-09-23T23:10:10.000Z",
+    type: "can"
   }
 ]
