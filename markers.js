@@ -1050,5 +1050,218 @@ markers = [
     title: "Fontana dei Quattro Cavalli - Rimini - Italy",
     datetime: "2018-09-23T23:10:10.000Z",
     type: "can"
-  }
+  },
+  {
+    latitude: 54.34699091162405, 
+    longitude: 18.655855996548535,
+    photo: "photos/tomasz/gdansk-motlawa.jpg",
+    author: "Tomasz",
+    title: "Motława - Gdańsk - Poland",
+    datetime: "2018-10-12T16:15:53.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 54.61073305421943,
+    longitude: 18.190023764079598,
+    photo: "photos/tomasz/wejherowo.jpg",
+    author: "Tomasz",
+    title: "Stacja benzynowa - Wejherowo - Poland",
+    datetime: "2019-10-03T12:00:06.000Z",
+    type: "can"
+  },
+  {
+    latitude: 54.206148623712814, 
+    longitude: 16.202511689562197,
+    photo: "photos/tomasz/koszalin-tribute-to.jpg",
+    author: "Tomasz",
+    title: "Hala Widowiskowo-Sportowa - Koszalin - Poland",
+    datetime: "2019-10-04T13:35:46.000Z",
+    commentPolish: "'Tribute to' to trasa koncertowa, z przebojami Michaela Jacksona, Elvisa Presley'a, Whitney Houston i Joe Cockera. Koncerty odbywają się w największych halach widowiskowych w dwunastu miastach w Polsce. W skład zespołu wchodzi 100-osobowa Orkiestra, 50-osobowy chór Music Everywhere, 10 wokalistów m.in. Justyna Steczkowska, Igor Herbut, Krzysztof Cugowski, Andrzej Piaseczny. ",
+    commentEnglish: "The 'Tribute to' concert tour features hit songs from artists such as Michael Jackson, Elvis Presley, Whitney Houston, and Joe Cocker. The concerts take place in the largest concert halls in twelve cities in Poland. The team includes a 100-member orchestra, a 50-member choir Music Everywhere and 10 singers including J. Steczkowska, I. Herbut, K. Cugowski, A. Piaseczny.",
+    type: "can"
+  },
+  {
+    latitude: 51.23871405032914, 
+    longitude: 22.532326190046213,
+    photo: "photos/tomasz/lublin-tribute-to.jpg",
+    author: "Tomasz",
+    title: "Hala Globus - Lublin - Poland",
+    datetime: "2019-10-06T22:47:09.000Z",
+    commentPolish: "'Tribute to' to trasa koncertowa, z przebojami Michaela Jacksona, Elvisa Presley'a, Whitney Houston i Joe Cockera. Koncerty odbywają się w największych halach widowiskowych w dwunastu miastach w Polsce. W skład zespołu wchodzi 100-osobowa Orkiestra, 50-osobowy chór Music Everywhere, 10 wokalistów m.in. Justyna Steczkowska, Igor Herbut, Krzysztof Cugowski, Andrzej Piaseczny. ",
+    commentEnglish: "The 'Tribute to' concert tour features hit songs from artists such as Michael Jackson, Elvis Presley, Whitney Houston, and Joe Cocker. The concerts take place in the largest concert halls in twelve cities in Poland. The team includes a 100-member orchestra, a 50-member choir Music Everywhere and 10 singers including J. Steczkowska, I. Herbut, K. Cugowski, A. Piaseczny.",
+    type: "bottle"
+  },  
+  {
+    latitude: 53.80225923200756,
+    longitude: 18.318205224791075,
+    photo: "photos/tomasz/lublin-tribute-to.jpg",
+    author: "Tomasz",
+    title: "Ośrodek Mleczarz - Ocypel - Poland",
+    datetime: "2019-10-19T10:23:02.000Z",
+    type: "can"
+  },
+  {
+    latitude: 53.77336915072873, 
+    longitude: 20.496083548374425,
+    photo: "photos/tomasz/olsztyn-tribute-to.jpg",
+    author: "Tomasz",
+    title: "Hala Urania - Olsztyn - Poland",
+    datetime: "2019-10-25T22:20:05.000Z",
+    commentPolish: "'Tribute to' to trasa koncertowa, z przebojami Michaela Jacksona, Elvisa Presley'a, Whitney Houston i Joe Cockera. Koncerty odbywają się w największych halach widowiskowych w dwunastu miastach w Polsce. W skład zespołu wchodzi 100-osobowa Orkiestra, 50-osobowy chór Music Everywhere, 10 wokalistów m.in. Justyna Steczkowska, Igor Herbut, Krzysztof Cugowski, Andrzej Piaseczny. ",
+    commentEnglish: "The 'Tribute to' concert tour features hit songs from artists such as Michael Jackson, Elvis Presley, Whitney Houston, and Joe Cocker. The concerts take place in the largest concert halls in twelve cities in Poland. The team includes a 100-member orchestra, a 50-member choir Music Everywhere and 10 singers including J. Steczkowska, I. Herbut, K. Cugowski, A. Piaseczny.",
+    type: "can"
+  },  
+  {
+    latitude: 50.244661935137216,
+    longitude: 19.079725862344077,
+    photo: "photos/tomasz/katowice-kopalnia-wieczorek.jpg",
+    author: "Tomasz",
+    title: "Kopalnia Wieczorek - Katowice - Poland",
+    datetime: "2019-10-27T12:23:28.000Z",
+     type: "can"
+  },
+  {
+    latitude: 50.2414259272049, 
+    longitude: 19.079235351002367,
+    photo: "photos/tomasz/katowice-nikiszowiec.jpg",
+    author: "Tomasz",
+    title: "Nikiszowiec - Katowice - Poland",
+    datetime: "2019-10-27T12:34:56.000Z",
+    type: "can"
+  }, 
+  {
+    latitude: 50.26368715082481, 
+    longitude: 19.033060896395778,
+    photo: "photos/tomasz/katowice-wieza-na-spodek.jpg",
+    author: "Tomasz",
+    title: "Wieża szybu Warszawa II - widok na Spodek - Katowice - Poland",
+    datetime: "2019-10-27T15:10:02.000Z",
+    type: "can"
+  },
+  {
+    latitude: 46.486120328882954,
+    longitude: 30.743865168475647,
+    photo: "photos/tomasz/odessa-cannon.jpg",
+    author: "Tomasz",
+    title: "The Cannon of the Tiger Fregate  - Odessa - Ukraine",
+    datetime: "2019-11-05T13:34:40.000Z",
+    type: "can"
+  },
+  {
+    latitude: 46.48614953111384, 
+    longitude: 30.743479071215564 ,
+    photo: "photos/tomasz/odessa-pushkin.jpg",
+    author: "Tomasz",
+    title: "Monument to Alexander Pushkin - Odessa - Ukraine",
+    datetime: "2019-11-05T13:43:16.000Z",
+    type: "can"
+  },  
+  {
+    latitude: 46.48822352028241, 
+    longitude: 30.7413700733837,
+    photo: "photos/tomasz/odessa-stairs.jpg",
+    author: "Tomasz",
+    title: "Potemkin Stairs - Odessa - Ukraine",
+    datetime: "2019-11-07T16:10:31.000Z",
+    type: "can"
+  }, 
+  {
+    latitude: 46.47579211384073, 
+    longitude: 30.765717796856322,
+    photo: "photos/tomasz/odessa-black-sea.jpg",
+    author: "Tomasz",
+    title: "Black Sea - Odessa - Ukraine",
+    datetime: "2019-11-07T16:52:03.000Z",
+    type: "can"
+  },
+  {
+    latitude: 52.22154383024683, 
+    longitude: 21.04144242111614,
+    photo: "photos/tomasz/warszawa-tribute-to.jpg",
+    author: "Tomasz",
+    title: "Widok na Stadion Miejski od strony Torwaru - Warszawa - Poland",
+    datetime: "2019-11-07T16:52:03.000Z",
+    type: "can"
+  },
+  {
+    latitude: 51.1079965502948, 
+    longitude: 17.073977906972672,
+    photo: "photos/tomasz/wroclaw.jpg",
+    author: "Tomasz",
+    title: "Iglica przed Halą Stulecia - Wrocław - Poland",
+    datetime: "2019-11-20T15:32:02.000Z",
+    type: "bottle"
+  }, 
+  {
+    latitude: 52., 
+    longitude: 21.,
+    photo: "photos/tomasz/krakow-bazylika.jpg",
+    author: "Tomasz",
+    title: "Bazylika Mariacka - Kraków - Poland",
+    datetime: "2019-11-29T12:22:12.000Z",
+    type: "can"
+  },
+  {
+    latitude: 50.05361919730601, 
+    longitude: 19.934314324719814,
+    photo: "photos/tomasz/krakow-zamek.jpg",
+    author: "Tomasz",
+    title: "Zamek Królewski na Wawelu - Kraków - Poland",
+    datetime: "2019-11-29T13:09:44.000Z",
+    type: "can"
+  }, 
+  {
+    latitude: 50.05291819667842, 
+    longitude: 19.93359157110255,
+    photo: "photos/tomasz/krakow-smok.jpg",
+    author: "Tomasz",
+    title: "Smok Wawelski - Kraków - Poland",
+    datetime: "2019-11-29T13:27:34.000Z",
+    type: "can"
+  },
+  {
+    latitude: 50.0560429384549,  
+    longitude: 19.93571604365751,
+    photo: "photos/tomasz/krakow-lawka.jpg",
+    author: "Tomasz",
+    title: "Ławka Banacha i Nikodyma - Kraków - Poland",
+    datetime: "2019-11-29T13:44:04.000Z",
+    type: "can"
+  },
+  {
+    latitude: 52.40615925409547, 
+    longitude: 16.932915556751116,
+    photo: "photos/tomasz/poznan-tribute-to.jpg",
+    author: "Tomasz",
+    title: "Ulica Wrocławska - Poznań - Poland",
+    datetime: "2019-12-05T23:30:27.000Z",
+    type: "can"
+  },
+  {
+    latitude: 51.9560870908215, 
+    longitude: 15.524259700998098,
+    photo: "photos/tomasz/zielona-gora-tribute-to.jpg",
+    author: "Tomasz",
+    title: "Hala CRS - Zielona Góra - Poland",
+    datetime: "2019-12-06T21:49:24.000Z",
+    type: "can"
+  },
+  {
+    latitude: 52.23608934986911,
+    longitude: 15.555267668607714,
+    photo: "photos/tomasz/swiebodzin.jpg",
+    author: "Tomasz",
+    title: "Świebodzin - Poland",
+    datetime: "2019-12-06T13:08:30.000Z",
+    type: "can"
+  },
+  {
+    latitude: 45.56164502370239,  
+    longitude: 6.823896032091728,
+    photo: "photos/tomasz/les-arcs.jpg",
+    author: "Tomasz",
+    title: "Les Arcs - France",
+    datetime: "2019-12-15T13:25:12.000Z",
+    type: "can"
+  },
 ]
