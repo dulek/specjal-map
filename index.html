@@ -46,7 +46,7 @@
 
   for (var i = 0; i < markers.length; ++i) {
     var imgTag = '<img style="width: 100%" src="' + markers[i].photo + '"';
-    var comment;
+    var comment = "";
     if (language === 'pl' && markers[i].commentPolish) {
         comment = markers[i].commentPolish;
     } else if (language === 'en' && markers[i].commentEnglish) {
