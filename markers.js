@@ -1193,8 +1193,8 @@ markers = [
     type: "bottle"
   }, 
   {
-    latitude: 52., 
-    longitude: 21.,
+    latitude: 50.06152774923709,
+    longitude: 19.93833996434733,
     photo: "photos/tomasz/krakow-bazylika.jpg",
     author: "Tomasz",
     title: "Bazylika Mariacka - Kraków - Poland",
