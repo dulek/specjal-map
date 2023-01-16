@@ -1094,7 +1094,7 @@ markers = [
   {
     latitude: 53.80225923200756,
     longitude: 18.318205224791075,
-    photo: "photos/tomasz/lublin-tribute-to.jpg",
+    photo: "photos/tomasz/ocypel.jpg",
     author: "Tomasz",
     title: "Ośrodek Mleczarz - Ocypel - Poland",
     datetime: "2019-10-19T10:23:02.000Z",
