@@ -1264,4 +1264,44 @@ markers = [
     datetime: "2019-12-15T13:25:12.000Z",
     type: "can"
   },
+  {
+    latitude: 51.46485428138906,
+    longitude: -3.1644553029726867,
+    photo: "photos/marcin/cardiff.jpg",
+    author: "Marcin",
+    title: "Wales Millennium Centre - Cardiff",
+    type: "can"
+  },
+  {
+    latitude: 60.170281,
+    longitude: 24.951313,
+    photo: "photos/marcin/helsinki.jpg",
+    author: "Marcin",
+    title: "Catedral - Helsinki",
+    type: "can"
+  },
+  {
+    latitude: 51.500767,
+    longitude: -0.121683,
+    photo: "photos/marcin/london.jpg",
+    title: "Big Ben - London - UK",
+    author: "Marcin",
+    type: "can"
+  },
+  {
+    latitude: 60.458589876593976,
+    longitude: 22.289513930555838,
+    photo: "photos/marcin/turku.jpg",
+    title: "Posankka - Turku - Finland",
+    author: "Marcin",
+    type: "can"
+  },
+  {
+    latitude: 48.20641867298928,
+    longitude: 16.363621521714517,
+    photo: "photos/marcin/vienna.jpg",
+    title: "Hofburg - Vienna - Austria",
+    author: "Marcin",
+    type: "can"
+  }
 ]
