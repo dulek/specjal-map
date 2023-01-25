@@ -1303,5 +1303,100 @@ markers = [
     title: "Hofburg - Vienna - Austria",
     author: "Marcin",
     type: "can"
+  },
+  {
+    latitude: 54.35052035926662, 
+    longitude: 18.657723326814647,
+    photo: "photos/tomasz/gdansk-zuraw.jpg",
+    author: "Tomasz",
+    title: "Żuraw - Gdańsk - Poland",
+    datetime: "2020-07-04T12:52:27.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 54.41682303352564, 
+    longitude: 17.418911143577414,
+    photo: "photos/tomasz/lupawa-mlyn2.jpg",
+    author: "Tomasz",
+    title: "Stary Młyn - Łupawa - Poland",
+    commentPolish: "Spływ Łupawą ZIMA 2020 - Stowarzyszenie Sympatyków Imprez nad Jeziorami",
+    datetime: "2020-01-25T16:41:48.000Z",
+    type: "can"
+  },
+  {
+    latitude: 54.4167657506518, 
+    longitude: 17.418247343222024,
+    photo: "photos/tomasz/lupawa-mlyn.jpg",
+    author: "Tomasz",
+    title: "Stary Młyn - Łupawa - Poland",
+    commentPolish: "Spływ Łupawą ZIMA 2020 - Stowarzyszenie Sympatyków Imprez nad Jeziorami",
+    datetime: "2020-01-25T09:54:49.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 54.40414741768671, 
+    longitude: 18.567157490286117,
+    photo: "photos/tomasz/oliwa-sp35.jpg",
+    author: "Tomasz",
+    title: "SP 35, ZKPiG 17, Gim 24 - Gdańsk-Oliwa - Poland",
+    commentPolish: "Wybory prezydenckie w Polsce w 2020 roku (drugie)",
+    commentEnglish: "2020 Polish presidential election",
+    datetime: "2020-07-12T15:12:36.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 54.35395761051367, 
+    longitude: 18.66203202327026,
+    photo: "photos/tomasz/gdansk-motlawa-milicja.jpg",
+    author: "Tomasz",
+    title: "Patrol, Motława - Gdańsk - Poland",
+    datetime: "2020-07-04T13:02:27.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 54.293537933497326,
+    longitude: 18.617686025683824,
+    photo: "photos/tomasz/gdansk-lipce-borkowska.jpg",
+    author: "Tomasz",
+    title: "Gdańsk-Lipce - Poland",
+    datetime: "2020-05-10T18:31:42.000Z",
+    type: "can"
+  },
+  {
+    latitude: 53.96519863431471, 
+    longitude: 17.91825214060925,
+    photo: "photos/tomasz/wdzydze-borsk.jpg",
+    author: "Tomasz",
+    title: "Jezioro Wdzydzkie - Borsk - Poland",
+    datetime: "2020-05-30T13:52:57.000Z",
+    type: "can"
+  },
+  {
+    latitude: 54.26017862278626,
+    longitude:  16.054694917062967,
+    photo: "photos/tomasz/mielno-la-palma.jpg",
+    author: "Tomasz",
+    title: "La Palma - Mielno - Poland",
+    datetime: "2020-02-14T12:14:20.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 54.43626454795243, 
+    longitude: 18.582561544885955,
+    photo: "photos/tomasz/sopot-plaza.jpg",
+    author: "Tomasz",
+    title: "Plaża - Sopot - Poland",
+    datetime: "2020-05-07T16:15:52.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 54.06397505535089, 
+    longitude: 23.185030503277105,
+    photo: "photos/tomasz/czarna-hancza-pcw.jpg",
+    author: "Tomasz",
+    title: "Zakole Pole Biwakowe, Buda Ruska - Czarna Hańcza - Poland",    
+    commentPolish: "Czarna Hańcza 2020 - Warsztaty PCW w trakcie spływu Stowarzyszenia Sympatyków Imprez nad Jeziorami.",
+    datetime: "2020-08-06T13:05:30.000Z",
+    type: "can"
   }
 ]
