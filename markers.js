@@ -1398,5 +1398,69 @@ markers = [
     commentPolish: "Czarna Hańcza 2020 - Warsztaty PCW w trakcie spływu Stowarzyszenia Sympatyków Imprez nad Jeziorami.",
     datetime: "2020-08-06T13:05:30.000Z",
     type: "can"
+  },
+
+  {
+    latitude: 53.9361389, 
+    longitude: 17.598055555555554,
+    photo: "photos/tomasz/zbrzyca.jpg",
+    author: "Tomasz",
+    title: "Rzeka Zbrzyca - Poland",    
+    commentPolish: "Zbrzyca 2021 - Spływ Zimowy Stowarzyszenia Sympatyków Imprez nad Jeziorami.",
+    datetime: "2021-01-30T16:00:00.000Z",
+    type: "can"
+  },
+  {
+    latitude: 53.76160384659894,
+    longitude: 15.28777118434468,
+    photo: "photos/tomasz/polandrock27-ploty.jpg",
+    author: "Tomasz",
+    title: "Pol'and'Rock 27 - Płoty - Poland",    
+    commentPolish: "Pol'and'Rock 27, znany również jako Przystanek Woodstock, zorganizowany po raz pierwszy (i jedyny na dzień 2023-09-30) w miejscowości Płoty.",    
+    commentEnglish: "Pol'and'Rock 27, also known as Polish Woodstock, was organized for the first time (and only time as of 2023-09-30) in the town of Płoty.",
+    datetime: "2021-07-29T15:50:00.000Z",
+    type: "can"
+  },
+  {
+    latitude: 38.40620992087192,
+    longitude: 14.962399632050172,
+    photo: "photos/tomasz/vulcano.jpg",
+    author: "Tomasz",
+    title: "Vulcano - Lipari, Italy",    
+    commentPolish: "Vulcano, to mała wyspa wulkaniczna położona na Morzu Tyrreńskim i będąca częścią archipelagu Liparyjskiego, może poszczycić się geotermalną aktywnością. Angielskie słowo 'volcano' oraz jego odpowiedniki w wielu językach europejskich wywodzą się od nazwy tej wyspy. Wiąże się to z rzymskim przekonaniem, że Vulcano to komin Wulkana, rzymskiego boga ognia.",    
+    commentEnglish: "Vulcano, a small volcanic island located in the Tyrrhenian Sea and part of the Lipari archipelago, boasts a geothermal activity. Intriguingly, the English word 'volcano', along with its counterparts in numerous European languages, finds its origin in the name of this island. This linguistic connection harks back to the Roman belief that Vulcano was the chimney of Vulcan, the Roman god of fire.",
+    datetime: "2021-09-05T19:25:00.000Z",
+    type: "can"
+  },
+  {
+    latitude: 37.05736387953419, 
+    longitude: 15.292951540976583,
+    photo: "photos/tomasz/syrakuzy-aretuza.jpg",
+    author: "Tomasz",
+    title: "The Fountain of Arethusa - Syracuse, Ortigia - Sicily, Italy",    
+    commentPolish: "Fontanna Aretuzy w Syrakuzach to źródło słodkiej wody, które tryska na brzegu morza, tworząc małe jezioro (i gości kaczki krzyżówki). Według mitologii greckiej źródło jest poświęcone nimfie Aretuzie, która została w nie przemieniona przez Artemidę, aby uciec przed uporczywym uczuciem Alfeusza, syna boga Oceanu. Jedno z dwóch lub trzech miejsc w Europie gdzie rośnie papirus.",    
+    commentEnglish: "The Fountain of Arethusa in Syracuse a freshwater spring that gushes out at the seashore, forming a small lake (and hosts mallard ducks). According to Greek mythology, the spring is dedicated to the nymph Arethusa, who was transformed into it by Artemis to escape the persistent affection of Alphaeus, the son of the god Ocean. Home to one of only few existing wild papyretic springs in Europe.",
+    datetime: "2021-09-12T18:27:25.000Z",
+    type: "can"
+  },
+  {
+    latitude: 37.057155181458796, 
+    longitude: 15.292971657543802,
+    photo: "photos/tomasz/syrakuzy-ortigia.jpg",
+    author: "Tomasz",
+    title: "Syracuse, Ortigia - Sicily, Italy",    
+    commentPolish: "Wyspa Ortigia w Syrakuzach to połączenie starożytnej historii i śródziemnomorskiego uroku. Podobnie jak szachach, gdzie Obrona Sycylijska strategicznie broni króla, Ortigia przez wieki pilnuje dziedzictwa Sycylii.",    
+    commentEnglish: "The Fountain of Arethusa ",
+    datetime: "2021-09-12T18:27:25.000Z",
+    type: "can"
+  },
+  {
+    latitude: 45.578004527949695, 
+    longitude: 6.834920246454719,
+    photo: "photos/tomasz/les-arcs-21.jpg",
+    author: "Tomasz",
+    title: "Les Arcs, Alps - France",
+    datetime: "2021-12-15T13:30:00.000Z",
+    type: "bottle"
   }
 ]
