@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Photo EXIF Data Reader</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">    
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        #preview {
+            max-width: 100%;
+            max-height: 300px;
+        }
+
+        #dropArea {
+            border: 2px dashed #aaa;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-top: 15px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center mt-3">Photo EXIF Data Reader</h1>
+        <div class="row justify-content-center mt-4">
+            <div class="col-12 col-md-6">
+                <div id="dropArea" ondragover="allowDrop(event)" ondrop="handleDrop(event)">
+                    <p>Drag and drop a photo here</p>
+                    <p>or</p>
+                    <input type="file" id="fileInput" accept="image/*" style="display: none;"
+                        onchange="readExifData(this)">
+                    <label for="fileInput" class="btn btn-primary">Select Photo</label>
+                </div>
+                <img id="preview" src="" alt="Preview" style="display: none;">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <div class="form-group">
+                    <label for="latitude">Latitude (Decimal):</label>
+                    <input type="text" id="latitude" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="longitude">Longitude (Decimal):</label>
+                    <input type="text" id="longitude" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="modifiedDate">Date:</label>
+                    <input type="text" id="modifiedDate" class="form-control" readonly>
+                    
+                    <input type="hidden" id="modifiedDateDefault">
+                </div>
+                <div class="form-group">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="commentPolish">Comment (Polish):</label>
+                    <input type="text" id="commentPolish" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="commentEnglish">Comment (English):</label>
+                    <input type="text" id="commentEnglish" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Type:</label>
+                    <div class="form-check">
+                        <input type="radio" name="type" id="typeCan" value="Can" class="form-check-input">
+                        <label for="typeCan" class="form-check-label">Can</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="type" id="typeBottle" value="Bottle" class="form-check-input">
+                        <label for="typeBottle" class="form-check-label">Bottle</label>
+                    </div>
+                </div>
+                <button onclick="generateJSON()" class="btn btn-success mt-3">Generate JSON</button>
+                <div class="form-group">
+                    <label for="jsonOutput">Generated JSON:</label>
+                    <textarea id="jsonOutput" class="form-control" rows="4" readonly></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function handleDrop(event) {
+            event.preventDefault();
+            const file = event.dataTransfer.files[0];
+            document.getElementById('fileInput').files = event.dataTransfer.files;
+            readExifData(document.getElementById('fileInput'));
+        }
+
+        function readExifData(input) {
+            if (input.files && input.files[0]) {
+                const file = input.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    const img = new Image();
+                    img.src = e.target.result;
+                    img.onload = function () {
+                        EXIF.getData(this, function () {
+                            const lat = EXIF.getTag(this, 'GPSLatitude');
+                            const lon = EXIF.getTag(this, 'GPSLongitude');
+                            const modifiedDate = new Date(file.lastModified);
+
+                            document.getElementById('latitude').value = lat ? getDecimalFromDMS(lat, EXIF.getTag(this, 'GPSLatitudeRef')) : '';
+                            document.getElementById('longitude').value = lon ? getDecimalFromDMS(lon, EXIF.getTag(this, 'GPSLongitudeRef')) : '';
+                            document.getElementById('modifiedDate').value = modifiedDate ? modifiedDate.toLocaleString() : '';
+                            document.getElementById('modifiedDateDefault').value = modifiedDate ? modifiedDate : '';
+
+                            document.getElementById('preview').src = e.target.result;
+                            document.getElementById('preview').style.display = 'block';
+                        });
+                    };
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function getDecimalFromDMS(dms, ref) {
+            const [degrees, minutes, seconds] = dms;
+            const decimal = degrees + minutes / 60 + seconds / 3600;
+
+            if (ref === 'S' || ref === 'W') {
+                return -decimal;
+            } else {
+                return decimal;
+            }
+        }
+
+        function generateJSON() {
+            const latitude = parseFloat(document.getElementById('latitude').value) || 0;
+            const longitude = parseFloat(document.getElementById('longitude').value) || 0;
+            const photoInput = document.getElementById('fileInput');
+            const photo = photoInput ? photoInput.value : '';
+            const authorInput = document.getElementById('author');
+            const author = authorInput ? authorInput.value : '';
+            const titleInput = document.getElementById('title');
+            const title = titleInput ? titleInput.value : '';
+            const commentPolishInput = document.getElementById('commentPolish');
+            const commentPolish = commentPolishInput ? commentPolishInput.value : '';
+            const commentEnglishInput = document.getElementById('commentEnglish');
+            const commentEnglish = commentEnglishInput ? commentEnglishInput.value : '';
+            const typeInput = document.querySelector('input[name="type"]:checked');
+            const type = typeInput ? typeInput.value.toLowerCase() : '';
+
+            const photoPath = `photos/${author.toLowerCase()}/${photo.replace("C:\\fakepath\\", "")}`;
+
+            
+            const dateValueInput = document.getElementById('modifiedDateDefault');
+            const dateValue = dateValueInput ? new Date(dateValueInput.value).toISOString(): ''; 
+
+        
+            const json = {
+                latitude,
+                longitude,
+                photo: photoPath,
+                author,
+                title,
+                commentPolish,
+                commentEnglish,
+                datetime: dateValue,
+                type,
+            };
+
+            const jsonOutput = JSON.stringify(json, null, 2);
+            document.getElementById('jsonOutput').value = jsonOutput.replace(/"([^"]+)":/g, '$1:');
+        }
+
+    </script>
+</body>
+
+</html>
