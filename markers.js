@@ -1459,8 +1459,157 @@ markers = [
     longitude: 6.834920246454719,
     photo: "photos/tomasz/les-arcs-21.jpg",
     author: "Tomasz",
-    title: "Les Arcs, Alps - France",
+    title: "Les Arcs - Alps, France",
     datetime: "2021-12-15T13:30:00.000Z",
     type: "bottle"
+  },
+  {
+    latitude: 44.899828, 
+    longitude: 6.595964,
+    photo: "photos/tomasz/serre-chevalier.jpg",
+    author: "Tomasz",
+    title: "Serre Chevalier - Alps, France",
+    datetime: "2022-03-23T12:51:08.386Z",
+    type: "can"
+  },
+  {
+    latitude: 54.358314, 
+    longitude: 19.312908,
+    photo: "photos/tomasz/przekop-mierzei.jpg",
+    author: "Tomasz",
+    title: "Przekop Mierzei Wiślanej - Poland",
+    datetime: "2022-04-02T13:35:08.216Z",
+    type: "bottle"
+  },
+  {
+    latitude: 51.77970555555555,
+    longitude: 19.473280555555554,
+    photo: "photos/tomasz/lodz-teatr.jpg",
+    author: "Tomasz",
+    title: "Teatr Muzyczny - Łódź - Poland",
+    datetime: "2023-10-13T20:27:15.109Z",
+    type: "bottle"
+  },
+  {
+    latitude: 52.405125,
+    longitude: 16.93106388888889,
+    photo: "photos/tomasz/poznan-pomnik.jpg",
+    author: "Tomasz",
+    title: "Pomnik Starego Marycha - Poznań - Poland",
+    datetime: "2022-12-05T19:07:25.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 52.40298611111111,
+    longitude: 16.913491666666665,
+    photo: "photos/tomasz/poznan-dworzec.jpg",
+    author: "Tomasz",
+    title: "Dworzec Główny - Poznań - Poland",
+    datetime: "2022-12-05T18:25:02.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 49.20436666666667,
+    longitude: 19.28933055555556,
+    photo: "photos/tomasz/dolny-kubin.jpg",
+    author: "Tomasz",
+    title: "Dolný Kubín - Slovakia",
+    datetime: "2022-08-07T13:49:19.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 49.225794444444446,
+    longitude: 19.300116666666668,
+    photo: "photos/tomasz/dolny-kubin2.jpg",
+    author: "Tomasz",
+    title: "Dolný Kubín - Slovakia",
+    datetime: "2022-08-07T14:17:52.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 59.37269444444445,
+    longitude: 18.000183333333332,
+    photo: "photos/tomasz/rolling-stones-stockholm.jpg",
+    author: "Tomasz",
+    title: "The Rolling Stones, Friends Arena - Stockholm - Sweden",
+    commentPolish: "Koncert Rolling Stonesów odbył się w ramach trasy 'Sixty'. Oprócz przebojów, takich jak Gimme Shelter i Paint it Black, zagrali także Angie. Podróż gdańskich fanów zespołu odbyła się bezpośrednio po Festiwalu Jazz w Lesie, a 'Specjal' musiał sprytnie dostać się na teren koncertu!",
+    commentEnglish: "The Rolling Stones concert during the 'Sixty' tour took place at Friends Arena. In addition to their greatest hits such as Gimme Shelter and Paint it Black, they also performed Angie. The trip for the Rolling Stones fans from Gdańsk took place immediately after the Jazz w Lesie Festival, and the Specjal had to make its way to the area cleverly!",
+    datetime: "2022-07-31T19:19:55.000Z",
+    type: "can"
+  },
+  {
+    latitude: 59.331408333333336,
+    longitude: 18.059169444444446,
+    photo: "photos/tomasz/stockholm.jpg",
+    author: "tomasz",
+    title: "Stockholm - Sweden",
+    datetime: "2022-08-01T12:17:31.000Z",
+    type: "can"
+  },
+  {
+    latitude: 53.51788055555556,
+    longitude: 16.280144444444442,
+    photo: "photos/tomasz/czaplinek-polandrock.jpg",
+    author: "tomasz",
+    title: "Pol'and'Rock 28 - Czaplinek - Poland",
+    datetime: "2022-08-05T12:07:11.000Z",
+    type: "can"
+  },
+  {
+    latitude: 55.954800000000006,
+    longitude: -3.1835805555555554,
+    photo: "photos/tomasz/edynburg.jpg",
+    author: "tomasz",
+    title: "Calton Hill - Edinburgh - Scotland",
+    datetime: "2022-12-30T15:32:30.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 55.95511666666667,
+    longitude: -3.1833666666666667,
+    photo: "photos/tomasz/edynburg2.jpg",
+    author: "tomasz",
+    title: "Calton Hill - Edinburgh - Scotland",
+    datetime: "2022-12-30T14:21:52.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 54.34882014451168,
+    longitude:  18.65253208441181,
+    photo: "photos/tomasz/makita-gdansk.jpg",
+    author: "tomasz",
+    title: "World Cat Day - Gdańsk - Poland",
+    commentPolish: "Światowy Dzień Kota wg polskiego kalendarza ma miejsce 17 lutego. Na świecie obchodzony także 8 sierpnia czy np. 29 października. Kotka na zdjęciu to Makita / Maka / Maczka.",
+    commentEnglish: "Even though Cat's Day may take place on August 8th (Canada), October 29th (United States), etc. in Poland it is on February 17th. The Kitty is called Makita aka Maka or Maczka (phonetically: Matchka).",
+    datetime: "2022-02-17",
+    type: "bottle"
+  },
+  {
+    latitude: 55.97743333333334,
+    longitude: -3.249877777777778,
+    photo: "photos/tomasz/edynburg-papuga.jpg",
+    author: "Tomasz",
+    title: "Waterfront Park - Edinburgh - Scotland",
+    datetime: "2022-12-31T15:44:16.000Z",
+    type: "can"
+  },
+  {
+    latitude: 55.95024166666667,
+    longitude: -3.1955555555555555,
+    photo: "photos/tomasz/edynburg-title.jpg",
+    author: "Tomasz",
+    title: "City Title - Edinburgh - Scotland",
+    datetime: "2022-12-26T17:14:31.000Z",
+    type: "can"
+  },
+  {
+    latitude: 55.98193611111111,
+    longitude: -3.177433333333333,
+    photo: "photos/tomasz/edynburg-hmy-britannia.jpg",
+    author: "Tomasz",
+    title: "Her Majesty's Yacht Britannia -  Leith, Edinburgh - Scotland",
+    datetime: "2022-12-28T16:32:01.000Z",
+    type: "can"
   }
 ]
+
