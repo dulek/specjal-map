@@ -1541,7 +1541,7 @@ markers = [
     latitude: 59.331408333333336,
     longitude: 18.059169444444446,
     photo: "photos/tomasz/stockholm.jpg",
-    author: "tomasz",
+    author: "Tomasz",
     title: "Stockholm - Sweden",
     datetime: "2022-08-01T12:17:31.000Z",
     type: "can"
@@ -1550,7 +1550,7 @@ markers = [
     latitude: 53.51788055555556,
     longitude: 16.280144444444442,
     photo: "photos/tomasz/czaplinek-polandrock.jpg",
-    author: "tomasz",
+    author: "Tomasz",
     title: "Pol'and'Rock 28 - Czaplinek - Poland",
     datetime: "2022-08-05T12:07:11.000Z",
     type: "can"
@@ -1559,7 +1559,7 @@ markers = [
     latitude: 55.954800000000006,
     longitude: -3.1835805555555554,
     photo: "photos/tomasz/edynburg.jpg",
-    author: "tomasz",
+    author: "Tomasz",
     title: "Calton Hill - Edinburgh - Scotland",
     datetime: "2022-12-30T15:32:30.000Z",
     type: "bottle"
@@ -1568,7 +1568,7 @@ markers = [
     latitude: 55.95511666666667,
     longitude: -3.1833666666666667,
     photo: "photos/tomasz/edynburg2.jpg",
-    author: "tomasz",
+    author: "Tomasz",
     title: "Calton Hill - Edinburgh - Scotland",
     datetime: "2022-12-30T14:21:52.000Z",
     type: "bottle"
@@ -1577,7 +1577,7 @@ markers = [
     latitude: 54.34882014451168,
     longitude:  18.65253208441181,
     photo: "photos/tomasz/makita-gdansk.jpg",
-    author: "tomasz",
+    author: "Tomasz",
     title: "World Cat Day - Gdańsk - Poland",
     commentPolish: "Światowy Dzień Kota wg polskiego kalendarza ma miejsce 17 lutego. Na świecie obchodzony także 8 sierpnia czy np. 29 października. Kotka na zdjęciu to Makita / Maka / Maczka.",
     commentEnglish: "Even though Cat's Day may take place on August 8th (Canada), October 29th (United States), etc. in Poland it is on February 17th. The Kitty is called Makita aka Maka or Maczka (phonetically: Matchka).",
