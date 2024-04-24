@@ -1610,6 +1610,94 @@ markers = [
     title: "Her Majesty's Yacht Britannia -  Leith, Edinburgh - Scotland",
     datetime: "2022-12-28T16:32:01.000Z",
     type: "can"
+  },
+  {
+    latitude: 44.10753432060425,
+    longitude: 9.726228034614074,
+    photo: "photos/cinque-terre.jpg",
+    author: "Dulek",
+    title: "Manarola - Italy",
+    type: "bottle"
+  },
+  {
+    latitude: 41.892309,
+    longitude: 12.485860,
+    photo: "photos/forum-romanum.jpg",
+    author: "Dulek",
+    title: "Forum Romanum - Rome - Italy",
+    type: "bottle"
+  },
+  {
+    latitude: 39.74750649300411,
+    longitude: 19.872218692533334,
+    photo: "photos/korfu.jpg",
+    author: "Dulek",
+    title: "Pantokrator - Korfu - Greece",
+    type: "can"
+  },
+  {
+    latitude: 48.72277566280351,
+    longitude: 21.256806531615727,
+    photo: "photos/koszyce.jpg",
+    author: "Dulek",
+    title: "Morový stĺp - Koszyce - Slovakia",
+    type: "bottle"
+  },
+  {
+    latitude: 32.75870599851436,
+    longitude: -16.942574222048908,
+    photo: "photos/madeira.jpg",
+    author: "Dulek",
+    title: "Pico Ruivo - Madeira - Portugal",
+    type: "can"
+  },
+  {
+    latitude: 47.716287,
+    longitude: 24.773912,
+    photo: "photos/maramures.jpg",
+    author: "Dulek",
+    title: "Maramureș - Romania",
+    type: "bottle"
+  },
+  {
+    latitude: 39.72607813949867,
+    longitude: 21.629103976042092,
+    photo: "photos/meteora.jpg",
+    author: "Dulek",
+    title: "Meteora - Greece",
+    type: "bottle"
+  },
+  {
+    latitude: 50.87688050164847,
+    longitude: 15.939367579284918,
+    photo: "photos/miedzianka.jpg",
+    author: "Dulek",
+    title: "Miedzianka - Polska",
+    type: "bottle"
+  },
+  {
+    latitude: 53.94456304033828,
+    longitude: 21.87006595577939,
+    photo: "photos/milki.jpg",
+    author: "Dulek",
+    title: "Miłki - Polska",
+    type: "bottle"
+  },
+  {
+    latitude: 63.45208,
+    longitude: 10.43711,
+    photo: "photos/trondheim.jpg",
+    author: "Dulek",
+    title: "Trondheim - Norway",
+    type: "can"
+  },
+  {
+    latitude: 49.34387327292896,
+    longitude: -123.01809409338706,
+    photo: "photos/vancouver2.jpg",
+    author: "Dulek",
+    title: "Lynn Canyon Bridge - Vancouver - Canada",
+    type: "can"
   }
 ]
 
