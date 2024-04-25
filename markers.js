@@ -1698,6 +1698,14 @@ markers = [
     author: "Dulek",
     title: "Lynn Canyon Bridge - Vancouver - Canada",
     type: "can"
+  },
+  {
+    latitude: 60.3779423, 
+    longitude: 5.3325779,
+    photo: "photos/sognefjorden.jpg",
+    author: "Doris",
+    title: "Sognefjorden - Norway",
+    type: "can"
   }
 ]
 
