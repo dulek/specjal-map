@@ -1822,7 +1822,7 @@ markers = [
     longitude: 1.4413194444444444,
     photo: "photos/tomasz/tuluza.jpg",
     author: "Tomasz",
-    title: "Basilica of Saint-Sernin - Toulouse - France",
+    title: "Basilica de Sant Sarnin - Toulouse - France",
     datetime: "2023-11-11T10:26:26.000Z",
     type: "can"
   },
@@ -1840,7 +1840,7 @@ markers = [
     longitude: 12.593201103054593,
     photo: "photos/tomasz/kopenhaga.jpg",
     author: "Tomasz",
-    title: "Copenhagen - France",
+    title: "Copenhagen - Denmark",
     datetime: "2024-01-05T14:00:00.000Z",
     type: "can"
   },
@@ -1849,7 +1849,7 @@ markers = [
     longitude: 12.592450084549322,
     photo: "photos/tomasz/kopenhaga2.jpg",
     author: "Tomasz",
-    title: "Copenhagen - France",
+    title: "Copenhagen - Denmark",
     datetime: "2024-01-05T13:55:00.000Z",
     type: "can"
   },
@@ -1858,7 +1858,7 @@ markers = [
     longitude: 12.456719444444444,
     photo: "photos/tomasz/watykan.jpg",
     author: "Tomasz",
-    title: "St. Peter's Square - Vatican City State",
+    title: "Piazza San Pietro - Vatican City State",
     datetime: "2024-04-24T17:40:53.000Z",
     type: "can"
   },
@@ -1876,7 +1876,7 @@ markers = [
     longitude: 12.491022222222222,
     photo: "photos/tomasz/rzym-koloseum.jpg",
     author: "Tomasz",
-    title: "Colosseum - Rome - Italy",
+    title: "Colosseo - Rome - Italy",
     datetime: "2024-04-25T17:28:22.000Z",
     type: "can"
   },
@@ -1885,7 +1885,7 @@ markers = [
     longitude: 12.487908333333333,
     photo: "photos/tomasz/rzym-forum.jpg",
     author: "Tomasz",
-    title: "Roman Forum - Rome - Italy",
+    title: "Forum Romanum - Rome - Italy",
     datetime: "2024-04-25T16:49:25.000Z",
     type: "can"
   },
@@ -1894,7 +1894,7 @@ markers = [
     longitude: 12.483474999999999,
     photo: "photos/tomasz/rzym-ditrevi.jpg",
     author: "Tomasz",
-    title: "Trevi Fountain - Rome - Italy",
+    title: "Fontana di Trevi - Rome - Italy",
     datetime: "2024-04-25T13:12:13.000Z",
     type: "can"
   },
@@ -1903,7 +1903,7 @@ markers = [
     longitude: 15.791877777777778,
     photo: "photos/tomasz/san-nicola.jpg",
     author: "Tomasz",
-    title: "Arcomagno - San Nicola Arcella - Italy",
+    title: "Arcomagno - San Nicola Arcella - Calabria - Italy",
     datetime: "2024-04-28T14:56:36.000Z",
     type: "can"
   },
@@ -1912,7 +1912,7 @@ markers = [
     longitude: 14.488791666666666,
     photo: "photos/tomasz/pompeje.jpg",
     author: "Tomasz",
-    title: "Pompeii - Italy",
+    title: "Pompeii - Campania - Italy",
     datetime: "2024-05-04T12:11:21.000Z",
     type: "can"
   },
