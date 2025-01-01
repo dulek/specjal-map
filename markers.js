@@ -1706,6 +1706,134 @@ markers = [
     author: "Doris",
     title: "Sognefjorden - Norway",
     type: "can"
+  },
+  {
+    latitude: 58.64751111111111,
+    longitude: 17.10915277777778,
+    photo: "photos/tomasz/oxelosund.jpg",
+    author: "Tomasz",
+    title: "Oxelösund - Sweden",
+    datetime: "2023-03-10T16:35:36.000Z",
+    type: "can"
+  },
+  {
+    latitude: 58.65076111111111,
+    longitude: 17.107802777777778,
+    photo: "photos/tomasz/oxelosund2.jpg",
+    author: "Tomasz",
+    title: "Oxelösund - Sweden",
+    datetime: "2023-03-10T16:17:08.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 44.98495833333333,
+    longitude: 6.176988888888889,
+    photo: "photos/tomasz/les-deux-alpes-23.jpg",
+    author: "Tomasz",
+    title: "Les Deux Alpes - France",
+    datetime: "2023-03-28T10:26:13.000Z",
+    type: "can"
+  },
+  {
+    latitude: 53.73033888888889,
+    longitude: 19.60387777777778,
+    photo: "photos/tomasz/jeziorak-23.jpg",
+    author: "Tomasz",
+    title: "Jeziorak, Lipowy Ostrów - Poland",
+    datetime: "2023-06-24T12:32:18.000Z",
+    type: "can"
+  },
+  {
+    latitude: 54.23598888888889,
+    longitude: 17.624394444444444,
+    photo: "photos/tomasz/jezioro-zukowko.jpg",
+    author: "Tomasz",
+    title: "Jezioro Żukówko - Poland",
+    datetime: "2023-07-29T13:46:38.000Z",
+    type: "can"
+  },
+  {
+    latitude: 53.51708611111111,
+    longitude: 16.294483333333336,
+    photo: "photos/tomasz/polandrock29-czaplinek.jpg",
+    author: "Tomasz",
+    title: "Pol'and'Rock 29 - Czaplinek - Poland",
+    datetime: "2023-08-03T17:14:05.000Z",
+    type: "can"
+  },
+  {
+    latitude: 43.50826388888889,
+    longitude: 16.440219444444445,
+    photo: "photos/tomasz/split.jpg",
+    author: "Tomasz",
+    title: "Diocletian's Palace - Split - Croatia",
+    datetime: "2023-09-08T19:38:18.000Z",
+    type: "can"
+  },
+  {
+    latitude: 42.964058333333334,
+    longitude: 17.13829722222222,
+    photo: "photos/tomasz/korcula.jpg",
+    author: "Tomasz",
+    title: "Korčula - Croatia",
+    datetime: "2023-09-11T12:07:12.000Z",
+    type: "can"
+  },
+  {
+    latitude: 42.964058333333334,
+    longitude: 17.13829722222222,
+    photo: "photos/tomasz/dubrownik.jpg",
+    author: "Tomasz",
+    title: "Jesuit Stairs - Dubrovnik - Croatia",
+    commentPolish: "Położone w sercu Dubrownika schody Jezuitów to słynne miejsce kręcenia scen do serialu \"Gra o Tron\". To tutaj rozpoczyna się ikoniczna scena \"Marszu Wstydu\", w której Cersei stoi na szczycie schodów, zanim zejdzie, naga w niesławie, ulicami Królewskiej Przystani.",
+    commentEnglish: "Located in the heart of Dubrovnik, the Jesuit Stairs are a famous filming location from Game of Thrones. This is where the iconic \"Walk of Shame\" scene begins, with Cersei standing at the top before descending through the streets of King's Landing.",
+    datetime: "2023-09-11T12:07:12.000Z",
+    type: "can"
+  },
+  {
+    latitude: 43.51670555555555,
+    longitude: 16.251380555555556,
+    photo: "photos/tomasz/trogir.jpg",
+    author: "Tomasz",
+    title: "Trogir - Croatia",
+    datetime: "2023-09-17T09:38:08.000Z",
+    type: "can"
+  },
+  {
+    latitude: 38.70661944444445,
+    longitude: -9.136091666666665,
+    photo: "photos/tomasz/lizbona.jpg",
+    author: "Tomasz",
+    title: "Cais das Colunas - Lisbon - Portugal",
+    datetime: "2023-11-09T12:36:56.000Z",
+    type: "can"
+  },
+  {
+    latitude: 38.70905833333334,
+    longitude: -9.146966666666666,
+    photo: "photos/tomasz/lizbona2.jpg",
+    author: "Tomasz",
+    title: "Tram 28 - Lisbon - Portugal",
+    datetime: "2023-11-09T16:03:21.000Z",
+    type: "can"
+  },
+  {
+    latitude: 43.60924722222222,
+    longitude: 1.4413194444444444,
+    photo: "photos/tomasz/tuluza.jpg",
+    author: "Tomasz",
+    title: "Basilica of Saint-Sernin - Toulouse - France",
+    datetime: "2023-11-11T10:26:26.000Z",
+    type: "can"
+  },
+  {
+    latitude: 43.60306666666667,
+    longitude: 1.4357277777777777,
+    photo: "photos/tomasz/tuluza-garona.jpg",
+    author: "Tomasz",
+    title: "Garonne - Toulouse - France",
+    datetime: "2023-11-11T10:56:27.000Z",
+    type: "can"
   }
 ]
 
