@@ -1834,6 +1834,123 @@ markers = [
     title: "Garonne - Toulouse - France",
     datetime: "2023-11-11T10:56:27.000Z",
     type: "can"
+  },
+  {
+    latitude: 55.683604921068124, 
+    longitude: 12.593201103054593,
+    photo: "photos/tomasz/kopenhaga.jpg",
+    author: "Tomasz",
+    title: "Copenhagen - France",
+    datetime: "2024-01-05T14:00:00.000Z",
+    type: "can"
+  },
+  {
+    latitude: 55.683012162166705, 
+    longitude: 12.592450084549322,
+    photo: "photos/tomasz/kopenhaga2.jpg",
+    author: "Tomasz",
+    title: "Copenhagen - France",
+    datetime: "2024-01-05T13:55:00.000Z",
+    type: "can"
+  },
+  {
+    latitude: 41.901383333333335,
+    longitude: 12.456719444444444,
+    photo: "photos/tomasz/watykan.jpg",
+    author: "Tomasz",
+    title: "St. Peter's Square - Vatican City State",
+    datetime: "2024-04-24T17:40:53.000Z",
+    type: "can"
+  },
+  {
+    latitude: 41.89106666666667,
+    longitude: 12.486305555555555,
+    photo: "photos/tomasz/rzym-panorama.jpg",
+    author: "Tomasz",
+    title: "Rome - Italy",
+    datetime: "2024-04-25T17:02:03.000Z",
+    type: "can"
+  },
+  {
+    latitude: 41.890744444444444,
+    longitude: 12.491022222222222,
+    photo: "photos/tomasz/rzym-koloseum.jpg",
+    author: "Tomasz",
+    title: "Colosseum - Rome - Italy",
+    datetime: "2024-04-25T17:28:22.000Z",
+    type: "can"
+  },
+  {
+    latitude: 41.89051666666666,
+    longitude: 12.487908333333333,
+    photo: "photos/tomasz/rzym-forum.jpg",
+    author: "Tomasz",
+    title: "Roman Forum - Rome - Italy",
+    datetime: "2024-04-25T16:49:25.000Z",
+    type: "can"
+  },
+  {
+    latitude: 41.90093888888889,
+    longitude: 12.483474999999999,
+    photo: "photos/tomasz/rzym-ditrevi.jpg",
+    author: "Tomasz",
+    title: "Trevi Fountain - Rome - Italy",
+    datetime: "2024-04-25T13:12:13.000Z",
+    type: "can"
+  },
+  {
+    latitude: 39.85492222222222,
+    longitude: 15.791877777777778,
+    photo: "photos/tomasz/san-nicola.jpg",
+    author: "Tomasz",
+    title: "Arcomagno - San Nicola Arcella - Italy",
+    datetime: "2024-04-28T14:56:36.000Z",
+    type: "can"
+  },
+  {
+    latitude: 40.750477777777775,
+    longitude: 14.488791666666666,
+    photo: "photos/tomasz/pompeje.jpg",
+    author: "Tomasz",
+    title: "Pompeii - Italy",
+    datetime: "2024-05-04T12:11:21.000Z",
+    type: "can"
+  },
+  {
+    latitude: 40.839800000000004,
+    longitude: 14.251577777777777,
+    photo: "photos/tomasz/neapol.jpg",
+    author: "Tomasz",
+    title: "Naples - Italy",
+    datetime: "2024-05-07T18:03:45.000Z",
+    type: "can"
+  },
+  {
+    latitude: 54.18521944444444,
+    longitude: 21.71009722222222,
+    photo: "photos/tomasz/mamry.jpg",
+    author: "Tomasz",
+    title: "Jezioro Mamry - Poland",
+    datetime: "2024-06-14T11:58:28.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 49.98305341811201, 
+    longitude: 20.056054638477807,
+    photo: "photos/tomasz/wieliczka.jpg",
+    author: "Tomasz",
+    title: "Wieliczka - Poland",
+    datetime: "2024-10-27T11:01:29.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 49.99986388888889,
+    longitude: 19.412091666666665,
+    photo: "photos/tomasz/energylandia.jpg",
+    author: "Tomasz",
+    title: "Energylandia - Zator - Poland",
+    datetime: "2024-10-26T12:56:36.000Z",
+    type: "can"
   }
 ]
 
