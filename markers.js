@@ -1951,6 +1951,24 @@ markers = [
     title: "Energylandia - Zator - Poland",
     datetime: "2024-10-26T12:56:36.000Z",
     type: "can"
+  },
+  {
+    latitude: 34.9007094,
+    longitude: 33.6265725,
+    photo: "photos/przemek/cypr1.jpg",
+    author: "Przemek",
+    title: "Larnaca Salt Lake - Cyprus",
+    datetime: "2025-02-19T10:16:36.000Z",
+    type: "can"
+  },
+  {
+    latitude: 34.664525,
+    longitude: 32.626461,
+    photo: "photos/przemek/cypr2.jpg",
+    author: "Przemek",
+    title: "Petra tu Romiu - Cyprus",
+    datetime: "2025-02-22T12:44:36.000Z",
+    type: "can"
   }
 ]
 
