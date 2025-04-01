@@ -1969,6 +1969,24 @@ markers = [
     title: "Petra tu Romiu - Cyprus",
     datetime: "2025-02-22T12:44:36.000Z",
     type: "can"
+  },
+  {
+    latitude: 55.93132,
+    longitude: 15.90150,
+    photo: "photos/baltic.jpg",
+    author: "Dulek",
+    title: "Baltic Sea",
+    datetime: "2025-03-29T22:23:20.000Z",
+    type: "can"
+  },
+  {
+    latitude: 56.159118,
+    longitude: 15.596332,
+    photo: "photos/karlskrona.jpg",
+    author: "Dulek",
+    title: "Karlskrona - Sweden",
+    datetime: "2025-03-29T22:12:11.450Z",
+    type: "bottle"
   }
 ]
 
