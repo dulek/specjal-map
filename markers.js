@@ -1987,6 +1987,15 @@ markers = [
     title: "Karlskrona - Sweden",
     datetime: "2025-03-29T22:12:11.450Z",
     type: "bottle"
+  },
+  {
+    latitude: 59.916591,
+    longitude: 10.729302,
+    photo: "photos/przemek/oslo.jpg",
+    author: "Przemek",
+    title: "Slottsplassen - Oslo - Norway",
+    datetime: "2025-04-04T19:44:36.000Z",
+    type: "can"
   }
 ]
 
