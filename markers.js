@@ -1996,6 +1996,15 @@ markers = [
     title: "Slottsplassen - Oslo - Norway",
     datetime: "2025-04-04T19:44:36.000Z",
     type: "can"
+  },
+  {
+    latitude: 38.574237,
+    longitude: -0.064249,
+    photo: "photos/przemek/lalbir.jpg",
+    author: "Przemek",
+    title: "Playa del Raco Albir - Spain",
+    datetime: "2025-06-19T19:44:36.000Z",
+    type: "can"
   }
 ]
 
