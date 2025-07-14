@@ -2005,6 +2005,24 @@ markers = [
     title: "Playa del Raco Albir - Spain",
     datetime: "2025-06-19T19:44:36.000Z",
     type: "can"
+  },
+  {
+    latitude: 42.109528,
+    longitude: 27.101464,
+    photo: "photos/julia/gorno-yabalkovo.jpg",
+    author: "Julia & Kuks",
+    title: "Gorno Yabalkovo - Bulgaria",
+    datetime: "2025-07-12T19:44:36.000Z",
+    type: "can"
+  },
+  {
+    latitude: 45.278195,
+    longitude: 24.306741,
+    photo: "photos/julia/transalpina.jpg",
+    author: "Julia & Kuks",
+    title: "Transalpina - Romania",
+    datetime: "2025-07-13T19:44:36.000Z",
+    type: "can"
   }
 ]
 
