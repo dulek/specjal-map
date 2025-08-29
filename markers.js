@@ -2023,6 +2023,15 @@ markers = [
     title: "Transalpina - Romania",
     datetime: "2025-07-13T19:44:36.000Z",
     type: "can"
+  },
+  {
+    latitude: 48.136985,
+    longitude: 17.108903,
+    photo: "photos/przemek/bratislava.jpg",
+    author: "Przemek",
+    title: "Bratisława - Slovakia",
+    datetime: "2025-08-21T15:11:36.000Z",
+    type: "can"
   }
 ]
 
