@@ -2059,6 +2059,15 @@ markers = [
     title: "Tallin - Estonia",
     datetime: "2024-05-02T19:00:36.000Z",
     type: "bottle"
+  },
+  {
+    latitude: 48.133837,
+    longitude: 11.549249,
+    photo: "photos/munich2.jpg",
+    author: "Dulek",
+    title: "Frühlingsfest - Munich - Germany",
+    datetime: "2025-05-10T17:00:36.000Z",
+    type: "can"
   }
 ]
 
