@@ -2032,6 +2032,33 @@ markers = [
     title: "Bratisława - Slovakia",
     datetime: "2025-08-21T15:11:36.000Z",
     type: "can"
+  },
+  {
+    latitude: 55.706157,
+    longitude: 21.129059,
+    photo: "photos/klaipeda.jpg",
+    author: "Dulek",
+    title: "Klaipeda - Lithuania",
+    datetime: "2024-04-27T19:00:36.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 56.948334,
+    longitude: 24.092830,
+    photo: "photos/riga.jpg",
+    author: "Dulek",
+    title: "Riga - Latvia",
+    datetime: "2024-04-29T19:00:36.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 59.438514,
+    longitude: 24.741046,
+    photo: "photos/tallin.jpg",
+    author: "Dulek",
+    title: "Tallin - Estonia",
+    datetime: "2024-05-02T19:00:36.000Z",
+    type: "bottle"
   }
 ]
 
