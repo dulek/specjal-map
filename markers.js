@@ -2068,6 +2068,80 @@ markers = [
     title: "Frühlingsfest - Munich - Germany",
     datetime: "2025-05-10T17:00:36.000Z",
     type: "can"
+  },
+  {
+    latitude: 45.4639055,
+    longitude: 9.1903722,
+    photo: "photos/tomasz/mediolan.jpg",
+    author: "Tomasz",
+    title: "Duomo St. Maria Nascente - Milan - Italy",
+    datetime: "2025-01-29T10:02:59.000Z",
+    type: "can"
+  },
+  {
+    latitude: 10.79160833,
+    longitude: 106.717789,
+    photo: "photos/tomasz/sajgon.jpg",
+    author: "Tomasz",
+    title: "Landmark 81 - Saigon / Ho Chi Minh - Vietnam", 
+    datetime: "2025-01-31T09:09:11.000Z",
+    type: "can"
+  },
+  {
+    latitude: 15.877155555,
+    longitude: 108.3280861,
+    photo: "photos/tomasz/hoian-da-nang.jpg",
+    author: "Tomasz",
+    title: "Ancient Town - Hội An - Vietnam",
+    commentPolish: "Ze względu na swoje znaczenie kulturowe i historyczne stare miasto portowe zostało 12 grudnia 1999 roku wpisane na listę światowego dziedzictwa UNESCO dzięki staraniom polskiego architekta Kazimierza Kwiatkowskiego.",
+    commentEnglish: "Due to its cultural and historical importance, the old port town was classified as a UNESCO World Heritage Site on December 12, 1999 thanks to the efforts of Polish architect Kazimierz Kwiatkowski.",
+    datetime: "2025-02-05T10:37:02.000Z",
+    type: "can"
+  },
+  {
+    latitude: 20.854375,
+    longitude: 107.09335,
+    photo: "photos/tomasz/halongbay.jpg",
+    author: "Tomasz",
+    title: "Hạ Long Bay - Vietnam",
+    datetime: "2025-02-09T07:51:32.000Z",
+    type: "can"
+  },
+  {
+    latitude: 21.0285694,
+    longitude: 105.8360027,
+    photo: "photos/tomasz/hanoi.jpg",
+    author: "Tomasz",
+    title: "Temple of Literature, Khue Van Cac - Hanoi - Vietnam",
+    datetime: "2025-02-10T07:21:07.000Z",
+    type: "can"
+  },
+  {
+    latitude: 46.22933056,
+    longitude: 10.7965055,
+    photo: "photos/tomasz/pinzolo-madonna-di-campiglio.jpg",
+    author: "Tomasz",
+    title: "Pinzolo - Madonna di Campiglio - Italy",
+    datetime: "2025-03-18T13:32:56.000Z",
+    type: "bottle"
+  },
+  {
+  latitude: 48.13353055,
+  longitude: 11.55015279,
+  photo: "photos/tomasz/monachium-fruhlingsfest.jpg",
+  author: "Tomasz",
+  title: "Frühlingsfest - Munich - Germany",
+  datetime: "2025-05-10T14:50:44.000Z",
+  type: "can"
+  },
+  {
+    latitude: 53.282855,
+    longitude: 19.896811,
+    photo: "photos/tomasz/wel.jpg",
+    author: "Tomasz",
+    title: "Rzeka Wel - Polska",
+    datetime: "2025-08-10T09:53:36.000Z",
+    type: "can"
   }
 ]
 
