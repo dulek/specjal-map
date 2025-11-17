@@ -2,8 +2,9 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>Photo EXIF Data Reader</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         #preview {
@@ -60,16 +61,30 @@
                     <input type="text" id="author" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="title">Title:</label>
-                    <input type="text" id="title" class="form-control">
+                    <label for="title">Title (English):</label>
+                    <small class="form-text text-muted">
+                        Format: Location name - City - Country (e.g., "Sagrada Familia - Barcelona - Spain")
+                    </small>
+                    <input type="text" id="title" class="form-control" oninput="searchSimilarMarkers()">
                 </div>
                 <div class="form-group">
-                    <label for="commentPolish">Comment (Polish):</label>
-                    <input type="text" id="commentPolish" class="form-control">
+                    <label for="titlePL">Title (Polish):</label>
+                    <small class="form-text text-muted">
+                        Format: Nazwa miejsca - Miasto - Kraj (np. "Sagrada Familia - Barcelona - Hiszpania")
+                    </small>
+                    <input type="text" id="titlePL" class="form-control" oninput="searchSimilarMarkers()">
+                </div>
+                <div id="similarMarkers" class="alert alert-info" style="display: none;">
+                    <strong>Similar locations found:</strong>
+                    <ul id="similarMarkersList" style="margin-bottom: 0;"></ul>
                 </div>
                 <div class="form-group">
-                    <label for="commentEnglish">Comment (English):</label>
-                    <input type="text" id="commentEnglish" class="form-control">
+                    <label for="comment">Comment (English):</label>
+                    <input type="text" id="comment" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="commentPL">Comment (Polish):</label>
+                    <input type="text" id="commentPL" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Type:</label>
@@ -95,6 +110,74 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../markers.js"></script>
+
+    <script>
+        // Global markers variable will be loaded from markers.js
+        let loadedMarkers = [];
+
+        // Wait for markers.js to load
+        window.addEventListener('load', function() {
+            if (typeof markers !== 'undefined') {
+                loadedMarkers = markers;
+                console.log('Loaded ' + loadedMarkers.length + ' markers for searching');
+            }
+        });
+
+        function searchSimilarMarkers() {
+            const titleInput = document.getElementById('title').value.toLowerCase();
+            const titlePLInput = document.getElementById('titlePL').value.toLowerCase();
+            const searchTerms = [titleInput, titlePLInput].filter(term => term.length > 2);
+
+            if (searchTerms.length === 0) {
+                document.getElementById('similarMarkers').style.display = 'none';
+                return;
+            }
+
+            const similarMarkers = [];
+            const searchWords = searchTerms.flatMap(term => term.split(/[-\s,]+/).filter(word => word.length > 2));
+
+            loadedMarkers.forEach(marker => {
+                const markerTitle = (marker.title || '').toLowerCase();
+                const markerTitlePL = (marker.titlePL || '').toLowerCase();
+
+                // Check if any search word matches in titles
+                const hasMatch = searchWords.some(word =>
+                    markerTitle.includes(word) || markerTitlePL.includes(word)
+                );
+
+                if (hasMatch) {
+                    // Calculate relevance score (how many words match)
+                    const score = searchWords.reduce((acc, word) => {
+                        return acc + (markerTitle.includes(word) ? 1 : 0) + (markerTitlePL.includes(word) ? 1 : 0);
+                    }, 0);
+
+                    similarMarkers.push({
+                        title: marker.title,
+                        titlePL: marker.titlePL,
+                        author: marker.author,
+                        score: score
+                    });
+                }
+            });
+
+            // Sort by relevance (higher score first)
+            similarMarkers.sort((a, b) => b.score - a.score);
+
+            // Display results
+            const markersList = document.getElementById('similarMarkersList');
+            const markersDiv = document.getElementById('similarMarkers');
+
+            if (similarMarkers.length > 0) {
+                markersList.innerHTML = similarMarkers.slice(0, 10).map(marker =>
+                    `<li><strong>EN:</strong> ${marker.title || 'N/A'}<br><strong>PL:</strong> ${marker.titlePL || 'N/A'}<br><small class="text-muted">Author: ${marker.author}</small></li>`
+                ).join('');
+                markersDiv.style.display = 'block';
+            } else {
+                markersDiv.style.display = 'none';
+            }
+        }
+    </script>
 
     <script>
         function allowDrop(event) {
@@ -157,30 +240,33 @@
             const author = authorInput ? authorInput.value : '';
             const titleInput = document.getElementById('title');
             const title = titleInput ? titleInput.value : '';
-            const commentPolishInput = document.getElementById('commentPolish');
-            const commentPolish = commentPolishInput ? commentPolishInput.value : '';
-            const commentEnglishInput = document.getElementById('commentEnglish');
-            const commentEnglish = commentEnglishInput ? commentEnglishInput.value : '';
+            const titlePLInput = document.getElementById('titlePL');
+            const titlePL = titlePLInput ? titlePLInput.value : '';
+            const commentInput = document.getElementById('comment');
+            const comment = commentInput ? commentInput.value : '';
+            const commentPLInput = document.getElementById('commentPL');
+            const commentPL = commentPLInput ? commentPLInput.value : '';
             const typeInput = document.querySelector('input[name="type"]:checked');
             const type = typeInput ? typeInput.value.toLowerCase() : '';
 
             const photoPath = `photos/${author.toLowerCase()}/${photo.replace("C:\\fakepath\\", "")}`;
 
-            
-            const dateValueInput = document.getElementById('modifiedDateDefault');
-            const dateValue = dateValueInput ? new Date(dateValueInput.value).toISOString(): ''; 
 
-        
+            const dateValueInput = document.getElementById('modifiedDateDefault');
+            const dateValue = dateValueInput ? new Date(dateValueInput.value).toISOString(): '';
+
+
             const json = {
                 latitude,
                 longitude,
                 photo: photoPath,
                 author,
                 title,
-                commentPolish,
-                commentEnglish,
-                datetime: dateValue,
+                ...(titlePL && { titlePL }),
                 type,
+                ...(comment && { comment }),
+                ...(commentPL && { commentPL }),
+                ...(dateValue && { datetime: dateValue })
             };
 
             const jsonOutput = JSON.stringify(json, null, 2);
