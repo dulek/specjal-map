@@ -13,12 +13,87 @@
 
 <h1>Specjal On Tour</h1>
 
+<button id="sidebarToggle" class="sidebar-toggle">☰</button>
+
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-header">
+    <h2 id="locationsTitle">Locations</h2>
+    <div class="header-buttons">
+      <button id="toggleAllGroups" class="toggle-all-button" title="Collapse All">▼</button>
+      <button id="sidebarClose" class="sidebar-close">×</button>
+    </div>
+  </div>
+
+  <div class="controls-header collapsed" id="controlsHeader">
+    <span class="controls-header-title" id="settingsTitle">Settings</span>
+    <span class="controls-header-arrow">▼</span>
+  </div>
+
+  <div class="sidebar-controls hidden" id="sidebarControls">
+    <div class="control-section">
+      <label class="control-label" id="languageLabel">Language:</label>
+      <div class="language-selector">
+        <button id="langPL" class="language-button" onclick="setLanguage('pl')">
+          <img src="images/pl.png" alt="PL" class="flag-icon"> <span id="polishLabel">Polski</span>
+        </button>
+        <button id="langEN" class="language-button" onclick="setLanguage('en')">
+          <img src="images/en.png" alt="EN" class="flag-icon"> <span id="englishLabel">English</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="control-section">
+      <label class="control-label" id="groupByLabel">Group by:</label>
+      <div class="toggle-group">
+        <label class="toggle-container">
+          <input type="checkbox" id="toggleAuthor" class="toggle-input">
+          <span class="toggle-slider"></span>
+          <span class="toggle-label" id="authorToggle">Author</span>
+        </label>
+        <label class="toggle-container">
+          <input type="checkbox" id="toggleCountry" class="toggle-input">
+          <span class="toggle-slider"></span>
+          <span class="toggle-label" id="countryToggle">Country</span>
+        </label>
+        <label class="toggle-container">
+          <input type="checkbox" id="toggleCity" class="toggle-input">
+          <span class="toggle-slider"></span>
+          <span class="toggle-label" id="cityToggle">City</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="control-section">
+      <label class="control-label" id="sortByLabel">Sort by:</label>
+      <select id="sortSelect" class="sort-select">
+        <option value="order" id="optionOrder">Order Added</option>
+        <option value="author-asc" id="optionAuthorAsc">Author (A-Z)</option>
+        <option value="author-desc" id="optionAuthorDesc">Author (Z-A)</option>
+        <option value="country-asc" id="optionCountryAsc">Country (A-Z)</option>
+        <option value="country-desc" id="optionCountryDesc">Country (Z-A)</option>
+        <option value="city-asc" id="optionCityAsc">City (A-Z)</option>
+        <option value="city-desc" id="optionCityDesc">City (Z-A)</option>
+        <option value="date-asc" id="optionDateAsc">Date (Oldest)</option>
+        <option value="date-desc" id="optionDateDesc">Date (Newest)</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="markerList" class="marker-list"></div>
+</div>
+
 <div id="map"></div>
 <script>
   var map = L.map('map',{
     center: [53, 10],
-    zoom: 3
+    zoom: 3,
+    zoomControl: false
   });
+
+  // Add zoom control on the right side
+  L.control.zoom({
+    position: 'topright'
+  }).addTo(map);
 
   var beerBottleIcon = L.icon({
     iconUrl: 'images/icon3.png',
@@ -37,6 +112,23 @@
   });
 
   var defaultIcon = beerBottleIcon;
+
+  // Function to create an icon with birthday cake emoji overlay
+  function createAnniversaryIcon(baseIcon) {
+    var iconUrl = baseIcon.options.iconUrl;
+    var iconSize = baseIcon.options.iconSize;
+
+    return L.divIcon({
+      html: '<div style="position: relative; width: ' + iconSize[0] + 'px; height: ' + iconSize[1] + 'px;">' +
+            '<img src="' + iconUrl + '" style="width: ' + iconSize[0] + 'px; height: ' + iconSize[1] + 'px;">' +
+            '<span style="position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%); font-size: 14px;">🎂</span>' +
+            '</div>',
+      iconSize: iconSize,
+      iconAnchor: baseIcon.options.iconAnchor,
+      popupAnchor: baseIcon.options.popupAnchor,
+      className: 'anniversary-marker'
+    });
+  }
 
   // Expired: 2023-10-31
   // L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png ',
@@ -66,14 +158,18 @@
   //     attribution: '&copy; <a href="https://opentopomap.org">OpenTopoMap</a> contributors'
   // }).addTo(map);
 
+  // Array to store marker references
+  var leafletMarkers = [];
 
   for (var i = 0; i < markers.length; ++i) {
+    // Get title based on language
+    var title = (language === 'pl' && markers[i].titlePL) ? markers[i].titlePL : markers[i].title;
+
+    // Get comment based on language
     var imgTag = '<img style="width: 100%" src="' + markers[i].photo + '"';
     var comment = "";
-    if (language === 'pl' && markers[i].commentPolish) {
-        comment = markers[i].commentPolish;
-    } else if (language === 'en' && markers[i].commentEnglish) {
-        comment = markers[i].commentEnglish;
+    if (language === 'pl' && markers[i].commentPL) {
+        comment = markers[i].commentPL;
     } else if (markers[i].comment) {
         comment = markers[i].comment;
     }
@@ -82,7 +178,7 @@
         imgTag += ' title="'+comment+'"';
     }
     imgTag += '/>';
-    var popupContent = '<h2> ' + markers[i].title + '</h2><a href="' + markers[i].photo + '">'+imgTag+'</a>📷 ' + markers[i].author;
+    var popupContent = '<h2> ' + title + '</h2><a href="' + markers[i].photo + '">'+imgTag+'</a>📷 ' + markers[i].author;
     if (markers[i].datetime) {
         popupContent += '<br>🗓️ ' + displayDate(markers[i].datetime);
     }
@@ -91,10 +187,534 @@
       beerIcon = beerCanIcon;
     }
 
-    L.marker([markers[i].latitude, markers[i].longitude], {icon: beerIcon})
+    // Check if this marker's date is an anniversary
+    if (markers[i].datetime && isAnniversary(markers[i].datetime)) {
+      beerIcon = createAnniversaryIcon(beerIcon);
+    }
+
+    var leafletMarker = L.marker([markers[i].latitude, markers[i].longitude], {icon: beerIcon})
     .bindPopup(popupContent)
     .addTo(map);
+
+    leafletMarkers.push({
+      marker: leafletMarker,
+      data: markers[i],
+      title: title,
+      comment: comment,
+      originalIndex: i,
+      parsed: parseTitle(title)
+    });
   }
+
+  // Current filter state
+  var filterState = {
+    groupByAuthor: false,
+    groupByCountry: false,
+    groupByCity: false,
+    sortBy: 'order'
+  };
+
+  // Function to create marker item element
+  function createMarkerItem(markerRef, index, hideAuthor) {
+    var markerItem = document.createElement('div');
+    markerItem.className = 'marker-item';
+    markerItem.dataset.index = index;
+
+    var titleDiv = document.createElement('div');
+    titleDiv.className = 'marker-item-title';
+    titleDiv.textContent = markerRef.title;
+    markerItem.appendChild(titleDiv);
+
+    // Show author only if not grouped by author
+    if (!hideAuthor) {
+      var authorDiv = document.createElement('div');
+      authorDiv.className = 'marker-item-author';
+      authorDiv.textContent = '📷 ' + markerRef.data.author;
+      markerItem.appendChild(authorDiv);
+    }
+
+    // Add date if available
+    if (markerRef.data.datetime) {
+      var dateDiv = document.createElement('div');
+      dateDiv.className = 'marker-item-date';
+      dateDiv.textContent = '🗓️ ' + displayDate(markerRef.data.datetime);
+      markerItem.appendChild(dateDiv);
+    }
+
+    if (markerRef.comment) {
+      var commentDiv = document.createElement('div');
+      commentDiv.className = 'marker-item-comment';
+      commentDiv.textContent = markerRef.comment;
+      markerItem.appendChild(commentDiv);
+    }
+
+    markerItem.addEventListener('click', function() {
+      var idx = parseInt(this.dataset.index);
+      var ref = leafletMarkers[idx];
+
+      map.closePopup();
+
+      var mapHeight = map.getSize().y;
+      var targetY = mapHeight * 0.36;
+      var point = map.project([ref.data.latitude, ref.data.longitude], map.getZoom());
+      point.y -= (mapHeight / 2 - targetY);
+      var newCenter = map.unproject(point, map.getZoom());
+
+      map.setView(newCenter, 8);
+      ref.marker.openPopup();
+
+      if (window.innerWidth < 768) {
+        document.getElementById('sidebar').classList.remove('open');
+        document.getElementById('sidebarToggle').classList.remove('hidden');
+      }
+    });
+
+    return markerItem;
+  }
+
+  // Function to sort markers
+  function sortMarkers(markersList, sortBy) {
+    var sorted = markersList.slice();
+
+    if (sortBy === 'author-asc') {
+      sorted.sort(function(a, b) {
+        return a.data.author.localeCompare(b.data.author, 'pl', { sensitivity: 'accent' });
+      });
+    } else if (sortBy === 'author-desc') {
+      sorted.sort(function(a, b) {
+        return b.data.author.localeCompare(a.data.author, 'pl', { sensitivity: 'accent' });
+      });
+    } else if (sortBy === 'country-asc') {
+      sorted.sort(function(a, b) {
+        var countryA = a.parsed.country || 'Unknown';
+        var countryB = b.parsed.country || 'Unknown';
+        return countryA.localeCompare(countryB, 'pl', { sensitivity: 'accent' });
+      });
+    } else if (sortBy === 'country-desc') {
+      sorted.sort(function(a, b) {
+        var countryA = a.parsed.country || 'Unknown';
+        var countryB = b.parsed.country || 'Unknown';
+        return countryB.localeCompare(countryA, 'pl', { sensitivity: 'accent' });
+      });
+    } else if (sortBy === 'city-asc') {
+      sorted.sort(function(a, b) {
+        var cityA = a.parsed.city || 'Unknown';
+        var cityB = b.parsed.city || 'Unknown';
+        return cityA.localeCompare(cityB, 'pl', { sensitivity: 'accent' });
+      });
+    } else if (sortBy === 'city-desc') {
+      sorted.sort(function(a, b) {
+        var cityA = a.parsed.city || 'Unknown';
+        var cityB = b.parsed.city || 'Unknown';
+        return cityB.localeCompare(cityA, 'pl', { sensitivity: 'accent' });
+      });
+    } else if (sortBy === 'date-asc') {
+      sorted.sort(function(a, b) {
+        var dateA = a.data.datetime ? new Date(a.data.datetime).getTime() : 0;
+        var dateB = b.data.datetime ? new Date(b.data.datetime).getTime() : 0;
+        return dateA - dateB;
+      });
+    } else if (sortBy === 'date-desc') {
+      sorted.sort(function(a, b) {
+        var dateA = a.data.datetime ? new Date(a.data.datetime).getTime() : 0;
+        var dateB = b.data.datetime ? new Date(b.data.datetime).getTime() : 0;
+        return dateB - dateA;
+      });
+    } else {
+      // 'order' - keep original order
+      sorted.sort(function(a, b) {
+        return a.originalIndex - b.originalIndex;
+      });
+    }
+
+    return sorted;
+  }
+
+  // Function to render the marker list
+  function renderMarkerList() {
+    var markerListDiv = document.getElementById('markerList');
+    markerListDiv.innerHTML = '';
+
+    var hasGrouping = filterState.groupByAuthor || filterState.groupByCountry || filterState.groupByCity;
+
+    // Show/hide toggle all button based on grouping
+    var toggleAllButton = document.getElementById('toggleAllGroups');
+    if (hasGrouping) {
+      toggleAllButton.classList.remove('hidden');
+    } else {
+      toggleAllButton.classList.add('hidden');
+    }
+
+    if (!hasGrouping) {
+      // No grouping - just show all markers sorted
+      var sorted = sortMarkers(leafletMarkers, filterState.sortBy);
+      for (var i = 0; i < sorted.length; i++) {
+        markerListDiv.appendChild(createMarkerItem(sorted[i], sorted[i].originalIndex, false));
+      }
+    } else if (filterState.groupByAuthor) {
+      // Group by author only
+      var groups = {};
+      for (var i = 0; i < leafletMarkers.length; i++) {
+        var author = leafletMarkers[i].data.author;
+        if (!groups[author]) groups[author] = [];
+        groups[author].push(leafletMarkers[i]);
+      }
+
+      // Sort group names - respect author sorting if selected
+      var groupNames = Object.keys(groups);
+      if (filterState.sortBy === 'author-asc') {
+        groupNames.sort(function(a, b) {
+          return a.localeCompare(b, 'pl', { sensitivity: 'accent' });
+        });
+      } else if (filterState.sortBy === 'author-desc') {
+        groupNames.sort(function(a, b) {
+          return b.localeCompare(a, 'pl', { sensitivity: 'accent' });
+        });
+      } else {
+        groupNames.sort(function(a, b) {
+          return a.localeCompare(b, 'pl', { sensitivity: 'accent' });
+        }); // Default alphabetical
+      }
+
+      for (var j = 0; j < groupNames.length; j++) {
+        var groupName = groupNames[j];
+        // Sort items within each group (only if not sorting by author)
+        var sortedGroup = (filterState.sortBy.startsWith('author-'))
+          ? groups[groupName]
+          : sortMarkers(groups[groupName], filterState.sortBy);
+        renderGroup(markerListDiv, groupName, sortedGroup, true);
+      }
+    } else if (filterState.groupByCountry && filterState.groupByCity) {
+      // Group by country, then by city
+      var countryGroups = {};
+      for (var i = 0; i < leafletMarkers.length; i++) {
+        var country = leafletMarkers[i].parsed.country || 'Unknown';
+        if (!countryGroups[country]) countryGroups[country] = [];
+        countryGroups[country].push(leafletMarkers[i]);
+      }
+
+      // Sort countries - respect country sorting if selected
+      var countryNames = Object.keys(countryGroups);
+      if (filterState.sortBy === 'country-asc') {
+        countryNames.sort(function(a, b) {
+          return a.localeCompare(b, 'pl', { sensitivity: 'accent' });
+        });
+      } else if (filterState.sortBy === 'country-desc') {
+        countryNames.sort(function(a, b) {
+          return b.localeCompare(a, 'pl', { sensitivity: 'accent' });
+        });
+      } else {
+        countryNames.sort(function(a, b) {
+          return a.localeCompare(b, 'pl', { sensitivity: 'accent' });
+        }); // Default alphabetical
+      }
+
+      for (var j = 0; j < countryNames.length; j++) {
+        var country = countryNames[j];
+        var countryDiv = createGroupHeader(country, countryGroups[country].length);
+        var countryContent = document.createElement('div');
+        countryContent.className = 'group-content';
+
+        // Group by city within this country
+        var cityGroups = {};
+        for (var i = 0; i < countryGroups[country].length; i++) {
+          var city = countryGroups[country][i].parsed.city || 'Unknown';
+          if (!cityGroups[city]) cityGroups[city] = [];
+          cityGroups[city].push(countryGroups[country][i]);
+        }
+
+        // Sort cities - respect city sorting if selected
+        var cityNames = Object.keys(cityGroups);
+        if (filterState.sortBy === 'city-asc') {
+          cityNames.sort(function(a, b) {
+            return a.localeCompare(b, 'pl', { sensitivity: 'accent' });
+          });
+        } else if (filterState.sortBy === 'city-desc') {
+          cityNames.sort(function(a, b) {
+            return b.localeCompare(a, 'pl', { sensitivity: 'accent' });
+          });
+        } else {
+          cityNames.sort(function(a, b) {
+            return a.localeCompare(b, 'pl', { sensitivity: 'accent' });
+          }); // Default alphabetical
+        }
+
+        for (var k = 0; k < cityNames.length; k++) {
+          var city = cityNames[k];
+          // Sort items within each city (only if not sorting by country or city)
+          var sortedGroup = (filterState.sortBy.startsWith('country-') || filterState.sortBy.startsWith('city-'))
+            ? cityGroups[city]
+            : sortMarkers(cityGroups[city], filterState.sortBy);
+          renderGroup(countryContent, city, sortedGroup, false);
+        }
+
+        // Add collapse functionality to country header
+        countryDiv.addEventListener('click', function() {
+          this.classList.toggle('collapsed');
+          this.nextElementSibling.classList.toggle('hidden');
+        });
+
+        markerListDiv.appendChild(countryDiv);
+        markerListDiv.appendChild(countryContent);
+      }
+    } else if (filterState.groupByCountry) {
+      // Group by country only
+      var groups = {};
+      for (var i = 0; i < leafletMarkers.length; i++) {
+        var country = leafletMarkers[i].parsed.country || 'Unknown';
+        if (!groups[country]) groups[country] = [];
+        groups[country].push(leafletMarkers[i]);
+      }
+
+      // Sort group names - respect country sorting if selected
+      var groupNames = Object.keys(groups);
+      if (filterState.sortBy === 'country-asc') {
+        groupNames.sort(function(a, b) {
+          return a.localeCompare(b, 'pl', { sensitivity: 'accent' });
+        });
+      } else if (filterState.sortBy === 'country-desc') {
+        groupNames.sort(function(a, b) {
+          return b.localeCompare(a, 'pl', { sensitivity: 'accent' });
+        });
+      } else {
+        groupNames.sort(function(a, b) {
+          return a.localeCompare(b, 'pl', { sensitivity: 'accent' });
+        }); // Default alphabetical
+      }
+
+      for (var j = 0; j < groupNames.length; j++) {
+        var groupName = groupNames[j];
+        // Sort items within each group (only if not sorting by country)
+        var sortedGroup = (filterState.sortBy.startsWith('country-'))
+          ? groups[groupName]
+          : sortMarkers(groups[groupName], filterState.sortBy);
+        renderGroup(markerListDiv, groupName, sortedGroup, false);
+      }
+    } else if (filterState.groupByCity) {
+      // Group by city only
+      var groups = {};
+      for (var i = 0; i < leafletMarkers.length; i++) {
+        var city = leafletMarkers[i].parsed.city || 'Unknown';
+        if (!groups[city]) groups[city] = [];
+        groups[city].push(leafletMarkers[i]);
+      }
+
+      // Sort group names - respect city sorting if selected
+      var groupNames = Object.keys(groups);
+      if (filterState.sortBy === 'city-asc') {
+        groupNames.sort(function(a, b) {
+          return a.localeCompare(b, 'pl', { sensitivity: 'accent' });
+        });
+      } else if (filterState.sortBy === 'city-desc') {
+        groupNames.sort(function(a, b) {
+          return b.localeCompare(a, 'pl', { sensitivity: 'accent' });
+        });
+      } else {
+        groupNames.sort(function(a, b) {
+          return a.localeCompare(b, 'pl', { sensitivity: 'accent' });
+        }); // Default alphabetical
+      }
+
+      for (var j = 0; j < groupNames.length; j++) {
+        var groupName = groupNames[j];
+        // Sort items within each group (only if not sorting by city)
+        var sortedGroup = (filterState.sortBy.startsWith('city-'))
+          ? groups[groupName]
+          : sortMarkers(groups[groupName], filterState.sortBy);
+        renderGroup(markerListDiv, groupName, sortedGroup, false);
+      }
+    }
+  }
+
+  // Function to create group header
+  function createGroupHeader(title, count) {
+    var header = document.createElement('div');
+    header.className = 'group-header';
+
+    var titleSpan = document.createElement('span');
+    titleSpan.className = 'group-header-title';
+    titleSpan.textContent = title;
+
+    var arrow = document.createElement('span');
+    arrow.className = 'group-header-arrow';
+    arrow.textContent = '▼';
+
+    header.appendChild(titleSpan);
+    header.appendChild(arrow);
+
+    return header;
+  }
+
+  // Function to render a group
+  function renderGroup(parent, groupName, markers, hideAuthor) {
+    var header = createGroupHeader(groupName, markers.length);
+    var content = document.createElement('div');
+    content.className = 'group-content';
+
+    for (var i = 0; i < markers.length; i++) {
+      content.appendChild(createMarkerItem(markers[i], markers[i].originalIndex, hideAuthor));
+    }
+
+    header.addEventListener('click', function() {
+      this.classList.toggle('collapsed');
+      this.nextElementSibling.classList.toggle('hidden');
+    });
+
+    parent.appendChild(header);
+    parent.appendChild(content);
+  }
+
+  // Initial render
+  renderMarkerList();
+
+  // Sidebar toggle functionality
+  var sidebar = document.getElementById('sidebar');
+  var sidebarToggle = document.getElementById('sidebarToggle');
+  var sidebarClose = document.getElementById('sidebarClose');
+
+  sidebarToggle.addEventListener('click', function() {
+    sidebar.classList.add('open');
+    sidebarToggle.classList.add('hidden');
+  });
+
+  sidebarClose.addEventListener('click', function() {
+    sidebar.classList.remove('open');
+    sidebarToggle.classList.remove('hidden');
+  });
+
+  // Controls header collapse functionality
+  var controlsHeader = document.getElementById('controlsHeader');
+  var sidebarControls = document.getElementById('sidebarControls');
+
+  controlsHeader.addEventListener('click', function() {
+    this.classList.toggle('collapsed');
+    sidebarControls.classList.toggle('hidden');
+  });
+
+  // Filter toggle event listeners
+  var toggleAuthor = document.getElementById('toggleAuthor');
+  var toggleCountry = document.getElementById('toggleCountry');
+  var toggleCity = document.getElementById('toggleCity');
+  var sortSelect = document.getElementById('sortSelect');
+
+  toggleAuthor.addEventListener('change', function() {
+    if (this.checked) {
+      // Turn off other toggles (except country+city combo)
+      toggleCountry.checked = false;
+      toggleCity.checked = false;
+      filterState.groupByCountry = false;
+      filterState.groupByCity = false;
+    }
+    filterState.groupByAuthor = this.checked;
+    renderMarkerList();
+  });
+
+  toggleCountry.addEventListener('change', function() {
+    if (this.checked) {
+      // Turn off author toggle
+      toggleAuthor.checked = false;
+      filterState.groupByAuthor = false;
+      // City can stay on for country+city combo
+    }
+    filterState.groupByCountry = this.checked;
+    renderMarkerList();
+  });
+
+  toggleCity.addEventListener('change', function() {
+    if (this.checked) {
+      // Turn off author toggle
+      toggleAuthor.checked = false;
+      filterState.groupByAuthor = false;
+      // Country can stay on for country+city combo
+    }
+    filterState.groupByCity = this.checked;
+    renderMarkerList();
+  });
+
+  sortSelect.addEventListener('change', function() {
+    filterState.sortBy = this.value;
+    renderMarkerList();
+  });
+
+  // Initialize UI translations
+  function initializeTranslations() {
+    document.getElementById('locationsTitle').textContent = t('locations');
+    document.getElementById('settingsTitle').textContent = t('settings');
+    document.getElementById('languageLabel').textContent = t('languageLabel') + ':';
+    document.getElementById('polishLabel').textContent = t('polish');
+    document.getElementById('englishLabel').textContent = t('english');
+    document.getElementById('groupByLabel').textContent = t('groupBy');
+    document.getElementById('authorToggle').textContent = t('author');
+    document.getElementById('countryToggle').textContent = t('country');
+    document.getElementById('cityToggle').textContent = t('city');
+    document.getElementById('sortByLabel').textContent = t('sortBy');
+    document.getElementById('optionOrder').textContent = t('orderAdded');
+    document.getElementById('optionAuthorAsc').textContent = t('authorAZ');
+    document.getElementById('optionAuthorDesc').textContent = t('authorZA');
+    document.getElementById('optionCountryAsc').textContent = t('countryAZ');
+    document.getElementById('optionCountryDesc').textContent = t('countryZA');
+    document.getElementById('optionCityAsc').textContent = t('cityAZ');
+    document.getElementById('optionCityDesc').textContent = t('cityZA');
+    document.getElementById('optionDateAsc').textContent = t('dateOldest');
+    document.getElementById('optionDateDesc').textContent = t('dateNewest');
+
+    // Highlight active language button
+    if (language === 'pl') {
+      document.getElementById('langPL').classList.add('active');
+      document.getElementById('langEN').classList.remove('active');
+    } else {
+      document.getElementById('langEN').classList.add('active');
+      document.getElementById('langPL').classList.remove('active');
+    }
+  }
+
+  // Call initialization after DOM is ready
+  initializeTranslations();
+
+  // Toggle all groups functionality
+  var toggleAllButton = document.getElementById('toggleAllGroups');
+  var allGroupsExpanded = true; // Track state
+
+  toggleAllButton.addEventListener('click', function() {
+    var allHeaders = document.querySelectorAll('.group-header');
+
+    if (allGroupsExpanded) {
+      // Collapse all
+      allHeaders.forEach(function(header) {
+        header.classList.add('collapsed');
+        if (header.nextElementSibling) {
+          header.nextElementSibling.classList.add('hidden');
+        }
+      });
+      allGroupsExpanded = false;
+      toggleAllButton.textContent = '▶';
+      toggleAllButton.title = t('expandAll');
+    } else {
+      // Expand all
+      allHeaders.forEach(function(header) {
+        header.classList.remove('collapsed');
+        if (header.nextElementSibling) {
+          header.nextElementSibling.classList.remove('hidden');
+        }
+      });
+      allGroupsExpanded = true;
+      toggleAllButton.textContent = '▼';
+      toggleAllButton.title = t('collapseAll');
+    }
+  });
+
+  // Reset toggle state when filters change
+  var originalRenderMarkerList = renderMarkerList;
+  renderMarkerList = function() {
+    originalRenderMarkerList();
+    // Reset toggle state only if there is grouping
+    var hasGrouping = filterState.groupByAuthor || filterState.groupByCountry || filterState.groupByCity;
+    if (hasGrouping) {
+      allGroupsExpanded = true;
+      toggleAllButton.textContent = '▼';
+      toggleAllButton.title = t('collapseAll');
+    }
+  };
 
 </script>
 
