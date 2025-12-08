@@ -2387,6 +2387,16 @@ markers = [
     titlePL: "Rzeka Wel - Polska",
     datetime: "2025-08-10T09:53:36.000Z",
     type: "can"
+  },
+  {
+    latitude: 69.900617,
+    longitude: 20.178437,
+    photo: "photos/julia/sandneset.jpg",
+    author: "Julia",
+    title: "North Lenangen Fjord - Norway",
+    titlePL: "Fiord North Lenangen - Norwegia",
+    datetime: "2025-12-07T21:54:36.000Z",
+    type: "can"
   }
 ]
 
