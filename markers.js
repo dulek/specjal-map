@@ -2397,6 +2397,16 @@ markers = [
     titlePL: "Fiord North Lenangen - Norwegia",
     datetime: "2025-12-07T21:54:36.000Z",
     type: "can"
+  },
+  {
+    latitude: 70.000128,
+    longitude: 21.688542,
+    photo: "photos/julia/spildra.jpg",
+    author: "Julia",
+    title: "Spildra - Norway",
+    titlePL: "Spildra - Norwegia",
+    datetime: "2025-12-09T23:26:36.000Z",
+    type: "can"
   }
 ]
 
