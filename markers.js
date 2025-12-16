@@ -2407,6 +2407,16 @@ markers = [
     titlePL: "Spildra - Norwegia",
     datetime: "2025-12-09T23:26:36.000Z",
     type: "can"
+  },
+  {
+    latitude: 69.652530,
+    longitude: 18.963636,
+    photo: "photos/julia/tromso.jpg",
+    author: "Julia",
+    title: "Tromso - Norway",
+    titlePL: "Tromso - Norwegia",
+    datetime: "2025-12-15T20:36:36.000Z",
+    type: "can"
   }
 ]
 
