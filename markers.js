@@ -2417,6 +2417,96 @@ markers = [
     titlePL: "Tromso - Norwegia",
     datetime: "2025-12-15T20:36:36.000Z",
     type: "can"
+  },
+  {
+    latitude: 44.494288,
+    longitude: 11.345975,
+    photo: "photos/bologna.jpg",
+    author: "Dulek",
+    title: "Le due Torri - Bologna - Italy",
+    titlePL: "Dwie wieże - Bolonia - Włochy",
+    datetime: "2025-12-29T12:48:36.000Z",
+    type: "bottle"
+  },
+  {
+    latitude: 38.254039,
+    longitude: 15.715147,
+    photo: "photos/scilla.jpg",
+    author: "Dulek",
+    title: "Messina Strait - Scilla - Italy",
+    titlePL: "Cieśnina Mesyńska - Scilla - Włochy",
+    datetime: "2026-01-04T16:48:36.000Z",
+    type: "can"
+  },
+  {
+    latitude: 40.71969384262174,
+    longitude: -74.00653034008359,
+    photo: "photos/julia/new-york.jpg",
+    author: "Julia & Kuks",
+    title: "Ghostbusters Headquarters - New York - USA",
+    titlePL: "Ghostbusters Headquarters - Nowy Jork - USA",
+    datetime: "2026-01-01T21:22:36.000Z",
+    type: "can"
+  },
+  {
+    latitude: 40.69062116364505,
+    longitude: -74.17731642829996,
+    photo: "photos/dany/newark.jpg",
+    author: "Dany",
+    title: "Newark Airport - Newark - USA",
+    titlePL: "Newark Airport - Nowy Jork - USA",
+    datetime: "2026-01-01T22:36:36.000Z",
+    type: "can"
+  },
+  {
+    latitude: 20.18424323622762, 
+    longitude: -87.44281338414844,
+    photo: "photos/maniu/tulum.jpg",
+    author: "Maniu",
+    title: "Tulum - Mexico",
+    titlePL: "Tulum - Meksyk",
+    //datetime: "2026-01-01T22:36:36.000Z",
+    type: "can"
+  },
+  {
+    latitude: 20.667547905261642,
+    longitude: -88.23017984124273,
+    photo: "photos/maniu/cenote-oxman.jpg",
+    author: "Maniu",
+    title: "Cenote San Lorenzo Oxman - Valldolid - Mexico",
+    titlePL: "Cenote San Lorenzo Oxman - Valldolid - Meksyk",
+    //datetime: "2026-01-01T22:36:36.000Z",
+    type: "can"
+  },
+  {
+    latitude: 21.52984215547805,
+    longitude: -87.37245048669755,
+    photo: "photos/maniu/holbox.jpg",
+    author: "Maniu",
+    title: "Holbox - Mexico",
+    titlePL: "Holbox - Meksyk",
+    //datetime: "2026-01-01T22:36:36.000Z",
+    type: "can"
+  },
+  {
+    latitude: 13.596435472432116,
+    longitude: -87.76472006492638,
+    photo: "photos/maniu/el-amatillo.jpg",
+    author: "Maniu",
+    title: "El Amatillo - Honduras",
+    titlePL: "El Amatillo - Honduras",
+    //datetime: "2026-01-01T22:36:36.000Z",
+    type: "can"
+  },
+  {
+    latitude: 6.234676820660236,
+    longitude: -75.52888618237925,
+    photo: "photos/maniu/medellin.jpg",
+    author: "Maniu",
+    title: "Medellin - Columbia",
+    titlePL: "Medellin - Kolumbia",
+    //datetime: "2026-01-01T22:36:36.000Z",
+    type: "can"
   }
 ]
 
