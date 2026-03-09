@@ -742,11 +742,11 @@ markers = [
     type: "can"
   },
   {
-    latitude: 47.012823,
-    longitude: 28.854447,
+    latitude: 47.024723941718406,
+    longitude: 28.83258965191287,
     photo: "photos/marcin/moldova-kishinev.jpg",
-    title: "Chișinău - Moldova",
-    titlePL: "Kiszyniów - Mołdawia",
+    title: "Arcul de Triumf - Chișinău - Moldova",
+    titlePL: "Arcul de Triumf - Kiszyniów - Mołdawia",
     author: "Marcin",
     type: "bottle"
   },
