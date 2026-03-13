@@ -2507,6 +2507,16 @@ markers = [
     titlePL: "Medellin - Kolumbia",
     //datetime: "2026-01-01T22:36:36.000Z",
     type: "can"
+  },
+  {
+    latitude: 69.787839,
+    longitude: 20.569443,
+    photo: "photos/julia/djupvik.jpg",
+    author: "Julia",
+    title: "Djupvik - Norway",
+    titlePL: "Djupvik - Norway",
+    datetime: "2026-03-12T22:36:36.000Z",
+    type: "can"
   }
 ]
 
