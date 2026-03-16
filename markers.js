@@ -2514,7 +2514,7 @@ markers = [
     photo: "photos/julia/djupvik.jpg",
     author: "Julia",
     title: "Djupvik - Norway",
-    titlePL: "Djupvik - Norway",
+    titlePL: "Djupvik - Norwegia",
     datetime: "2026-03-12T22:36:36.000Z",
     type: "can"
   },
@@ -2524,7 +2524,7 @@ markers = [
     photo: "photos/przemek/stavanger.jpg",
     author: "Przemek",
     title: "Innovation Dock - Stavanger - Norway",
-    titlePL: "Innovation Dock - Stavanger - Norway",
+    titlePL: "Innovation Dock - Stavanger - Norwegia",
     datetime: "2026-03-14T14:36:36.000Z",
     type: "can"
   },
@@ -2534,8 +2534,18 @@ markers = [
     photo: "photos/julia/sorrisniva.jpg",
     author: "Julia",
     title: "Sorrisniva - Norway",
-    titlePL: "Sorrisniva - Norway",
+    titlePL: "Sorrisniva - Norwegia",
     datetime: "2026-03-12T22:36:36.000Z",
+    type: "can"
+  },
+  {
+    latitude: 57.697329,
+    longitude: 11.979373,
+    photo: "photos/przemek/goteborg.jpg",
+    author: "Przemek",
+    title: "Poseidon - Göteborg - Sweden",
+    titlePL: "Poseidon - Göteborg - Szwecja",
+    datetime: "2026-02-28T16:36:36.000Z",
     type: "can"
   }
 ]
