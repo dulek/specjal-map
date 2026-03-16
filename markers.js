@@ -2517,6 +2517,26 @@ markers = [
     titlePL: "Djupvik - Norway",
     datetime: "2026-03-12T22:36:36.000Z",
     type: "can"
+  },
+  {
+    latitude: 58.969483,
+    longitude: 5.762735,
+    photo: "photos/przemek/stavanger.jpg",
+    author: "Przemek",
+    title: "Innovation Dock - Stavanger - Norway",
+    titlePL: "Innovation Dock - Stavanger - Norway",
+    datetime: "2026-03-14T14:36:36.000Z",
+    type: "can"
+  },
+  {
+    latitude: 69.86506460882596,
+    longitude: 23.317621932673752,
+    photo: "photos/julia/sorrisniva.jpg",
+    author: "Julia",
+    title: "Sorrisniva - Norway",
+    titlePL: "Sorrisniva - Norway",
+    datetime: "2026-03-12T22:36:36.000Z",
+    type: "can"
   }
 ]
 
