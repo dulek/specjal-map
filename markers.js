@@ -2547,6 +2547,16 @@ markers = [
     titlePL: "Poseidon - Göteborg - Szwecja",
     datetime: "2026-02-28T16:36:36.000Z",
     type: "can"
+  },
+  {
+    latitude: 50.896065,
+    longitude: 4.341702,
+    photo: "photos/przemek/brussels.jpg",
+    author: "Przemek",
+    title: "Atomium - Brussels - Belgium",
+    titlePL: "Atomium - Bruksela - Belgia",
+    datetime: "2026-03-06T13:00:00.000Z",
+    type: "can"
   }
 ]
 
