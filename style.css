@@ -35,6 +35,24 @@ h1 {
   min-width: 250px;
 }
 
+/* Limit popup image height and prevent stretching */
+.popup-image {
+  max-height: 48vh;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 8px auto;
+}
+
+/* Allow dragging the map through the popup */
+.leaflet-popup {
+  pointer-events: none !important;
+}
+.leaflet-popup-close-button {
+  pointer-events: auto !important;
+}
+
 /* Sidebar styles */
 .sidebar {
   position: fixed;

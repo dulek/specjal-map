@@ -167,7 +167,7 @@
     var title = (language === 'pl' && markers[i].titlePL) ? markers[i].titlePL : markers[i].title;
 
     // Get comment based on language
-    var imgTag = '<img style="width: 100%" src="' + markers[i].photo + '"';
+    var imgTag = '<img class="popup-image" src="' + markers[i].photo + '"';
     var comment = "";
     if (language === 'pl' && markers[i].commentPL) {
         comment = markers[i].commentPL;
@@ -194,7 +194,7 @@
     }
 
     var leafletMarker = L.marker([markers[i].latitude, markers[i].longitude], {icon: beerIcon})
-    .bindPopup(popupContent)
+    .bindPopup(popupContent, { autoPanPaddingTopLeft: [0, 80] })
     .addTo(map);
 
     leafletMarkers.push({
@@ -206,6 +206,17 @@
       parsed: parseTitle(title)
     });
   }
+
+  // Re-adjust popup padding and position automatically when an image finishes loading
+  map.on('popupopen', function(e) {
+      var popup = e.popup;
+      var img = popup.getElement().querySelector('img.popup-image');
+      if (img && !img.complete) {
+          img.addEventListener('load', function() {
+              popup.update(); // Recalculates size and triggers Leaflet's internal autoPan
+          });
+      }
+  });
 
   // Current filter state
   var filterState = {
@@ -227,7 +238,7 @@
       var zoomLevel = dynamicZoom ? 14 : 8;
 
       var mapHeight = map.getSize().y || window.innerHeight;
-      var targetY = mapHeight * 0.36;
+      var targetY = mapHeight * 0.15; // Set marker to 85% from the top (15% from bottom)
       var point = map.project([ref.data.latitude, ref.data.longitude], zoomLevel);
       point.y -= (mapHeight / 2 - targetY);
       var newCenter = map.unproject(point, zoomLevel);
