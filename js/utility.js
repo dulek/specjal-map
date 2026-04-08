@@ -28,7 +28,9 @@ var translations = {
     dateOldest: "Daty (Najstarsze)",
     dateNewest: "Daty (Najnowsze)",
     collapseAll: "Zwiń wszystkie",
-    expandAll: "Rozwiń wszystkie"
+    expandAll: "Rozwiń wszystkie",
+    linkCopied: "Link skopiowany do schowka",
+    shareLink: "Udostępnij / skopiuj link"
   },
   en: {
     settings: "Settings",
@@ -51,7 +53,9 @@ var translations = {
     dateOldest: "Date (Oldest)",
     dateNewest: "Date (Newest)",
     collapseAll: "Collapse All",
-    expandAll: "Expand All"
+    expandAll: "Expand All",
+    linkCopied: "Link copied to clipboard",
+    shareLink: "Share / copy link"
   }
 };
 
