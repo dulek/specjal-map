@@ -2555,7 +2555,17 @@ markers = [
     author: "Przemek",
     title: "Atomium - Brussels - Belgium",
     titlePL: "Atomium - Bruksela - Belgia",
-    datetime: "2026-03-06T13:00:00.000Z",
+    datetime: "2026-04-06T13:00:00.000Z",
+    type: "can"
+  },
+  {
+    latitude: -15.246635586598138,
+    longitude: 30.246977317525868,
+    photo: "photos/maniu/katondwe.jpg",
+    author: "Maniu",
+    title: "Sacred Heart Hospital - Katondwe - Zambia",
+    titlePL: "Sacred Heart Hospital - Katondwe - Zambia",
+    datetime: "2026-04-08T16:30:00.000Z",
     type: "can"
   }
 ]
