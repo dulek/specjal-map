@@ -279,6 +279,9 @@
   };
 
   var lastFocusRef = null;
+  var lastClickedMarkerRef = null;
+  var consecutiveClickCount = 0;
+  var highlightedMarkerRef = null;
 
   // Function to move map and focus on a specific marker
   function focusOnMarker(ref, skipListSelect) {
@@ -481,17 +484,28 @@
       tourState = 'paused';
       
       if (tourTimer) { clearTimeout(tourTimer); tourTimer = null; }
+      isSlotAnimating = false;
+      clearTourListHighlights();
       
       setTourButton('paused');
       
       // After 10 seconds idle in paused state, revert to globe
       playRevertTimer = setTimeout(function() {
           if (tourState === 'paused') {
-              tourState = 'idle';
-              setTourButton('idle');
-              map.closePopup();
+              stopTour();
           }
       }, 10000);
+  }
+
+  function stopTour() {
+      if (playRevertTimer) { clearTimeout(playRevertTimer); playRevertTimer = null; }
+      if (tourTimer) { clearTimeout(tourTimer); tourTimer = null; }
+      
+      tourState = 'idle';
+      isSlotAnimating = false;
+      setTourButton('idle');
+      clearTourListHighlights();
+      map.closePopup();
   }
 
   function resumeTour() {
@@ -525,6 +539,156 @@
       }
   }
 
+  // --- World Tour Slot Animation State ---
+  var visibleListOrder = [];
+  var isSlotAnimating = false;
+  var slotTimer = null;
+
+  function refreshVisibleListOrder() {
+      visibleListOrder = [];
+      var items = document.querySelectorAll('.marker-item');
+      items.forEach(function(item) {
+          var idx = parseInt(item.dataset.index);
+          if (leafletMarkers[idx]) {
+              visibleListOrder.push(leafletMarkers[idx]);
+          }
+      });
+  }
+
+  function clearTourListHighlights() {
+      document.querySelectorAll('.marker-item').forEach(function(item) {
+          item.classList.remove('tour-silver', 'tour-gold');
+      });
+  }
+
+  function runSlotAnimation(targetRef, onComplete) {
+      if (slotTimer) { clearTimeout(slotTimer); slotTimer = null; }
+      
+      if (visibleListOrder.length === 0) {
+          if (onComplete) onComplete();
+          return;
+      }
+
+      var sidebar = document.getElementById('sidebar');
+      if (!sidebar.classList.contains('open')) {
+          if (onComplete) onComplete();
+          return;
+      }
+
+      isSlotAnimating = true;
+      clearTourListHighlights();
+
+      var startIdx = -1;
+      var currentGold = document.querySelector('.marker-item.tour-gold');
+      if (currentGold) {
+          startIdx = findInVisibleList(leafletMarkers[parseInt(currentGold.dataset.index)]);
+      } else if (lastFocusRef) {
+          startIdx = findInVisibleList(lastFocusRef);
+      }
+      
+      if (startIdx === -1) startIdx = 0;
+      
+      var targetIdx = findInVisibleList(targetRef);
+      if (targetIdx === -1) {
+          if (onComplete) onComplete();
+          return;
+      }
+
+      var totalSteps = targetIdx - startIdx;
+      if (totalSteps < 0) totalSteps += visibleListOrder.length;
+      
+      // If we are already there, nothing to do
+      if (totalSteps === 0) {
+          if (onComplete) onComplete();
+          return;
+      }
+
+      // Target total duration ~1.6 seconds, but not more than 30ms per step for consistency
+      var targetDuration = 1600; 
+      var avgDelay = targetDuration / totalSteps;
+      
+      // For large distances, we will "skip" updates to keep it smooth
+      var skipFactor = 1;
+      if (totalSteps > 150) skipFactor = 4;
+      else if (totalSteps > 80) skipFactor = 2;
+
+      var currentStep = 0;
+      var currentPos = startIdx;
+
+      function nextStep() {
+          if (tourState === 'idle' || !isSlotAnimating) {
+              isSlotAnimating = false;
+              return;
+          }
+
+          // Clean up previous highlight
+          var prevElem = document.getElementById('marker-item-' + visibleListOrder[currentPos].originalIndex);
+          if (prevElem) prevElem.classList.remove('tour-silver');
+
+          // Decide how many items to jump this frame
+          // Always 1-by-1 for the first 10 and last 15 steps for precision/feel
+          var actualStepSize = 1;
+          if (currentStep > 10 && currentStep < totalSteps - 15) {
+              actualStepSize = skipFactor;
+          }
+          
+          currentPos = (currentPos + actualStepSize) % visibleListOrder.length;
+          currentStep += actualStepSize;
+
+          // If we overshoot due to skipFactor, clamp it
+          if (currentStep > totalSteps) {
+              var overshoot = currentStep - totalSteps;
+              currentPos = (currentPos - overshoot + visibleListOrder.length) % visibleListOrder.length;
+              currentStep = totalSteps;
+          }
+
+          var currentElem = document.getElementById('marker-item-' + visibleListOrder[currentPos].originalIndex);
+          if (currentElem) {
+              currentElem.classList.add('tour-silver');
+              
+              // Only scroll every few frames if skipping, to avoid jitter
+              var isLastStep = (currentStep >= totalSteps);
+              
+              // NEW: Trigger scroll earlier if we're past the midpoint to keep destination closer
+              var shouldScroll = isLastStep || (currentStep % skipFactor === 0);
+              if (shouldScroll) {
+                  currentElem.scrollIntoView({ 
+                      behavior: isLastStep ? 'smooth' : 'auto', 
+                      block: 'center' 
+                  });
+              }
+          }
+
+          if (currentStep >= totalSteps) {
+              if (currentElem) {
+                  currentElem.classList.remove('tour-silver');
+                  currentElem.classList.add('tour-gold');
+              }
+              isSlotAnimating = false;
+              if (onComplete) onComplete();
+          } else {
+              // Speed curve: ease-in-out
+              var progress = currentStep / totalSteps;
+              var delay = avgDelay * actualStepSize; // compensate delay for skipped steps
+              
+              if (progress < 0.15) delay = Math.max(delay, 40); // slow start
+              else if (progress > 0.85) delay = Math.max(delay, 30); // slow end
+              else delay = Math.max(delay * 0.4, 8); // fast reel
+              
+              slotTimer = setTimeout(nextStep, delay);
+          }
+      }
+
+      nextStep();
+  }
+
+  function findInVisibleList(ref) {
+      for (var i = 0; i < visibleListOrder.length; i++) {
+          if (visibleListOrder[i] === ref) return i;
+      }
+      return -1;
+  }
+
   function tourFlyToNext() {
       if (tourState !== 'playing') return;
       
@@ -537,6 +701,25 @@
       if (tourIndex >= tourSequence.length) tourIndex = 0;
       
       map.closePopup();
+
+      // Start animations in parallel
+      var sidebar = document.getElementById('sidebar');
+      if (sidebar.classList.contains('open')) {
+          // Ensure the target element is visible (expand groups if necessary)
+          var itemElem = document.getElementById('marker-item-' + targetRef.originalIndex);
+          if (itemElem) {
+              var parentContent = itemElem.closest('.group-content');
+              if (parentContent && parentContent.classList.contains('hidden')) {
+                  var header = parentContent.previousElementSibling;
+                  if (header && header.classList.contains('group-header')) {
+                      header.click();
+                  }
+              }
+          }
+          
+          runSlotAnimation(targetRef); 
+      }
+      
       focusOnMarker(targetRef, true);
       
       // After arriving, popup opens (via focusOnMarker). Wait 3s then continue.
@@ -557,18 +740,70 @@
   // Also update tourIndex during active tour so the next slide follows the clicked marker
   map.on('popupopen', function(e) {
       var popup = e.popup;
+      var foundRef = null;
+
       for (var i = 0; i < leafletMarkers.length; i++) {
           if (leafletMarkers[i].marker.getPopup() === popup) {
-              lastFocusRef = leafletMarkers[i];
+              foundRef = leafletMarkers[i];
+              lastFocusRef = foundRef;
+              
+              // --- Double Click to Highlight Logic ---
+              if (foundRef === lastClickedMarkerRef) {
+                  consecutiveClickCount++;
+              } else {
+                  consecutiveClickCount = 1;
+                  lastClickedMarkerRef = foundRef;
+                  // ONLY clear if we are NOT in the middle of a tour.
+                  // During tour, runSlotAnimation handles the highlight timing.
+                  if (tourState === 'idle') {
+                      clearTourListHighlights();
+                      highlightedMarkerRef = null;
+                  }
+              }
+
+              if (consecutiveClickCount >= 2) {
+                  var itemElem = document.getElementById('marker-item-' + foundRef.originalIndex);
+                  if (itemElem) {
+                      clearTourListHighlights();
+                      itemElem.classList.add('tour-gold');
+                      highlightedMarkerRef = foundRef;
+                      
+                      // Auto-expand group if it's hidden
+                      var parentContent = itemElem.closest('.group-content');
+                      if (parentContent && parentContent.classList.contains('hidden')) {
+                          var header = parentContent.previousElementSibling;
+                          if (header && header.classList.contains('group-header')) {
+                              header.click();
+                          }
+                      }
+                      
+                      // Scroll if sidebar is open
+                      var sidebar = document.getElementById('sidebar');
+                      if (sidebar.classList.contains('open')) {
+                          itemElem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                      }
+                  }
+              }
+              // ----------------------------------------
+
               // During tour, update the index to continue from this marker
               if (tourState === 'playing' || tourState === 'paused') {
-                  var pos = findInTourSequence(leafletMarkers[i]);
+                  var pos = findInTourSequence(foundRef);
                   if (pos !== -1) {
                       tourIndex = (pos + 1) % tourSequence.length;
                   }
               }
               break;
           }
+      }
+  });
+
+  map.on('popupclose', function() {
+      // Clear highlights when a popup is closed, but only if we're not currently
+      // in the middle of a slot animation (to avoid flickering).
+      if (!isSlotAnimating) {
+          clearTourListHighlights();
+          consecutiveClickCount = 0; // Reset click count when popup closes
       }
   });
 
@@ -647,6 +882,7 @@
     var markerItem = document.createElement('div');
     markerItem.className = 'marker-item';
     markerItem.dataset.index = index;
+    markerItem.id = 'marker-item-' + index;
 
     var titleDiv = document.createElement('div');
     titleDiv.className = 'marker-item-title';
@@ -977,6 +1213,26 @@
     parent.appendChild(content);
   }
 
+  // Reset toggle state when filters change and track visible list order
+  var originalRenderMarkerList = renderMarkerList;
+  renderMarkerList = function() {
+    originalRenderMarkerList();
+    // Rebuild the flat ordered list for the slot animation
+    if (typeof refreshVisibleListOrder === 'function') {
+        refreshVisibleListOrder();
+    }
+    // Reset toggle state only if there is grouping
+    var hasGrouping = filterState.groupByAuthor || filterState.groupByCountry || filterState.groupByCity;
+    if (hasGrouping) {
+      allGroupsExpanded = true;
+      var toggleAllButton = document.getElementById('toggleAllGroups');
+      if (toggleAllButton) {
+          toggleAllButton.textContent = '▼';
+          toggleAllButton.title = t('collapseAll');
+      }
+    }
+  };
+
   // Initial render
   renderMarkerList();
 
@@ -988,6 +1244,16 @@
   sidebarToggle.addEventListener('click', function() {
     sidebar.classList.add('open');
     sidebarToggle.classList.add('hidden');
+    
+    // Auto-scroll to current highlight if exists
+    if (highlightedMarkerRef) {
+        var itemElem = document.getElementById('marker-item-' + highlightedMarkerRef.originalIndex);
+        if (itemElem) {
+            setTimeout(function() {
+                itemElem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300); // Wait for sidebar transition
+        }
+    }
   });
 
   sidebarClose.addEventListener('click', function() {
@@ -1116,18 +1382,7 @@
     }
   });
 
-  // Reset toggle state when filters change
-  var originalRenderMarkerList = renderMarkerList;
-  renderMarkerList = function() {
-    originalRenderMarkerList();
-    // Reset toggle state only if there is grouping
-    var hasGrouping = filterState.groupByAuthor || filterState.groupByCountry || filterState.groupByCity;
-    if (hasGrouping) {
-      allGroupsExpanded = true;
-      toggleAllButton.textContent = '▼';
-      toggleAllButton.title = t('collapseAll');
-    }
-  };
+
 
   // URL Parameter Handling for Dynamic Marker Focus
   function handleUrlParams() {

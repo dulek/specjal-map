@@ -918,7 +918,7 @@ markers = [
     photo: "photos/dolphins.jpg",
     title: "Andalusian coast - Mediterranean Sea",
     titlePL: "Wybrzeże Andaluzji - Morze Śródziemne",
-    author: "Doris", 
+    author: "Doris",
     type: "bottle"
   },
   {
@@ -941,7 +941,7 @@ markers = [
     commentPL: "Wyprawa Golfem przez Afrykę",
     comment: "Golf car expedition through Africa",
     type: "bottle"
-  },  
+  },
   {
     latitude: 16.2067095,
     longitude: -16.4069102,
@@ -988,7 +988,7 @@ markers = [
     commentPL: "Deskidance i Off Snow to wyjazdy narciarskie do Francji, które zabierały trójmiejską grupę dwa razy w roku od końca pierwszej dekady XXI wieku. Autokar był na nich również niesamowitym doświadczeniem, słynął z cateringów w drodze powrotnej, które przygotowywali uczestnicy.",
     comment: "Deskidance and Off Snow were ski trips to France that took a group from the Tri-city area twice a year starting in the early 21st century. The bus rides were also an experience, known for the catered meals prepared by the participants on the way back",
     type: "can"
-  },  
+  },
   {
     latitude: 45.44018,
     longitude: 6.95815,
@@ -1155,7 +1155,7 @@ markers = [
     titlePL: "Plac Trzech Męczenników - Rimini - Włochy",
     datetime: "2018-09-20T18:33:33.000Z",
     type: "can"
-  },  
+  },
   {
     latitude: 44.080065548641485,
     longitude: 12.55300515761504,
@@ -1197,7 +1197,7 @@ markers = [
     type: "can"
   },
   {
-    latitude: 54.206148623712814, 
+    latitude: 54.206148623712814,
     longitude: 16.202511689562197,
     photo: "photos/tomasz/koszalin-tribute-to.jpg",
     author: "Tomasz",
@@ -1209,7 +1209,7 @@ markers = [
     type: "can"
   },
   {
-    latitude: 51.23871405032914, 
+    latitude: 51.23871405032914,
     longitude: 22.532326190046213,
     photo: "photos/tomasz/lublin-tribute-to.jpg",
     author: "Tomasz",
@@ -1219,7 +1219,7 @@ markers = [
     commentPL: "'Tribute to' to trasa koncertowa, z przebojami Michaela Jacksona, Elvisa Presley'a, Whitney Houston i Joe Cockera. Koncerty odbywają się w największych halach widowiskowych w dwunastu miastach w Polsce. W skład zespołu wchodzi 100-osobowa Orkiestra, 50-osobowy chór Music Everywhere, 10 wokalistów m.in. Justyna Steczkowska, Igor Herbut, Krzysztof Cugowski, Andrzej Piaseczny. ",
     comment: "The 'Tribute to' concert tour features hit songs from artists such as Michael Jackson, Elvis Presley, Whitney Houston, and Joe Cocker. The concerts take place in the largest concert halls in twelve cities in Poland. The team includes a 100-member orchestra, a 50-member choir Music Everywhere and 10 singers including J. Steczkowska, I. Herbut, K. Cugowski, A. Piaseczny.",
     type: "bottle"
-  },  
+  },
   {
     latitude: 53.80225923200756,
     longitude: 18.318205224791075,
@@ -1231,7 +1231,7 @@ markers = [
     type: "can"
   },
   {
-    latitude: 53.77336915072873, 
+    latitude: 53.77336915072873,
     longitude: 20.496083548374425,
     photo: "photos/tomasz/olsztyn-tribute-to.jpg",
     author: "Tomasz",
@@ -1241,7 +1241,7 @@ markers = [
     commentPL: "'Tribute to' to trasa koncertowa, z przebojami Michaela Jacksona, Elvisa Presley'a, Whitney Houston i Joe Cockera. Koncerty odbywają się w największych halach widowiskowych w dwunastu miastach w Polsce. W skład zespołu wchodzi 100-osobowa Orkiestra, 50-osobowy chór Music Everywhere, 10 wokalistów m.in. Justyna Steczkowska, Igor Herbut, Krzysztof Cugowski, Andrzej Piaseczny. ",
     comment: "The 'Tribute to' concert tour features hit songs from artists such as Michael Jackson, Elvis Presley, Whitney Houston, and Joe Cocker. The concerts take place in the largest concert halls in twelve cities in Poland. The team includes a 100-member orchestra, a 50-member choir Music Everywhere and 10 singers including J. Steczkowska, I. Herbut, K. Cugowski, A. Piaseczny.",
     type: "can"
-  },  
+  },
   {
     latitude: 50.244661935137216,
     longitude: 19.079725862344077,
@@ -1250,10 +1250,10 @@ markers = [
     title: "Kopalnia Wieczorek - Katowice - Poland",
     titlePL: "Kopalnia Wieczorek - Katowice - Polska",
     datetime: "2019-10-27T12:23:28.000Z",
-     type: "can"
+    type: "can"
   },
   {
-    latitude: 50.2414259272049, 
+    latitude: 50.2414259272049,
     longitude: 19.079235351002367,
     photo: "photos/tomasz/katowice-nikiszowiec.jpg",
     author: "Tomasz",
@@ -1261,9 +1261,9 @@ markers = [
     titlePL: "Nikiszowiec - Katowice - Polska",
     datetime: "2019-10-27T12:34:56.000Z",
     type: "can"
-  }, 
+  },
   {
-    latitude: 50.26368715082481, 
+    latitude: 50.26368715082481,
     longitude: 19.033060896395778,
     photo: "photos/tomasz/katowice-wieza-na-spodek.jpg",
     author: "Tomasz",
@@ -1283,17 +1283,17 @@ markers = [
     type: "can"
   },
   {
-    latitude: 46.48614953111384, 
-    longitude: 30.743479071215564 ,
+    latitude: 46.48614953111384,
+    longitude: 30.743479071215564,
     photo: "photos/tomasz/odessa-pushkin.jpg",
     author: "Tomasz",
     title: "Monument to Alexander Pushkin - Odessa - Ukraine",
     titlePL: "Pomnik Aleksandra Puszkina - Odessa - Ukraina",
     datetime: "2019-11-05T13:43:16.000Z",
     type: "can"
-  },  
+  },
   {
-    latitude: 46.48822352028241, 
+    latitude: 46.48822352028241,
     longitude: 30.7413700733837,
     photo: "photos/tomasz/odessa-stairs.jpg",
     author: "Tomasz",
@@ -1301,9 +1301,9 @@ markers = [
     titlePL: "Schody Potiomkinowskie - Odessa - Ukraina",
     datetime: "2019-11-07T16:10:31.000Z",
     type: "can"
-  }, 
+  },
   {
-    latitude: 46.47579211384073, 
+    latitude: 46.47579211384073,
     longitude: 30.765717796856322,
     photo: "photos/tomasz/odessa-black-sea.jpg",
     author: "Tomasz",
@@ -1313,7 +1313,7 @@ markers = [
     type: "can"
   },
   {
-    latitude: 52.22154383024683, 
+    latitude: 52.22154383024683,
     longitude: 21.04144242111614,
     photo: "photos/tomasz/warszawa-tribute-to.jpg",
     author: "Tomasz",
@@ -1323,7 +1323,7 @@ markers = [
     type: "can"
   },
   {
-    latitude: 51.1079965502948, 
+    latitude: 51.1079965502948,
     longitude: 17.073977906972672,
     photo: "photos/tomasz/wroclaw.jpg",
     author: "Tomasz",
@@ -1331,7 +1331,7 @@ markers = [
     titlePL: "Iglica przed Halą Stulecia - Wrocław - Polska",
     datetime: "2019-11-20T15:32:02.000Z",
     type: "bottle"
-  }, 
+  },
   {
     latitude: 50.06152774923709,
     longitude: 19.93833996434733,
@@ -1343,7 +1343,7 @@ markers = [
     type: "can"
   },
   {
-    latitude: 50.05361919730601, 
+    latitude: 50.05361919730601,
     longitude: 19.934314324719814,
     photo: "photos/tomasz/krakow-zamek.jpg",
     author: "Tomasz",
@@ -1351,9 +1351,9 @@ markers = [
     titlePL: "Zamek Królewski na Wawelu - Kraków - Polska",
     datetime: "2019-11-29T13:09:44.000Z",
     type: "can"
-  }, 
+  },
   {
-    latitude: 50.05291819667842, 
+    latitude: 50.05291819667842,
     longitude: 19.93359157110255,
     photo: "photos/tomasz/krakow-smok.jpg",
     author: "Tomasz",
@@ -1363,7 +1363,7 @@ markers = [
     type: "can"
   },
   {
-    latitude: 50.0560429384549,  
+    latitude: 50.0560429384549,
     longitude: 19.93571604365751,
     photo: "photos/tomasz/krakow-lawka.jpg",
     author: "Tomasz",
@@ -1373,7 +1373,7 @@ markers = [
     type: "can"
   },
   {
-    latitude: 52.40615925409547, 
+    latitude: 52.40615925409547,
     longitude: 16.932915556751116,
     photo: "photos/tomasz/poznan-tribute-to.jpg",
     author: "Tomasz",
@@ -1383,7 +1383,7 @@ markers = [
     type: "can"
   },
   {
-    latitude: 51.9560870908215, 
+    latitude: 51.9560870908215,
     longitude: 15.524259700998098,
     photo: "photos/tomasz/zielona-gora-tribute-to.jpg",
     author: "Tomasz",
@@ -1403,7 +1403,7 @@ markers = [
     type: "can"
   },
   {
-    latitude: 45.56164502370239,  
+    latitude: 45.56164502370239,
     longitude: 6.823896032091728,
     photo: "photos/tomasz/les-arcs.jpg",
     author: "Tomasz",
@@ -1458,7 +1458,7 @@ markers = [
     type: "can"
   },
   {
-    latitude: 54.35052035926662, 
+    latitude: 54.35052035926662,
     longitude: 18.657723326814647,
     photo: "photos/tomasz/gdansk-zuraw.jpg",
     author: "Tomasz",
@@ -1468,7 +1468,7 @@ markers = [
     type: "bottle"
   },
   {
-    latitude: 54.41682303352564, 
+    latitude: 54.41682303352564,
     longitude: 17.418911143577414,
     photo: "photos/tomasz/lupawa-mlyn2.jpg",
     author: "Tomasz",
@@ -1479,7 +1479,7 @@ markers = [
     type: "can"
   },
   {
-    latitude: 54.4167657506518, 
+    latitude: 54.4167657506518,
     longitude: 17.418247343222024,
     photo: "photos/tomasz/lupawa-mlyn.jpg",
     author: "Tomasz",
@@ -1490,7 +1490,7 @@ markers = [
     type: "bottle"
   },
   {
-    latitude: 54.40414741768671, 
+    latitude: 54.40414741768671,
     longitude: 18.567157490286117,
     photo: "photos/tomasz/oliwa-sp35.jpg",
     author: "Tomasz",
@@ -1502,7 +1502,7 @@ markers = [
     type: "bottle"
   },
   {
-    latitude: 54.35395761051367, 
+    latitude: 54.35395761051367,
     longitude: 18.66203202327026,
     photo: "photos/tomasz/gdansk-motlawa-milicja.jpg",
     author: "Tomasz",
@@ -1522,7 +1522,7 @@ markers = [
     type: "can"
   },
   {
-    latitude: 53.96519863431471, 
+    latitude: 53.96519863431471,
     longitude: 17.91825214060925,
     photo: "photos/tomasz/wdzydze-borsk.jpg",
     author: "Tomasz",
@@ -1533,7 +1533,7 @@ markers = [
   },
   {
     latitude: 54.26017862278626,
-    longitude:  16.054694917062967,
+    longitude: 16.054694917062967,
     photo: "photos/tomasz/mielno-la-palma.jpg",
     author: "Tomasz",
     title: "La Palma - Mielno - Poland",
@@ -1542,7 +1542,7 @@ markers = [
     type: "bottle"
   },
   {
-    latitude: 54.43626454795243, 
+    latitude: 54.43626454795243,
     longitude: 18.582561544885955,
     photo: "photos/tomasz/sopot-plaza.jpg",
     author: "Tomasz",
@@ -1552,11 +1552,11 @@ markers = [
     type: "bottle"
   },
   {
-    latitude: 54.06397505535089, 
+    latitude: 54.06397505535089,
     longitude: 23.185030503277105,
     photo: "photos/tomasz/czarna-hancza-pcw.jpg",
     author: "Tomasz",
-    title: "Zakole Pole Biwakowe, Buda Ruska - Czarna Hańcza - Poland",    
+    title: "Zakole Pole Biwakowe, Buda Ruska - Czarna Hańcza - Poland",
     titlePL: "Zakole Pole Biwakowe, Buda Ruska - Czarna Hańcza - Polska",
     commentPL: "Czarna Hańcza 2020 - Warsztaty PCW w trakcie spływu Stowarzyszenia Sympatyków Imprez nad Jeziorami.",
     datetime: "2020-08-06T13:05:30.000Z",
@@ -1564,11 +1564,11 @@ markers = [
   },
 
   {
-    latitude: 53.9361389, 
+    latitude: 53.9361389,
     longitude: 17.598055555555554,
     photo: "photos/tomasz/zbrzyca.jpg",
     author: "Tomasz",
-    title: "Rzeka Zbrzyca - Poland",    
+    title: "Rzeka Zbrzyca - Poland",
     titlePL: "Rzeka Zbrzyca - Polska",
     commentPL: "Zbrzyca 2021 - Spływ Zimowy Stowarzyszenia Sympatyków Imprez nad Jeziorami.",
     datetime: "2021-01-30T16:00:00.000Z",
@@ -1579,9 +1579,9 @@ markers = [
     longitude: 15.28777118434468,
     photo: "photos/tomasz/polandrock27-ploty.jpg",
     author: "Tomasz",
-    title: "Pol'and'Rock 27 - Płoty - Poland",    
+    title: "Pol'and'Rock 27 - Płoty - Poland",
     titlePL: "Pol'and'Rock 27 - Płoty - Polska",
-    commentPL: "Pol'and'Rock 27, znany również jako Przystanek Woodstock, zorganizowany po raz pierwszy (i jedyny na dzień 2023-09-30) w miejscowości Płoty.",    
+    commentPL: "Pol'and'Rock 27, znany również jako Przystanek Woodstock, zorganizowany po raz pierwszy (i jedyny na dzień 2023-09-30) w miejscowości Płoty.",
     comment: "Pol'and'Rock 27, also known as Polish Woodstock, was organized for the first time (and only time as of 2023-09-30) in the town of Płoty.",
     datetime: "2021-07-29T15:50:00.000Z",
     type: "can"
@@ -1591,39 +1591,39 @@ markers = [
     longitude: 14.962399632050172,
     photo: "photos/tomasz/vulcano.jpg",
     author: "Tomasz",
-    title: "Vulcano - Lipari, Italy",    
+    title: "Vulcano - Lipari, Italy",
     titlePL: "Vulcano - Lipari, Włochy",
-    commentPL: "Vulcano, to mała wyspa wulkaniczna położona na Morzu Tyrreńskim i będąca częścią archipelagu Liparyjskiego, może poszczycić się geotermalną aktywnością. Angielskie słowo 'volcano' oraz jego odpowiedniki w wielu językach europejskich wywodzą się od nazwy tej wyspy. Wiąże się to z rzymskim przekonaniem, że Vulcano to komin Wulkana, rzymskiego boga ognia.",    
+    commentPL: "Vulcano, to mała wyspa wulkaniczna położona na Morzu Tyrreńskim i będąca częścią archipelagu Liparyjskiego, może poszczycić się geotermalną aktywnością. Angielskie słowo 'volcano' oraz jego odpowiedniki w wielu językach europejskich wywodzą się od nazwy tej wyspy. Wiąże się to z rzymskim przekonaniem, że Vulcano to komin Wulkana, rzymskiego boga ognia.",
     comment: "Vulcano, a small volcanic island located in the Tyrrhenian Sea and part of the Lipari archipelago, boasts a geothermal activity. Intriguingly, the English word 'volcano', along with its counterparts in numerous European languages, finds its origin in the name of this island. This linguistic connection harks back to the Roman belief that Vulcano was the chimney of Vulcan, the Roman god of fire.",
     datetime: "2021-09-05T19:25:00.000Z",
     type: "can"
   },
   {
-    latitude: 37.05736387953419, 
+    latitude: 37.05736387953419,
     longitude: 15.292951540976583,
     photo: "photos/tomasz/syrakuzy-aretuza.jpg",
     author: "Tomasz",
-    title: "The Fountain of Arethusa - Syracuse, Ortigia - Sicily, Italy",    
+    title: "The Fountain of Arethusa - Syracuse, Ortigia - Sicily, Italy",
     titlePL: "Źródło Aretuzy, Ortigia - Syrakuzy - Sycylia, Włochy",
-    commentPL: "Fontanna Aretuzy w Syrakuzach to źródło słodkiej wody, które tryska na brzegu morza, tworząc małe jezioro (i gości kaczki krzyżówki). Według mitologii greckiej źródło jest poświęcone nimfie Aretuzie, która została w nie przemieniona przez Artemidę, aby uciec przed uporczywym uczuciem Alfeusza, syna boga Oceanu. Jedno z dwóch lub trzech miejsc w Europie gdzie rośnie papirus.",    
+    commentPL: "Fontanna Aretuzy w Syrakuzach to źródło słodkiej wody, które tryska na brzegu morza, tworząc małe jezioro (i gości kaczki krzyżówki). Według mitologii greckiej źródło jest poświęcone nimfie Aretuzie, która została w nie przemieniona przez Artemidę, aby uciec przed uporczywym uczuciem Alfeusza, syna boga Oceanu. Jedno z dwóch lub trzech miejsc w Europie gdzie rośnie papirus.",
     comment: "The Fountain of Arethusa in Syracuse a freshwater spring that gushes out at the seashore, forming a small lake (and hosts mallard ducks). According to Greek mythology, the spring is dedicated to the nymph Arethusa, who was transformed into it by Artemis to escape the persistent affection of Alphaeus, the son of the god Ocean. Home to one of only few existing wild papyretic springs in Europe.",
     datetime: "2021-09-12T18:27:25.000Z",
     type: "can"
   },
   {
-    latitude: 37.057155181458796, 
+    latitude: 37.057155181458796,
     longitude: 15.292971657543802,
     photo: "photos/tomasz/syrakuzy-ortigia.jpg",
     author: "Tomasz",
-    title: "Syracuse, Ortigia - Sicily, Italy",    
+    title: "Syracuse, Ortigia - Sicily, Italy",
     titlePL: "Ortigia - Syrakuzy - Sycylia, Włochy",
-    commentPL: "Wyspa Ortigia w Syrakuzach to połączenie starożytnej historii i śródziemnomorskiego uroku. Podobnie jak szachach, gdzie Obrona Sycylijska strategicznie broni króla, Ortigia przez wieki pilnuje dziedzictwa Sycylii.",    
+    commentPL: "Wyspa Ortigia w Syrakuzach to połączenie starożytnej historii i śródziemnomorskiego uroku. Podobnie jak szachach, gdzie Obrona Sycylijska strategicznie broni króla, Ortigia przez wieki pilnuje dziedzictwa Sycylii.",
     comment: "The Fountain of Arethusa",
     datetime: "2021-09-12T18:27:25.000Z",
     type: "can"
   },
   {
-    latitude: 45.578004527949695, 
+    latitude: 45.578004527949695,
     longitude: 6.834920246454719,
     photo: "photos/tomasz/les-arcs-21.jpg",
     author: "Tomasz",
@@ -1633,7 +1633,7 @@ markers = [
     type: "bottle"
   },
   {
-    latitude: 44.899828, 
+    latitude: 44.899828,
     longitude: 6.595964,
     photo: "photos/tomasz/serre-chevalier.jpg",
     author: "Tomasz",
@@ -1643,7 +1643,7 @@ markers = [
     type: "can"
   },
   {
-    latitude: 54.358314, 
+    latitude: 54.358314,
     longitude: 19.312908,
     photo: "photos/tomasz/przekop-mierzei.jpg",
     author: "Tomasz",
@@ -1756,7 +1756,7 @@ markers = [
   },
   {
     latitude: 54.34882014451168,
-    longitude:  18.65253208441181,
+    longitude: 18.65253208441181,
     photo: "photos/tomasz/makita-gdansk.jpg",
     author: "Tomasz",
     title: "World Cat Day - Gdańsk - Poland",
@@ -1896,7 +1896,7 @@ markers = [
     type: "can"
   },
   {
-    latitude: 60.3779423, 
+    latitude: 60.3779423,
     longitude: 5.3325779,
     photo: "photos/sognefjorden.jpg",
     author: "Doris",
@@ -2047,7 +2047,7 @@ markers = [
     type: "can"
   },
   {
-    latitude: 55.683604921068124, 
+    latitude: 55.683604921068124,
     longitude: 12.593201103054593,
     photo: "photos/tomasz/kopenhaga.jpg",
     author: "Tomasz",
@@ -2057,7 +2057,7 @@ markers = [
     type: "can"
   },
   {
-    latitude: 55.683012162166705, 
+    latitude: 55.683012162166705,
     longitude: 12.592450084549322,
     photo: "photos/tomasz/kopenhaga2.jpg",
     author: "Tomasz",
@@ -2149,7 +2149,7 @@ markers = [
   {
     latitude: 54.18521944444444,
     longitude: 21.71009722222222,
-    photo: "photos/tomasz/mamry.jpg",
+    photo: "photos/tomasz/mamry24.jpg",
     author: "Tomasz",
     title: "Jezioro Mamry - Poland",
     titlePL: "Jezioro Mamry - Polska",
@@ -2157,7 +2157,7 @@ markers = [
     type: "bottle"
   },
   {
-    latitude: 49.98305341811201, 
+    latitude: 49.98305341811201,
     longitude: 20.056054638477807,
     photo: "photos/tomasz/wieliczka.jpg",
     author: "Tomasz",
@@ -2321,7 +2321,7 @@ markers = [
     longitude: 106.717789,
     photo: "photos/tomasz/sajgon.jpg",
     author: "Tomasz",
-    title: "Landmark 81 - Saigon / Ho Chi Minh - Vietnam", 
+    title: "Landmark 81 - Saigon / Ho Chi Minh - Vietnam",
     titlePL: "Landmark 81 - Sajgon / Ho Chi Minh - Wietnam",
     datetime: "2025-01-31T09:09:11.000Z",
     type: "can"
@@ -2369,14 +2369,14 @@ markers = [
     type: "bottle"
   },
   {
-  latitude: 48.13353055,
-  longitude: 11.55015279,
-  photo: "photos/tomasz/monachium-fruhlingsfest.jpg",
-  author: "Tomasz",
-  title: "Frühlingsfest - Munich - Germany",
-  titlePL: "Frühlingsfest - Monachium - Niemcy",
-  datetime: "2025-05-10T14:50:44.000Z",
-  type: "can"
+    latitude: 48.13353055,
+    longitude: 11.55015279,
+    photo: "photos/tomasz/monachium-fruhlingsfest.jpg",
+    author: "Tomasz",
+    title: "Frühlingsfest - Munich - Germany",
+    titlePL: "Frühlingsfest - Monachium - Niemcy",
+    datetime: "2025-05-10T14:50:44.000Z",
+    type: "can"
   },
   {
     latitude: 53.282855,
@@ -2459,7 +2459,7 @@ markers = [
     type: "can"
   },
   {
-    latitude: 20.18424323622762, 
+    latitude: 20.18424323622762,
     longitude: -87.44281338414844,
     photo: "photos/maniu/tulum.jpg",
     author: "Maniu",

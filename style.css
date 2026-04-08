@@ -326,6 +326,29 @@ h1 {
   border-top: 1px solid #333;
 }
 
+/* World Tour slot machine reel highlights */
+.marker-item.tour-silver {
+  border-color: #aaa; /* Stronger than silver */
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  transform: translateX(5px);
+  z-index: 10;
+  position: relative;
+}
+
+@keyframes tour-gold-glow {
+  0%   { box-shadow: 0 0 2px rgba(255, 215, 0, 0.2); }
+  40%  { box-shadow: 0 0 16px rgba(255, 215, 0, 0.8); }
+  100% { box-shadow: 0 0 8px rgba(255, 215, 0, 0.5); }
+}
+
+.marker-item.tour-gold {
+  border-color: #FFD700;
+  background-color: rgba(255, 215, 0, 0.1);
+  transform: translateX(5px);
+  animation: tour-gold-glow 1.5s ease-out forwards;
+}
+
 /* Toggle button */
 .sidebar-toggle {
   position: fixed;
