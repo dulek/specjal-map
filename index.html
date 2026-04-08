@@ -20,6 +20,7 @@
   <div class="sidebar-header">
     <h2 id="locationsTitle">Locations</h2>
     <div class="header-buttons">
+      <button id="worldTourBtn" class="tour-button" title="Zwiedzaj świat ze Specjalem">🌍</button>
       <button id="toggleAllGroups" class="toggle-all-button" title="Collapse All">▼</button>
       <button id="sidebarClose" class="sidebar-close">×</button>
     </div>
@@ -277,35 +278,37 @@
     sortBy: 'order'
   };
 
-  // Function to move map and focus on a specific marker
-  function focusOnMarker(ref, dynamicZoom) {
-      map.closePopup();
+  var lastFocusRef = null;
 
-      if (window.innerWidth < 768) {
+  // Function to move map and focus on a specific marker
+  function focusOnMarker(ref, skipListSelect) {
+    if (!ref || !ref.marker) return;
+
+    lastFocusRef = ref;
+    var zoomLevel = 13;
+    if (map.getZoom() > 13) zoomLevel = map.getZoom();
+
+    // Position marker in the lower part of screen — popup modal opens above
+    var mapHeight = map._container.offsetHeight;
+    var targetY = mapHeight * 0.75; // Marker at 75% from top (bottom quarter)
+    
+    var point = map.project([ref.data.latitude, ref.data.longitude], zoomLevel);
+    point.y += (mapHeight / 2 - targetY); // Shift center UP so marker appears LOW on screen
+    var newCenter = map.unproject(point, zoomLevel);
+
+    map.flyTo(newCenter, zoomLevel, {
+      duration: (tourState === 'playing') ? 2.0 : 1.2,
+      easeLinearity: 0.1  // Strong ease-in / ease-out (slow start, fast middle, slow end)
+    });
+
+    map.once('moveend', function() {
+      ref.marker.openPopup();
+    });
+
+    if (!skipListSelect && window.innerWidth < 768) {
         document.getElementById('sidebar').classList.remove('open');
         document.getElementById('sidebarToggle').classList.remove('hidden');
-      }
-
-      var zoomLevel = dynamicZoom ? 14 : 8;
-
-      var mapHeight = map.getSize().y || window.innerHeight;
-      var targetY = mapHeight * 0.15; // Set marker to 85% from the top (15% from bottom)
-      var point = map.project([ref.data.latitude, ref.data.longitude], zoomLevel);
-      point.y -= (mapHeight / 2 - targetY);
-      var newCenter = map.unproject(point, zoomLevel);
-
-      if (dynamicZoom) {
-          map.flyTo(newCenter, zoomLevel, {
-              animate: true,
-              duration: 2.0
-          });
-          map.once('moveend', function() {
-              ref.marker.openPopup();
-          });
-      } else {
-          map.setView(newCenter, zoomLevel);
-          ref.marker.openPopup();
-      }
+    }
   }
 
   // Global Toast function
@@ -367,6 +370,218 @@
           console.error("Clipboard copy failed: ", err);
       });
   };
+
+  // --- Explore the World (World Tour) Logic ---
+  // States: 'idle' (🌍), 'playing' (⏸), 'paused' (▶)
+  var tourState = 'idle';
+  var tourSequence = [];  // Fixed sorted order, computed once
+  var tourIndex = 0;
+  var tourTimer = null;
+  var playRevertTimer = null;
+
+  // Build a proximity-sorted sequence starting from a given marker.
+  // This sequence is FIXED once computed — the tour always follows this order.
+  function calculateTourSequence(startRef) {
+      if (leafletMarkers.length === 0) return [];
+      
+      var sequence = [];
+      var unvisited = leafletMarkers.slice();
+      var current = startRef || unvisited[Math.floor(Math.random() * unvisited.length)];
+      
+      var idx = unvisited.indexOf(current);
+      if (idx > -1) unvisited.splice(idx, 1);
+      sequence.push(current);
+      
+      // Greedy nearest neighbor to build a geographic route
+      while (unvisited.length > 0) {
+          var nearest = null;
+          var minDist = Infinity;
+          var nearestIdx = -1;
+          
+          for (var i = 0; i < unvisited.length; i++) {
+              var d = Math.pow(unvisited[i].data.latitude - current.data.latitude, 2) + 
+                      Math.pow(unvisited[i].data.longitude - current.data.longitude, 2);
+              if (d < minDist) {
+                  minDist = d;
+                  nearest = unvisited[i];
+                  nearestIdx = i;
+              }
+          }
+          
+          if (nearest) {
+              sequence.push(nearest);
+              unvisited.splice(nearestIdx, 1);
+              current = nearest;
+          } else {
+              break;
+          }
+      }
+      return sequence;
+  }
+
+  // Find a marker's index in the tour sequence
+  function findInTourSequence(ref) {
+      for (var i = 0; i < tourSequence.length; i++) {
+          if (tourSequence[i] === ref) return i;
+      }
+      return -1;
+  }
+
+  function setTourButton(state) {
+      var btn = document.getElementById('worldTourBtn');
+      if (state === 'playing') {
+          btn.innerHTML = '⏸';
+          btn.classList.add('active');
+          btn.title = t('stopTour');
+      } else if (state === 'paused') {
+          btn.innerHTML = '▶';
+          btn.classList.remove('active');
+          btn.title = t('worldTour');
+      } else {
+          btn.innerHTML = '🌍';
+          btn.classList.remove('active');
+          btn.title = t('worldTour');
+      }
+  }
+
+  function startTour() {
+      if (leafletMarkers.length === 0) return;
+      
+      if (playRevertTimer) { clearTimeout(playRevertTimer); playRevertTimer = null; }
+      
+      tourState = 'playing';
+      setTourButton('playing');
+      
+      // Build the fixed sorted sequence (computed once per tour start from idle)
+      var startFrom = lastFocusRef || leafletMarkers[Math.floor(Math.random() * leafletMarkers.length)];
+      tourSequence = calculateTourSequence(startFrom);
+      
+      // Set tourIndex to the NEXT marker after startFrom in the sequence
+      var startIdx = findInTourSequence(startFrom);
+      tourIndex = (startIdx + 1) % tourSequence.length;
+      
+      // If a popup is currently open, wait 2 seconds before closing and starting
+      var hasOpenPopup = map._popup && map._popup.isOpen && map._popup.isOpen();
+      if (hasOpenPopup) {
+          tourTimer = setTimeout(function() {
+              if (tourState !== 'playing') return;
+              map.closePopup();
+              setTimeout(function() {
+                  if (tourState !== 'playing') return;
+                  tourFlyToNext();
+              }, 300);
+          }, 2000);
+      } else {
+          tourFlyToNext();
+      }
+  }
+
+  function pauseTour() {
+      if (tourState !== 'playing') return;
+      tourState = 'paused';
+      
+      if (tourTimer) { clearTimeout(tourTimer); tourTimer = null; }
+      
+      setTourButton('paused');
+      
+      // After 10 seconds idle in paused state, revert to globe
+      playRevertTimer = setTimeout(function() {
+          if (tourState === 'paused') {
+              tourState = 'idle';
+              setTourButton('idle');
+              map.closePopup();
+          }
+      }, 10000);
+  }
+
+  function resumeTour() {
+      if (tourState !== 'paused') return;
+      
+      if (playRevertTimer) { clearTimeout(playRevertTimer); playRevertTimer = null; }
+      
+      tourState = 'playing';
+      setTourButton('playing');
+      
+      // If user clicked a marker during pause, update tourIndex to next after it
+      if (lastFocusRef) {
+          var pos = findInTourSequence(lastFocusRef);
+          if (pos !== -1) {
+              tourIndex = (pos + 1) % tourSequence.length;
+          }
+      }
+      
+      var hasOpenPopup = map._popup && map._popup.isOpen && map._popup.isOpen();
+      if (hasOpenPopup) {
+          tourTimer = setTimeout(function() {
+              if (tourState !== 'playing') return;
+              map.closePopup();
+              setTimeout(function() {
+                  if (tourState !== 'playing') return;
+                  tourFlyToNext();
+              }, 300);
+          }, 2000);
+      } else {
+          tourFlyToNext();
+      }
+  }
+
+  function tourFlyToNext() {
+      if (tourState !== 'playing') return;
+      
+      if (tourIndex >= tourSequence.length) {
+          tourIndex = 0;
+      }
+      
+      var targetRef = tourSequence[tourIndex];
+      tourIndex++;
+      if (tourIndex >= tourSequence.length) tourIndex = 0;
+      
+      map.closePopup();
+      focusOnMarker(targetRef, true);
+      
+      // After arriving, popup opens (via focusOnMarker). Wait 3s then continue.
+      map.once('moveend', function() {
+          if (tourState !== 'playing') return;
+          tourTimer = setTimeout(function() {
+              if (tourState !== 'playing') return;
+              map.closePopup();
+              setTimeout(function() {
+                  if (tourState !== 'playing') return;
+                  tourFlyToNext();
+              }, 500);
+          }, 3000);
+      });
+  }
+
+  // Always track which marker was last opened (for tour starting point)
+  // Also update tourIndex during active tour so the next slide follows the clicked marker
+  map.on('popupopen', function(e) {
+      var popup = e.popup;
+      for (var i = 0; i < leafletMarkers.length; i++) {
+          if (leafletMarkers[i].marker.getPopup() === popup) {
+              lastFocusRef = leafletMarkers[i];
+              // During tour, update the index to continue from this marker
+              if (tourState === 'playing' || tourState === 'paused') {
+                  var pos = findInTourSequence(leafletMarkers[i]);
+                  if (pos !== -1) {
+                      tourIndex = (pos + 1) % tourSequence.length;
+                  }
+              }
+              break;
+          }
+      }
+  });
+
+  document.getElementById('worldTourBtn').addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (tourState === 'idle') {
+          startTour();
+      } else if (tourState === 'playing') {
+          pauseTour();
+      } else if (tourState === 'paused') {
+          resumeTour();
+      }
+  });
 
   // Function to find marker using URL parameters logic
   function findMarkerRefByParams(q, lat, lon) {
@@ -949,7 +1164,9 @@
         setTimeout(function() {
             focusOnMarker(foundMarkerRef, true);
         }, 600);
+        return true;
     }
+    return false;
   }
 
   // Support postMessage from parent iframe
@@ -962,7 +1179,38 @@
       }
   });
 
-  handleUrlParams();
+  var hasFocusParam = handleUrlParams();
+
+  // Auto-start World Tour if URL contains ?zwiedzam=swiat or ?explore=world
+  (function checkAutoTour() {
+      var params = new URLSearchParams(window.location.search);
+      var autoTour = (params.get('zwiedzam') === 'swiat') || (params.get('explore') === 'world');
+      
+      if (!autoTour && window.self !== window.top) {
+          try {
+              var parentParams = new URLSearchParams(window.top.location.search);
+              autoTour = (parentParams.get('zwiedzam') === 'swiat') || (parentParams.get('explore') === 'world');
+          } catch(e) {
+              try {
+                  if (document.referrer) {
+                      var refUrl = new URL(document.referrer);
+                      autoTour = (refUrl.searchParams.get('zwiedzam') === 'swiat') || (refUrl.searchParams.get('explore') === 'world');
+                  }
+              } catch(e2) {}
+          }
+      }
+      
+      if (autoTour) {
+          if (hasFocusParam) {
+              // Wait for the initial marker focus to complete (popup opens), then start tour
+              map.once('popupopen', function() {
+                  setTimeout(function() { startTour(); }, 3000);
+              });
+          } else {
+              setTimeout(function() { startTour(); }, 1500);
+          }
+      }
+  })();
 
 </script>
 

@@ -30,7 +30,9 @@ var translations = {
     collapseAll: "Zwiń wszystkie",
     expandAll: "Rozwiń wszystkie",
     linkCopied: "Link skopiowany do schowka",
-    shareLink: "Udostępnij / skopiuj link"
+    shareLink: "Udostępnij / skopiuj link",
+    worldTour: "Zwiedzaj świat ze Specjalem",
+    stopTour: "Zatrzymaj zwiedzanie"
   },
   en: {
     settings: "Settings",
@@ -55,7 +57,9 @@ var translations = {
     collapseAll: "Collapse All",
     expandAll: "Expand All",
     linkCopied: "Link copied to clipboard",
-    shareLink: "Share / copy link"
+    shareLink: "Share / copy link",
+    worldTour: "Explore the world with Specjal",
+    stopTour: "Stop the tour"
   }
 };
 
