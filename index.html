@@ -179,7 +179,15 @@
         imgTag += ' title="'+comment+'"';
     }
     imgTag += '/>';
-    var popupContent = '<h2> ' + title + '</h2><a href="' + markers[i].photo + '">'+imgTag+'</a>📷 ' + markers[i].author;
+    
+    var shareIconSVG = '<svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>';
+    var checkIconSVG = '<svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+
+    var popupContent = '<h2> ' + title + '</h2>' +
+                       '<div class="popup-image-container">' +
+                       '<a href="' + markers[i].photo + '">' + imgTag + '</a>' +
+                       '<button class="share-btn" onclick="shareLocation(event, ' + markers[i].latitude + ', ' + markers[i].longitude + ', this)" data-original-svg=\'' + shareIconSVG + '\' data-check-svg=\'' + checkIconSVG + '\'>' + shareIconSVG + '</button>' +
+                       '</div>📷 ' + markers[i].author;
     if (markers[i].datetime) {
         popupContent += '<br>🗓️ ' + displayDate(markers[i].datetime);
     }
@@ -257,21 +265,73 @@
       }
   }
 
+  // URL Share logic
+  window.shareLocation = function(event, lat, lon, btn) {
+      event.preventDefault();
+      event.stopPropagation();
+      
+      var baseUrl = window.location.origin + window.location.pathname;
+      
+      if (window.self !== window.top) {
+          try {
+              if (document.referrer) {
+                  var refUrl = new URL(document.referrer);
+                  // Use parent origin and path as the base, dropping its old query params
+                  baseUrl = refUrl.origin + refUrl.pathname;
+              }
+          } catch(e) {}
+      }
+      
+      var shareUrl = baseUrl + '?x=' + parseFloat(lon).toFixed(6) + '&y=' + parseFloat(lat).toFixed(6);
+      
+      navigator.clipboard.writeText(shareUrl).then(function() {
+          var originalSvg = btn.getAttribute('data-original-svg');
+          var checkSvg = btn.getAttribute('data-check-svg');
+          
+          btn.innerHTML = checkSvg;
+          btn.style.background = 'rgba(76, 175, 80, 0.8)'; // Zielony tint i wyzsza widoczność na success
+          btn.style.opacity = '1';
+          
+          setTimeout(function() {
+              btn.innerHTML = originalSvg;
+              btn.style.background = '';
+              btn.style.opacity = '';
+          }, 2500);
+      }).catch(function(err) {
+          console.error("Clipboard copy failed: ", err);
+      });
+  };
+
   // Function to find marker using URL parameters logic
   function findMarkerRefByParams(q, lat, lon) {
     if (lat || lon) {
+      var searchLat = lat ? parseFloat(lat) : null;
+      var searchLon = lon ? parseFloat(lon) : null;
+      var closestMarker = null;
+      var minDistance = Infinity;
+
       for (var i = 0; i < leafletMarkers.length; i++) {
-         var matchLat = true;
-         var matchLon = true;
-         if (lat) {
-             matchLat = leafletMarkers[i].data.latitude.toString().startsWith(lat.toString());
+         var mLat = leafletMarkers[i].data.latitude;
+         var mLon = leafletMarkers[i].data.longitude;
+         var dist = 0;
+         
+         if (searchLat !== null && searchLon !== null) {
+             dist = Math.pow(mLat - searchLat, 2) + Math.pow(mLon - searchLon, 2);
+         } else if (searchLat !== null) {
+             dist = Math.abs(mLat - searchLat);
+         } else if (searchLon !== null) {
+             dist = Math.abs(mLon - searchLon);
          }
-         if (lon) {
-             matchLon = leafletMarkers[i].data.longitude.toString().startsWith(lon.toString());
+
+         if (dist < minDistance) {
+             minDistance = dist;
+             closestMarker = leafletMarkers[i];
          }
-         if (matchLat && matchLon) {
-             return leafletMarkers[i];
-         }
+      }
+      
+      // Allow minor floating point drift up to e.g. ~10km max threshold
+      if (closestMarker && minDistance < 0.05) {
+          return closestMarker;
       }
     } else if (q) {
       var query = q.toLowerCase();

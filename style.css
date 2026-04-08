@@ -35,6 +35,14 @@ h1 {
   min-width: 250px;
 }
 
+/* Container for image to hold the absolute share button */
+.popup-image-container {
+  position: relative;
+  display: block;
+  width: fit-content;
+  margin: 0 auto 8px auto;
+}
+
 /* Limit popup image height and prevent stretching */
 .popup-image {
   max-height: 48vh;
@@ -42,7 +50,52 @@ h1 {
   max-width: 100%;
   object-fit: contain;
   display: block;
-  margin: 0 auto 8px auto;
+  margin: 0;
+}
+
+/* Share button overlay */
+.share-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 10;
+  padding: 0;
+}
+
+.share-btn svg {
+  display: block;
+}
+
+/* Hover on desktop */
+@media (hover: hover) {
+  .popup-image-container:hover .share-btn {
+    opacity: 1;
+  }
+  .share-btn:hover {
+    background: rgba(0, 0, 0, 0.6);
+    transform: scale(1.1);
+  }
+}
+
+/* Mobile permanent visibility */
+@media (hover: none) {
+  .share-btn {
+    opacity: 0.8;
+  }
 }
 
 /* Allow dragging the map through the popup */
