@@ -215,6 +215,81 @@
     sortBy: 'order'
   };
 
+  // Function to move map and focus on a specific marker
+  function focusOnMarker(ref, dynamicZoom) {
+      map.closePopup();
+
+      if (window.innerWidth < 768) {
+        document.getElementById('sidebar').classList.remove('open');
+        document.getElementById('sidebarToggle').classList.remove('hidden');
+      }
+
+      var zoomLevel = dynamicZoom ? 14 : 8;
+
+      var mapHeight = map.getSize().y || window.innerHeight;
+      var targetY = mapHeight * 0.36;
+      var point = map.project([ref.data.latitude, ref.data.longitude], zoomLevel);
+      point.y -= (mapHeight / 2 - targetY);
+      var newCenter = map.unproject(point, zoomLevel);
+
+      if (dynamicZoom) {
+          map.flyTo(newCenter, zoomLevel, {
+              animate: true,
+              duration: 2.0
+          });
+          map.once('moveend', function() {
+              ref.marker.openPopup();
+          });
+      } else {
+          map.setView(newCenter, zoomLevel);
+          ref.marker.openPopup();
+      }
+  }
+
+  // Function to find marker using URL parameters logic
+  function findMarkerRefByParams(q, lat, lon) {
+    if (lat || lon) {
+      for (var i = 0; i < leafletMarkers.length; i++) {
+         var matchLat = true;
+         var matchLon = true;
+         if (lat) {
+             matchLat = leafletMarkers[i].data.latitude.toString().startsWith(lat.toString());
+         }
+         if (lon) {
+             matchLon = leafletMarkers[i].data.longitude.toString().startsWith(lon.toString());
+         }
+         if (matchLat && matchLon) {
+             return leafletMarkers[i];
+         }
+      }
+    } else if (q) {
+      var query = q.toLowerCase();
+      var foundIndex = -1;
+      
+      var checkMatch = function(field) {
+          if (!field) return false;
+          return field.toString().toLowerCase().indexOf(query) !== -1;
+      };
+
+      var checks = [
+          'photo', 'title', 'titlePL', 'comment', 'commentPL', 'author', 'datetime'
+      ];
+
+      for (var c = 0; c < checks.length && foundIndex === -1; c++) {
+          for (var i = 0; i < leafletMarkers.length && foundIndex === -1; i++) {
+              if (checkMatch(leafletMarkers[i].data[checks[c]])) {
+                  foundIndex = i;
+              }
+          }
+      }
+
+      if (foundIndex !== -1) {
+          return leafletMarkers[foundIndex];
+      }
+    }
+    return null;
+  }
+
   // Function to create marker item element
   function createMarkerItem(markerRef, index, hideAuthor) {
     var markerItem = document.createElement('div');
@@ -252,22 +327,7 @@
     markerItem.addEventListener('click', function() {
       var idx = parseInt(this.dataset.index);
       var ref = leafletMarkers[idx];
-
-      map.closePopup();
-
-      var mapHeight = map.getSize().y;
-      var targetY = mapHeight * 0.36;
-      var point = map.project([ref.data.latitude, ref.data.longitude], map.getZoom());
-      point.y -= (mapHeight / 2 - targetY);
-      var newCenter = map.unproject(point, map.getZoom());
-
-      map.setView(newCenter, 8);
-      ref.marker.openPopup();
-
-      if (window.innerWidth < 768) {
-        document.getElementById('sidebar').classList.remove('open');
-        document.getElementById('sidebarToggle').classList.remove('hidden');
-      }
+      focusOnMarker(ref, false);
     });
 
     return markerItem;
@@ -716,6 +776,56 @@
       toggleAllButton.title = t('collapseAll');
     }
   };
+
+  // URL Parameter Handling for Dynamic Marker Focus
+  function handleUrlParams() {
+    var q, lat, lon;
+    
+    var ownParams = new URLSearchParams(window.location.search);
+    q = ownParams.get('q');
+    lat = ownParams.get('lat') || ownParams.get('y');
+    lon = ownParams.get('lon') || ownParams.get('x');
+
+    if (window.self !== window.top && !q && !lat && !lon) {
+        try {
+            if (window.top.location.search) {
+                var parentParams = new URLSearchParams(window.top.location.search);
+                q = parentParams.get('q') || q;
+                lat = parentParams.get('lat') || parentParams.get('y') || lat;
+                lon = parentParams.get('lon') || parentParams.get('x') || lon;
+            }
+        } catch(e) {
+            try {
+                if (document.referrer) {
+                    var refUrl = new URL(document.referrer);
+                    q = refUrl.searchParams.get('q') || q;
+                    lat = refUrl.searchParams.get('lat') || refUrl.searchParams.get('y') || lat;
+                    lon = refUrl.searchParams.get('lon') || refUrl.searchParams.get('x') || lon;
+                }
+            } catch(e2) {}
+        }
+    }
+
+    var foundMarkerRef = findMarkerRefByParams(q, lat, lon);
+
+    if (foundMarkerRef) {
+        setTimeout(function() {
+            focusOnMarker(foundMarkerRef, true);
+        }, 600);
+    }
+  }
+
+  // Support postMessage from parent iframe
+  window.addEventListener("message", function(event) {
+      if (event.data && typeof event.data === 'object' && event.data.type === 'mapFocus') {
+          var foundMarkerRef = findMarkerRefByParams(event.data.q, event.data.lat || event.data.y, event.data.lon || event.data.x);
+          if (foundMarkerRef) {
+              focusOnMarker(foundMarkerRef, true);
+          }
+      }
+  });
+
+  handleUrlParams();
 
 </script>
 
