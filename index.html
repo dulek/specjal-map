@@ -1172,9 +1172,23 @@
   // Support postMessage from parent iframe
   window.addEventListener("message", function(event) {
       if (event.data && typeof event.data === 'object' && event.data.type === 'mapFocus') {
+          // 1. Check for marker focus
           var foundMarkerRef = findMarkerRefByParams(event.data.q, event.data.lat || event.data.y, event.data.lon || event.data.x);
           if (foundMarkerRef) {
               focusOnMarker(foundMarkerRef, true);
+          }
+          
+          // 2. Check for auto-tour
+          var autoTour = (event.data.zwiedzam === 'swiat') || (event.data.explore === 'world');
+          if (autoTour) {
+              if (foundMarkerRef) {
+                  // Wait for the requested focus to complete before starting tour
+                  map.once('popupopen', function() {
+                      setTimeout(function() { startTour(); }, 3000);
+                  });
+              } else {
+                  startTour();
+              }
           }
       }
   });
