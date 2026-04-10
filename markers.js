@@ -2567,6 +2567,51 @@ markers = [
     titlePL: "Sacred Heart Hospital - Katondwe - Zambia",
     datetime: "2026-04-08T16:30:00.000Z",
     type: "can"
+  },
+  {
+    latitude: 13.597768,
+    longitude: -87.767456,
+    photo: "photos/maniu/el-amatillo-salvador.jpg",
+    author: "Maniu",
+    title: "El Amatillo - El Salvador",
+    titlePL: "El Amatillo - Salwador",
+    type: "can"
+  },
+  {
+    latitude: 14.544197180035397,
+    longitude: -90.7523737922298,
+    photo: "photos/maniu/antigua-guatemala.jpg",
+    author: "Maniu",
+    title: "Antigua Guatemala",
+    titlePL: "Antigua Guatemala",
+    type: "can"
+  },
+  {
+    latitude: 43.08824762671596,
+    longitude: -79.07407103725319,
+    photo: "photos/maniu/niagara-falls.jpg",
+    author: "Maniu",
+    title: "American Falls - Niagara Falls - Canada",
+    titlePL: "American Falls - Niagara Falls - Kanada",
+    type: "can"
+  },
+  {
+    latitude: 11.215366,
+    longitude: -85.612344,
+    photo: "photos/maniu/penas-blancas.jpg",
+    author: "Maniu",
+    title: "Peñas Blancas - Costarica",
+    titlePL: "Peñas Blancas - Kostaryka",
+    type: "can"
+  },
+  {
+    latitude: 40.043046563151094,
+    longitude: 46.518168664664294,
+    photo: "photos/maniu/vangli.jpg",
+    author: "Maniu",
+    title: "Vangli - Nagorno-Karabakh - Azerbaijan",
+    titlePL: "Vangli - Górski Karabach - Azerbejdżan",
+    type: "can"
   }
 ]
 
