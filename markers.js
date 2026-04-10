@@ -2612,6 +2612,15 @@ markers = [
     title: "Vangli - Nagorno-Karabakh - Azerbaijan",
     titlePL: "Vangli - Górski Karabach - Azerbejdżan",
     type: "can"
+  },
+  {
+    latitude: 42.65757165930243,
+    longitude: 21.161928281878414,
+    photo: "photos/marcin/pristina.jpg",
+    author: "Marcin",
+    title: "Biblioteka Kombëtare e Kosovës “Pjetër Bogdani” - Pristina - Kosovo",
+    titlePL: "Biblioteka Narodowa Kosowa “Pjetër Bogdani” - Prisztina - Kosowo",
+    type: "can"
   }
 ]
 
