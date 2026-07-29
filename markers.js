@@ -2621,6 +2621,16 @@ markers = [
     title: "Biblioteka Kombëtare e Kosovës “Pjetër Bogdani” - Pristina - Kosovo",
     titlePL: "Biblioteka Narodowa Kosowa “Pjetër Bogdani” - Prisztina - Kosowo",
     type: "can"
+  },
+  {
+    latitude: 42.423571,
+    longitude: 18.777099,
+    photo: "photos/przemek/kotor.jpg",
+    author: "Przemek",
+    title: "Kotor - Montenegro",
+    titlePL: "Kotor - Czarnogóra",
+    datetime: "2026-07-25T17:37:00.000Z",
+    type: "can"
   }
 ]
 
